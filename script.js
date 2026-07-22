@@ -1,1576 +1,848 @@
-// Add your 100 terms in this array
 const glossaryData = [
-{
-    term: "GIS",
-    en: "A system used to collect, store, analyze, and display location-based data.",
-    hi: "एक सिस्टम जो स्थान (Location) से जुड़े डेटा को एकत्र, स्टोर, विश्लेषण और प्रदर्शित करता है।"
-},
-{
-    term: "Remote Sensing",
-    en: "Collecting information about the Earth's surface without touching it using satellites or aircraft.",
-    hi: "उपग्रह या विमान की मदद से बिना सीधे संपर्क किए पृथ्वी की सतह की जानकारी प्राप्त करना।"
-},
-{
-    term: "GPS",
-    en: "A satellite-based system used to find accurate locations anywhere on Earth.",
-    hi: "पृथ्वी पर किसी भी स्थान की सटीक स्थिति बताने वाली उपग्रह आधारित प्रणाली।"
-},
-{
-    term: "GNSS",
-    en: "A group of satellite systems used for global positioning and navigation.",
-    hi: "वैश्विक स्थिति और नेविगेशन के लिए उपयोग की जाने वाली उपग्रह प्रणालियों का समूह।"
-},
-{
-    term: "Drone (UAV)",
-    en: "A flying machine without a pilot used for mapping and surveying.",
-    hi: "बिना पायलट का उड़ने वाला विमान जिसका उपयोग मैपिंग और सर्वेक्षण में किया जाता है।"
-},
-{
-    term: "Python",
-    en: "A programming language used to automate GIS tasks.",
-    hi: "GIS कार्यों को ऑटोमेट करने के लिए उपयोग की जाने वाली प्रोग्रामिंग भाषा।"
-},
-{
-    term: "Google Earth Engine",
-    en: "A cloud platform for analyzing satellite images.",
-    hi: "सैटेलाइट इमेज का विश्लेषण करने वाला क्लाउड प्लेटफॉर्म।"
-},
-{
-    term: "Raster",
-    en: "Data made of pixels, commonly used for satellite images.",
-    hi: "पिक्सेल से बना डेटा, जिसका उपयोग सैटेलाइट इमेज में होता है।"
-},
-{
-    term: "Vector",
-    en: "Data represented by points, lines, and polygons.",
-    hi: "बिंदु, रेखा और बहुभुज के रूप में दर्शाया गया डेटा।"
-},
-{
-    term: "Point",
-    en: "A single location on a map.",
-    hi: "मानचित्र पर एक स्थान।"
-},
-{
-    term: "Line",
-    en: "A feature representing roads, rivers, or boundaries.",
-    hi: "सड़क, नदी या सीमा जैसी रेखीय वस्तु।"
-},
-{
-    term: "Polygon",
-    en: "A closed shape representing an area.",
-    hi: "किसी क्षेत्र को दर्शाने वाली बंद आकृति।"
-},
-{
-    term: "Coordinate",
-    en: "Numbers that define a location.",
-    hi: "किसी स्थान की स्थिति बताने वाले अंक।"
-},
-{
-    term: "Latitude",
-    en: "Measures north or south position.",
-    hi: "उत्तर या दक्षिण दिशा की स्थिति।"
-},
-{
-    term: "Longitude",
-    en: "Measures east or west position.",
-    hi: "पूर्व या पश्चिम दिशा की स्थिति।"
-},
-{
-    term: "Projection",
-    en: "A method to display Earth's curved surface on a flat map.",
-    hi: "पृथ्वी की गोल सतह को समतल मानचित्र पर दिखाने की विधि।"
-},
-{
-    term: "Datum",
-    en: "A reference model for measuring locations.",
-    hi: "स्थान मापने का संदर्भ मॉडल।"
-},
-{
-    term: "UTM",
-    en: "A coordinate system used for accurate mapping.",
-    hi: "सटीक मैपिंग के लिए उपयोग की जाने वाली निर्देशांक प्रणाली।"
-},
-{
-    term: "Scale",
-    en: "The relationship between map distance and real distance.",
-    hi: "मानचित्र और वास्तविक दूरी का अनुपात।"
-},
-{
-    term: "Map",
-    en: "A visual representation of an area.",
-    hi: "किसी क्षेत्र का चित्रात्मक प्रदर्शन।"
-},
-{
-    term: "Basemap",
-    en: "The background map used for reference.",
-    hi: "संदर्भ के लिए उपयोग किया जाने वाला आधार मानचित्र।"
-},
-{
-    term: "Layer",
-    en: "A collection of similar geographic data.",
-    hi: "एक जैसे भौगोलिक डेटा का समूह।"
-},
-{
-    term: "Attribute",
-    en: "Information describing a geographic feature.",
-    hi: "भौगोलिक वस्तु का विवरण।"
-},
-{
-    term: "Attribute Table",
-    en: "A table containing information about map features.",
-    hi: "मैप फीचर्स की जानकारी वाली तालिका।"
-},
-{
-    term: "Feature",
-    en: "Any object shown on a map.",
-    hi: "मानचित्र पर दिखाई गई कोई भी वस्तु।"
-},
-{
-    term: "Feature Class",
-    en: "A collection of similar geographic features.",
-    hi: "एक जैसे फीचर्स का संग्रह।"
-},
-{
-    term: "Geodatabase",
-    en: "A database for storing GIS data.",
-    hi: "GIS डेटा को संग्रहित करने वाला डेटाबेस।"
-},
-{
-    term: "Shapefile",
-    en: "A popular GIS file format for vector data.",
-    hi: "वेक्टर डेटा के लिए लोकप्रिय GIS फ़ाइल प्रारूप।"
-},
-{
-    term: "GeoJSON",
-    en: "A format for storing geographic data in JSON.",
-    hi: "JSON में भौगोलिक डेटा रखने का प्रारूप।"
-},
-{
-    term: "KML",
-    en: "A file format used in Google Earth.",
-    hi: "Google Earth में उपयोग होने वाला फ़ाइल प्रारूप।"
-},
-{
-    term: "GeoTIFF",
-    en: "A raster image with location information.",
-    hi: "स्थान जानकारी वाली रास्टर इमेज।"
-},
-{
-    term: "DEM",
-    en: "A digital model showing ground elevation.",
-    hi: "भूमि की ऊँचाई दर्शाने वाला डिजिटल मॉडल।"
-},
-{
-    term: "DSM",
-    en: "A surface model including trees and buildings.",
-    hi: "पेड़ और भवन सहित सतह का डिजिटल मॉडल।"
-},
-{
-    term: "DTM",
-    en: "A model representing bare ground.",
-    hi: "केवल भूमि की सतह का डिजिटल मॉडल।"
-},
-{
-    term: "Elevation",
-    en: "Height above sea level.",
-    hi: "समुद्र तल से ऊँचाई।"
-},
-{
-    term: "Slope",
-    en: "The steepness of the land.",
-    hi: "भूमि का ढाल।"
-},
-{
-    term: "Aspect",
-    en: "The direction a slope faces.",
-    hi: "ढाल किस दिशा में है।"
-},
-{
-    term: "Hillshade",
-    en: "A shaded view of terrain.",
-    hi: "भूभाग का छायांकित दृश्य।"
-},
-{
-    term: "Contour",
-    en: "Lines connecting equal elevations.",
-    hi: "समान ऊँचाई वाले बिंदुओं को जोड़ने वाली रेखाएँ।"
-},
-{
-    term: "Buffer",
-    en: "An area created around a feature.",
-    hi: "किसी फीचर के चारों ओर बनाया गया क्षेत्र।"
-},
-{
-    term: "Clip",
-    en: "Cuts data using a boundary.",
-    hi: "सीमा के अनुसार डेटा काटना।"
-},
-{
-    term: "Merge",
-    en: "Combines multiple datasets into one.",
-    hi: "कई डेटा को एक में जोड़ना।"
-},
-{
-    term: "Union",
-    en: "Combines overlapping polygons.",
-    hi: "ओवरलैप होने वाले पॉलीगॉन को जोड़ना।"
-},
-{
-    term: "Intersect",
-    en: "Keeps only common overlapping areas.",
-    hi: "केवल समान ओवरलैप क्षेत्र रखना।"
-},
-{
-    term: "Dissolve",
-    en: "Removes shared boundaries.",
-    hi: "समान सीमाओं को हटाना।"
-},
-{
-    term: "Spatial Join",
-    en: "Joins data based on location.",
-    hi: "स्थान के आधार पर डेटा जोड़ना।"
-},
-{
-    term: "Georeferencing",
-    en: "Assigning real-world coordinates to an image.",
-    hi: "इमेज को वास्तविक निर्देशांक देना।"
-},
-{
-    term: "Digitizing",
-    en: "Creating map features from images.",
-    hi: "इमेज से फीचर बनाना।"
-},
-{
-    term: "Topology",
-    en: "Rules that define relationships between features.",
-    hi: "फीचर्स के बीच संबंधों के नियम।"
-},
-{
-    term: "Overlay",
-    en: "Combining multiple map layers.",
-    hi: "कई लेयरों को एक साथ जोड़ना।"
-},
-{
-    term: "Spatial Analysis",
-    en: "Studying geographic patterns and relationships.",
-    hi: "भौगोलिक पैटर्न और संबंधों का अध्ययन।"
-},
-{
-    term: "Interpolation",
-    en: "Estimating unknown values between points.",
-    hi: "बिंदुओं के बीच अज्ञात मान का अनुमान लगाना।"
-},
-{
-    term: "IDW",
-    en: "An interpolation method using nearby values.",
-    hi: "निकटतम मानों से अनुमान लगाने की विधि।"
-},
-{
-    term: "Kriging",
-    en: "An advanced interpolation technique.",
-    hi: "उन्नत इंटरपोलेशन तकनीक।"
-},
-{
-    term: "Network Analysis",
-    en: "Finding the best routes in a network.",
-    hi: "नेटवर्क में सबसे अच्छा मार्ग ढूंढना।"
-},
-{
-    term: "Shortest Path",
-    en: "The quickest route between two places.",
-    hi: "दो स्थानों के बीच सबसे छोटा मार्ग।"
-},
-{
-    term: "Geocoding",
-    en: "Converting addresses into coordinates.",
-    hi: "पते को निर्देशांक में बदलना।"
-},
-{
-    term: "Reverse Geocoding",
-    en: "Converting coordinates into an address.",
-    hi: "निर्देशांक को पते में बदलना।"
-},
-{
-    term: "Pixel",
-    en: "The smallest unit of a raster image.",
-    hi: "रास्टर इमेज की सबसे छोटी इकाई।"
-},
-{
-    term: "Resolution",
-    en: "The size of each pixel on the ground.",
-    hi: "जमीन पर प्रत्येक पिक्सेल का आकार।"
-},
-{
-    term: "Spatial Resolution",
-    en: "Level of detail in an image.",
-    hi: "इमेज में विवरण का स्तर।"
-},
-{
-    term: "Temporal Resolution",
-    en: "How often images are captured.",
-    hi: "कितनी बार इमेज ली जाती है।"
-},
-{
-    term: "Spectral Resolution",
-    en: "Number of wavelength bands recorded.",
-    hi: "रिकॉर्ड किए गए स्पेक्ट्रल बैंड की संख्या।"
-},
-{
-    term: "NDVI",
-    en: "An index used to measure vegetation health.",
-    hi: "वनस्पति की स्थिति मापने वाला सूचकांक।"
-},
-{
-    term: "NDWI",
-    en: "An index used to detect water bodies.",
-    hi: "जल निकायों की पहचान करने वाला सूचकांक।"
-},
-{
-    term: "NDBI",
-    en: "An index used to identify built-up areas.",
-    hi: "निर्मित क्षेत्रों की पहचान करने वाला सूचकांक।"
-},
-{
-    term: "LULC",
-    en: "Land Use and Land Cover classification.",
-    hi: "भूमि उपयोग और भूमि आवरण वर्गीकरण।"
-},
-{
-    term: "Classification",
-    en: "Grouping pixels into different categories.",
-    hi: "पिक्सेल को अलग-अलग वर्गों में बांटना।"
-},
-{
-    term: "Supervised Classification",
-    en: "Classification using training samples.",
-    hi: "प्रशिक्षण नमूनों के आधार पर वर्गीकरण।"
-},
-{
-    term: "Unsupervised Classification",
-    en: "Automatic classification without training data.",
-    hi: "बिना प्रशिक्षण डेटा के स्वचालित वर्गीकरण।"
-},
-{
-    term: "Accuracy Assessment",
-    en: "Checking how correct a classification is.",
-    hi: "वर्गीकरण की शुद्धता की जांच।"
-},
-{
-    term: "Ground Truth",
-    en: "Actual field data used for verification.",
-    hi: "सत्यापन के लिए वास्तविक फील्ड डेटा।"
-},
-{
-    term: "Survey",
-    en: "Collecting field information.",
-    hi: "फील्ड से जानकारी एकत्र करना।"
-},
-{
-    term: "Photogrammetry",
-    en: "Creating measurements from photographs.",
-    hi: "फोटो से माप और मानचित्र बनाना।"
-},
-{
-    term: "LiDAR",
-    en: "A laser-based technology for measuring distances.",
-    hi: "लेजर आधारित दूरी मापने की तकनीक।"
-},
-{
-    term: "Orthomosaic",
-    en: "A corrected aerial image made from many photos.",
-    hi: "कई फोटो जोड़कर बनाई गई सही एरियल इमेज।"
-},
-{
-    term: "GCP",
-    en: "Ground points used to improve map accuracy.",
-    hi: "मैप की सटीकता बढ़ाने वाले ग्राउंड पॉइंट।"
-},
-{
-    term: "RTK",
-    en: "A GPS method for centimeter-level accuracy.",
-    hi: "सेंटीमीटर स्तर की सटीकता देने वाली GPS तकनीक।"
-},
-{
-    term: "Waypoint",
-    en: "A planned location for navigation.",
-    hi: "नेविगेशन के लिए निर्धारित स्थान।"
-},
-{
-    term: "Mission Planning",
-    en: "Planning the flight path of a drone.",
-    hi: "ड्रोन की उड़ान का मार्ग तय करना।"
-},
-{
-    term: "Cloud Computing",
-    en: "Using online servers for data processing.",
-    hi: "ऑनलाइन सर्वर पर डेटा प्रोसेस करना।"
-},
-{
-    term: "ArcGIS",
-    en: "A popular GIS software by Esri.",
-    hi: "Esri द्वारा विकसित लोकप्रिय GIS सॉफ्टवेयर।"
-},
-{
-    term: "QGIS",
-    en: "A free and open-source GIS software.",
-    hi: "मुफ्त और ओपन-सोर्स GIS सॉफ्टवेयर।"
-},
-{
-    term: "GeoServer",
-    en: "Software for sharing GIS data online.",
-    hi: "GIS डेटा ऑनलाइन साझा करने वाला सॉफ्टवेयर।"
-},
-{
-    term: "WebGIS",
-    en: "GIS available through a web browser.",
-    hi: "वेब ब्राउज़र के माध्यम से उपयोग होने वाला GIS।"
-},
-{
-    term: "Cloud GIS",
-    en: "GIS services running on cloud platforms.",
-    hi: "क्लाउड पर चलने वाली GIS सेवाएं।"
-},
-{
-    term: "SQL",
-    en: "A language for managing databases.",
-    hi: "डेटाबेस को प्रबंधित करने की भाषा।"
-},
-{
-    term: "PostGIS",
-    en: "A spatial extension for PostgreSQL.",
-    hi: "PostgreSQL का स्थानिक एक्सटेंशन।"
-},
-{
-    term: "GeoAI",
-    en: "Using Artificial Intelligence with GIS.",
-    hi: "GIS के साथ कृत्रिम बुद्धिमत्ता का उपयोग।"
-},
-{
-    term: "Satellite",
-    en: "An object orbiting Earth to capture images.",
-    hi: "पृथ्वी की परिक्रमा कर इमेज लेने वाला उपग्रह।"
-},
-{
-    term: "Landsat",
-    en: "A satellite program for Earth observation.",
-    hi: "पृथ्वी अवलोकन के लिए उपग्रह कार्यक्रम।"
-},
-{
-    term: "Sentinel",
-    en: "European satellites for Earth monitoring.",
-    hi: "पृथ्वी निगरानी के लिए यूरोपीय उपग्रह।"
-},
-{
-    term: "Band",
-    en: "A specific range of light recorded by a sensor.",
-    hi: "सेंसर द्वारा रिकॉर्ड की गई प्रकाश की एक विशेष सीमा।"
-},
-{
-    term: "Metadata",
-    en: "Information describing a dataset.",
-    hi: "डेटा के बारे में जानकारी।"
-},
-{
-    term: "Coordinate System",
-    en: "A system used to define map locations.",
-    hi: "मानचित्र पर स्थान निर्धारित करने की प्रणाली।"
-},
-{
-    term: "Map Layout",
-    en: "The final design of a map for printing.",
-    hi: "प्रिंट के लिए तैयार मानचित्र का डिज़ाइन।"
-},
-{
-    term: "Legend",
-    en: "Explains map symbols.",
-    hi: "मानचित्र के चिन्हों का विवरण।"
-},
-{
-    term: "North Arrow",
-    en: "Shows the north direction on a map.",
-    hi: "मानचित्र पर उत्तर दिशा दिखाता है।"
-},
-{
-    term: "Scale Bar",
-    en: "Shows distance on a map.",
-    hi: "मानचित्र पर दूरी दर्शाता है।"
-},
-{
-    term: "Symbology",
-    en: "The style used to display map features.",
-    hi: "मानचित्र फीचर्स को दिखाने की शैली।"
-},
-{
-    term: "Dashboard",
-    en: "A visual display of GIS information.",
-    hi: "GIS जानकारी दिखाने वाला विजुअल पैनल।"
-},
-{
-    term: "Story Map",
-    en: "A map combined with text, photos, and videos.",
-    hi: "मैप, टेक्स्ट, फोटो और वीडियो का संयोजन।"
-},
-{
-    term: "Spatial Database",
-    en: "A database designed for geographic data.",
-    hi: "भौगोलिक डेटा के लिए बनाया गया डेटाबेस।"
-},
-{
-    term: "Map Service",
-    en: "A service that shares maps online.",
-    hi: "ऑनलाइन मानचित्र साझा करने वाली सेवा।"
-},
-{
-    term: "OpenStreetMap",
-    en: "A free editable map of the world.",
-    hi: "दुनिया का मुफ्त संपादन योग्य मानचित्र।"
-},
+    { // 1
+        "term": "Active Sensor",
+        "category": "Remote Sensing",
+        "definition_en": "An Active Sensor emits its own energy toward the Earth's surface and measures the reflected signal. Radar and LiDAR are common examples of active remote sensing systems.",
+        "definition_hi": "\u090f\u0915\u094d\u091f\u093f\u0935 \u0938\u0947\u0902\u0938\u0930 (Active Sensor) \u0938\u094d\u0935\u092f\u0902 \u090a\u0930\u094d\u091c\u093e \u092d\u0947\u091c\u0924\u093e \u0939\u0948 \u0914\u0930 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0938\u0947 \u0932\u094c\u091f\u0928\u0947 \u0935\u093e\u0932\u0947 \u0938\u093f\u0917\u094d\u0928\u0932 \u0915\u094b \u092e\u093e\u092a\u0924\u093e \u0939\u0948\u0964 Radar \u0914\u0930 LiDAR \u0907\u0938\u0915\u0947 \u092a\u094d\u0930\u092e\u0941\u0916 \u0909\u0926\u093e\u0939\u0930\u0923 \u0939\u0948\u0902\u0964",
+        "image": "Active Sensor.png"
+    },
+    {//
+        "term": "Almanac",
+        "category": "GPS",
+        "definition_en": "A set of data transmitted by a satellite containing rough orbit information for all satellites in the constellation.",
+        "definition_hi": "\u0909\u092a\u0917\u094d\u0930\u0939 \u0926\u094d\u0935\u093e\u0930\u093e \u092a\u094d\u0930\u0947\u0937\u093f\u0924 \u0921\u0947\u091f\u093e \u0915\u093e \u090f\u0915 \u0938\u0947\u091f \u091c\u093f\u0938\u092e\u0947\u0902 \u0924\u093e\u0930\u093e\u092e\u0902\u0921\u0932 \u0915\u0947 \u0938\u092d\u0940 \u0909\u092a\u0917\u094d\u0930\u0939\u094b\u0902 \u0915\u0947 \u0932\u093f\u090f \u0905\u0928\u0941\u092e\u093e\u0928\u093f\u0924 \u0915\u0915\u094d\u0937\u093e \u0915\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0939\u094b\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Almanac.jpg"
+    },
+    {
+        "term": "Aspect",
+        "category": "Terrain Analysis",
+        "definition_en": "Aspect indicates the compass direction that a slope faces. It influences sunlight exposure, soil moisture, vegetation growth, and climate conditions, making it an important factor in environmental studies.",
+        "definition_hi": "\u090f\u0938\u094d\u092a\u0947\u0915\u094d\u091f (Aspect) \u0915\u093f\u0938\u0940 \u0922\u093e\u0932 \u0915\u0940 \u0926\u093f\u0936\u093e \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948 \u0915\u093f \u0935\u0939 \u0909\u0924\u094d\u0924\u0930, \u0926\u0915\u094d\u0937\u093f\u0923, \u092a\u0942\u0930\u094d\u0935 \u092f\u093e \u092a\u0936\u094d\u091a\u093f\u092e \u0915\u0940 \u0913\u0930 \u0939\u0948\u0964 \u092f\u0939 \u0938\u0942\u0930\u094d\u092f \u0915\u0947 \u092a\u094d\u0930\u0915\u093e\u0936, \u092e\u093f\u091f\u094d\u091f\u0940 \u0915\u0940 \u0928\u092e\u0940, \u0935\u0928\u0938\u094d\u092a\u0924\u093f \u0935\u0943\u0926\u094d\u0927\u093f \u0914\u0930 \u091c\u0932\u0935\u093e\u092f\u0941 \u0915\u094b \u092a\u094d\u0930\u092d\u093e\u0935\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Aspect.jpg"
+    },
+    {
+        "term": "Atmospheric Correction",
+        "category": "Remote Sensing",
+        "definition_en": "Atmospheric Correction is the process of removing the effects of atmospheric particles, gases, and moisture from satellite imagery. It improves image quality and ensures that pixel values accurately represent the Earth's surface.",
+        "definition_hi": "\u090f\u091f\u092e\u0949\u0938\u094d\u092b\u0947\u0930\u093f\u0915 \u0915\u0930\u0947\u0915\u094d\u0936\u0928 (Atmospheric Correction) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0935\u093e\u092f\u0941\u092e\u0902\u0921\u0932 \u0915\u0947 \u0927\u0942\u0932 \u0915\u0923\u094b\u0902, \u0917\u0948\u0938\u094b\u0902 \u0914\u0930 \u0928\u092e\u0940 \u0915\u0947 \u092a\u094d\u0930\u092d\u093e\u0935 \u0915\u094b \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0938\u0947 \u0939\u091f\u093e\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u0907\u092e\u0947\u091c \u0905\u0927\u093f\u0915 \u0938\u091f\u0940\u0915 \u0914\u0930 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u092f\u094b\u0917\u094d\u092f \u092c\u0928\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Atmospheric Correction.jpg"
+    },
+    {
+        "term": "Attribute Data",
+        "category": "GIS",
+        "definition_en": "Attribute Data is descriptive information associated with a geographic feature. It includes details such as name, population, area, road type, or land use, which help users understand the characteristics of spatial features.",
+        "definition_hi": "\u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u0921\u0947\u091f\u093e \u0915\u093f\u0938\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930 \u0938\u0947 \u0938\u0902\u092c\u0902\u0927\u093f\u0924 \u0935\u093f\u0935\u0930\u0923\u093e\u0924\u094d\u092e\u0915 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0939\u094b\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0928\u093e\u092e, \u091c\u0928\u0938\u0902\u0916\u094d\u092f\u093e, \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u092b\u0932, \u0938\u0921\u093c\u0915 \u0915\u093e \u092a\u094d\u0930\u0915\u093e\u0930, \u092d\u0942\u092e\u093f \u0909\u092a\u092f\u094b\u0917 \u0906\u0926\u093f \u091c\u0948\u0938\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0936\u093e\u092e\u093f\u0932 \u0939\u094b\u0924\u0940 \u0939\u0948, \u091c\u093f\u0938\u0938\u0947 \u0909\u0938 \u092b\u0940\u091a\u0930 \u0915\u0940 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u0913\u0902 \u0915\u094b \u0938\u092e\u091d\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Attribute Data.jpg"
+    },
+    {
+        "term": "Attribute Query",
+        "category": "GIS",
+        "definition_en": "An Attribute Query selects features based on information stored in the attribute table instead of their location. For example, selecting all cities with a population greater than one million or all roads classified as highways.",
+        "definition_hi": "\u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u0915\u094d\u0935\u0947\u0930\u0940 (Attribute Query) \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u094d\u0925\u093e\u0928 \u0915\u0947 \u092c\u091c\u093e\u092f \u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u091f\u0947\u092c\u0932 \u092e\u0947\u0902 \u092e\u094c\u091c\u0942\u0926 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930 \u092b\u0940\u091a\u0930\u094d\u0938 \u091a\u0941\u0928\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0909\u0926\u093e\u0939\u0930\u0923 \u0915\u0947 \u0932\u093f\u090f, 10 \u0932\u093e\u0916 \u0938\u0947 \u0905\u0927\u093f\u0915 \u091c\u0928\u0938\u0902\u0916\u094d\u092f\u093e \u0935\u093e\u0932\u0947 \u0936\u0939\u0930 \u092f\u093e \u0915\u0947\u0935\u0932 \u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0930\u093e\u091c\u092e\u093e\u0930\u094d\u0917 \u091a\u0941\u0928\u0928\u093e\u0964",
+        "image": "Attribute Query.jpg"
+    },
+    {
+        "term": "Azimuth",
+        "category": "Cartography",
+        "definition_en": "The horizontal angle or direction of a compass bearing.",
+        "definition_hi": "\u0915\u092e\u094d\u092a\u093e\u0938 \u092c\u093f\u092f\u0930\u093f\u0902\u0917 \u0915\u0940 \u0915\u094d\u0937\u0948\u0924\u093f\u091c \u0926\u093f\u0936\u093e \u092f\u093e \u0915\u094b\u0923\u0964",
+        "image": "Azimuth.jpg"
+    },
+    {
+        "term": "Base Map",
+        "category": "Cartography",
+        "definition_en": "A map providing background context for other map layers, such as roads, terrain, or borders.",
+        "definition_hi": "\u090f\u0915 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u091c\u094b \u0905\u0928\u094d\u092f \u092e\u0948\u092a \u0932\u0947\u092f\u0930\u094d\u0938 \u0915\u0947 \u0932\u093f\u090f \u092a\u0943\u0937\u094d\u0920\u092d\u0942\u092e\u093f \u0938\u0902\u0926\u0930\u094d\u092d \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u093e \u0939\u0948, \u091c\u0948\u0938\u0947 \u0938\u0921\u093c\u0915\u0947\u0902, \u092d\u0942-\u092d\u093e\u0917 \u092f\u093e \u0938\u0940\u092e\u093e\u090f\u0901\u0964",
+        "image": "Base Map.jpg"
+    },
+    {
+        "term": "Buffer",
+        "category": "Spatial Analysis",
+        "definition_en": "A Buffer is a zone created around a geographic feature at a specified distance. It is commonly used to identify nearby features, perform proximity analysis, and support decision-making in urban planning, environmental studies, and transportation.",
+        "definition_hi": "\u092c\u092b\u0930 (Buffer) \u0915\u093f\u0938\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930 \u0915\u0947 \u091a\u093e\u0930\u094b\u0902 \u0913\u0930 \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0926\u0942\u0930\u0940 \u092a\u0930 \u092c\u0928\u093e\u092f\u093e \u0917\u092f\u093e \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0928\u093f\u0915\u091f\u0935\u0930\u094d\u0924\u0940 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u0940 \u092a\u0939\u091a\u093e\u0928, \u0928\u093f\u0915\u091f\u0924\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 (Proximity Analysis), \u0936\u0939\u0930\u0940 \u0928\u093f\u092f\u094b\u091c\u0928, \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923 \u0905\u0927\u094d\u092f\u092f\u0928 \u0914\u0930 \u092a\u0930\u093f\u0935\u0939\u0928 \u092f\u094b\u091c\u0928\u093e \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Buffer.jpg"
+    },
+    {
+        "term": "Cartogram",
+        "category": "Cartography",
+        "definition_en": "A map in which statistical information is shown in diagrammatic form, distorting geometry to convey data.",
+        "definition_hi": "\u090f\u0915 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u091c\u093f\u0938\u092e\u0947\u0902 \u0938\u093e\u0902\u0916\u094d\u092f\u093f\u0915\u0940\u092f \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u094b \u0906\u0930\u0947\u0916\u0940\u092f \u0930\u0942\u092a \u092e\u0947\u0902 \u0926\u093f\u0916\u093e\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948, \u0921\u0947\u091f\u093e \u0915\u094b \u0935\u094d\u092f\u0915\u094d\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u091c\u094d\u092f\u093e\u092e\u093f\u0924\u093f \u0915\u094b \u0935\u093f\u0915\u0943\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Cartogram.jpg"
+    },
+    {
+        "term": "Check Point",
+        "category": "Surveying",
+        "definition_en": "A Check Point is an independently surveyed point used to verify the positional accuracy of a map or drone survey. Unlike GCPs, check points are not used during image processing but only for accuracy assessment.",
+        "definition_hi": "\u091a\u0947\u0915 \u092a\u0949\u0907\u0902\u091f \u090f\u0915 \u0938\u094d\u0935\u0924\u0902\u0924\u094d\u0930 \u0930\u0942\u092a \u0938\u0947 \u092e\u093e\u092a\u093e \u0917\u092f\u093e \u092c\u093f\u0902\u0926\u0941 \u0939\u094b\u0924\u093e \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u0938\u0940 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092f\u093e \u0921\u094d\u0930\u094b\u0928 \u0938\u0930\u094d\u0935\u0947 \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u091c\u093e\u0901\u091a\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0947 \u0907\u092e\u0947\u091c \u092a\u094d\u0930\u094b\u0938\u0947\u0938\u093f\u0902\u0917 \u092e\u0947\u0902 \u0928\u0939\u0940\u0902 \u092c\u0932\u094d\u0915\u093f \u0915\u0947\u0935\u0932 Accuracy Assessment \u0915\u0947 \u0932\u093f\u090f \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Check Point.jpg"
+    },
+    {
+        "term": "Choropleth Map",
+        "category": "Cartography",
+        "definition_en": "A thematic map where areas are shaded or patterned in proportion to the measurement of the statistical variable being displayed.",
+        "definition_hi": "\u090f\u0915 \u0935\u093f\u0937\u092f\u0917\u0924 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u091c\u0939\u093e\u0901 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u094b\u0902 \u0915\u094b \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u093f\u090f \u091c\u093e \u0930\u0939\u0947 \u0938\u093e\u0902\u0916\u094d\u092f\u093f\u0915\u0940\u092f \u091a\u0930 \u0915\u0947 \u092e\u093e\u092a \u0915\u0947 \u0905\u0928\u0941\u092a\u093e\u0924 \u092e\u0947\u0902 \u091b\u093e\u092f\u093e\u0902\u0915\u093f\u0924 \u092f\u093e \u092a\u0948\u091f\u0930\u094d\u0928 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Choropleth Map.jpg"
+    },
+    {
+        "term": "Clip",
+        "category": "Spatial Analysis",
+        "definition_en": "Clip is a GIS tool used to cut one dataset using the boundary of another dataset. It keeps only the features that fall inside the clipping boundary and removes everything outside it.",
+        "definition_hi": "\u0915\u094d\u0932\u093f\u092a (Clip) \u090f\u0915 GIS \u091f\u0942\u0932 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u090f\u0915 \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u0915\u094b \u0926\u0942\u0938\u0930\u0947 \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u0915\u0940 \u0938\u0940\u092e\u093e \u0915\u0947 \u0905\u0928\u0941\u0938\u093e\u0930 \u0915\u093e\u091f\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 \u0915\u0947\u0935\u0932 \u0938\u0940\u092e\u093e \u0915\u0947 \u0905\u0902\u0926\u0930 \u0906\u0928\u0947 \u0935\u093e\u0932\u0947 \u092b\u0940\u091a\u0930\u094d\u0938 \u0915\u094b \u0930\u0916\u0924\u093e \u0939\u0948 \u0914\u0930 \u092c\u093e\u0915\u0940 \u0921\u0947\u091f\u093e \u0939\u091f\u093e \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "Clip.jpg"
+    },
+    {
+        "term": "Contour",
+        "category": "Cartography",
+        "definition_en": "A Contour is a line that connects points of equal elevation on a map. Contour lines help represent the shape, height, and slope of the terrain and are widely used in topographic mapping.",
+        "definition_hi": "\u0915\u0902\u091f\u0942\u0930 (Contour) \u0935\u0939 \u0930\u0947\u0916\u093e \u0939\u0948 \u091c\u094b \u0938\u092e\u093e\u0928 \u090a\u0901\u091a\u093e\u0908 \u0935\u093e\u0932\u0947 \u092c\u093f\u0902\u0926\u0941\u0913\u0902 \u0915\u094b \u091c\u094b\u0921\u093c\u0924\u0940 \u0939\u0948\u0964 \u0915\u0902\u091f\u0942\u0930 \u0930\u0947\u0916\u093e\u090f\u0901 \u092d\u0942-\u092d\u093e\u0917 \u0915\u0940 \u090a\u0901\u091a\u093e\u0908, \u0922\u093e\u0932 \u0914\u0930 \u0906\u0915\u093e\u0930 \u0915\u094b \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902 \u0924\u0925\u093e \u091f\u094b\u092a\u094b\u0917\u094d\u0930\u093e\u092b\u093f\u0915 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930\u094b\u0902 \u092e\u0947\u0902 \u0935\u094d\u092f\u093e\u092a\u0915 \u0930\u0942\u092a \u0938\u0947 \u0909\u092a\u092f\u094b\u0917 \u0915\u0940 \u091c\u093e\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "image": "Contour.jpg"
+    },
+    {
+        "term": "Contour Interval",
+        "category": "Cartography",
+        "definition_en": "Contour Interval is the vertical elevation difference between two consecutive contour lines. A smaller interval shows more terrain detail, while a larger interval represents broader elevation changes.",
+        "definition_hi": "\u0915\u0902\u091f\u0942\u0930 \u0907\u0902\u091f\u0930\u0935\u0932 (Contour Interval) \u0926\u094b \u0932\u0917\u093e\u0924\u093e\u0930 \u0915\u0902\u091f\u0942\u0930 \u0930\u0947\u0916\u093e\u0913\u0902 \u0915\u0947 \u092c\u0940\u091a \u0915\u0940 \u090a\u0901\u091a\u093e\u0908 \u0915\u093e \u0905\u0902\u0924\u0930 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0915\u092e \u0915\u0902\u091f\u0942\u0930 \u0907\u0902\u091f\u0930\u0935\u0932 \u0905\u0927\u093f\u0915 \u0935\u093f\u0938\u094d\u0924\u0943\u0924 \u092d\u0942-\u092d\u093e\u0917 \u0926\u093f\u0916\u093e\u0924\u093e \u0939\u0948 \u091c\u092c\u0915\u093f \u092c\u0921\u093c\u093e \u0907\u0902\u091f\u0930\u0935\u0932 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u090a\u0901\u091a\u093e\u0908 \u092a\u0930\u093f\u0935\u0930\u094d\u0924\u0928 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Contour Interval.jpg"
+    },
+    {
+        "term": "Coordinate System",
+        "category": "GIS",
+        "definition_en": "A Coordinate System is a reference framework used to define the exact position of geographic features on the Earth's surface. It ensures that maps and datasets align correctly and can be used together accurately.",
+        "definition_hi": "\u0915\u094b\u0911\u0930\u094d\u0921\u093f\u0928\u0947\u091f \u0938\u093f\u0938\u094d\u091f\u092e \u090f\u0915 \u0938\u0902\u0926\u0930\u094d\u092d \u092a\u094d\u0930\u0923\u093e\u0932\u0940 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092a\u0943\u0925\u094d\u0935\u0940 \u092a\u0930 \u0915\u093f\u0938\u0940 \u0938\u094d\u0925\u093e\u0928 \u0915\u0940 \u0938\u091f\u0940\u0915 \u0938\u094d\u0925\u093f\u0924\u093f \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 \u0938\u0941\u0928\u093f\u0936\u094d\u091a\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948 \u0915\u093f \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0914\u0930 \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u0938\u0939\u0940 \u0938\u094d\u0925\u093e\u0928 \u092a\u0930 \u090f\u0915-\u0926\u0942\u0938\u0930\u0947 \u0915\u0947 \u0938\u093e\u0925 \u092e\u0947\u0932 \u0916\u093e\u090f\u0901\u0964",
+        "image": "Coordinate System.jpg"
+    },
+    {
+        "term": "Datum",
+        "category": "GIS",
+        "definition_en": "A Datum is a mathematical reference model used to define the size, shape, and position of the Earth. It serves as the foundation for accurate coordinate systems and mapping applications.",
+        "definition_hi": "\u0921\u0947\u091f\u092e \u090f\u0915 \u0917\u0923\u093f\u0924\u0940\u092f \u0938\u0902\u0926\u0930\u094d\u092d \u092e\u0949\u0921\u0932 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0947 \u0906\u0915\u093e\u0930, \u092e\u093e\u092a \u0914\u0930 \u0938\u094d\u0925\u093f\u0924\u093f \u0915\u094b \u092a\u0930\u093f\u092d\u093e\u0937\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 \u0938\u091f\u0940\u0915 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915 \u092a\u094d\u0930\u0923\u093e\u0932\u0940 \u0914\u0930 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930\u0923 \u0915\u093e \u0906\u0927\u093e\u0930 \u0939\u094b\u0924\u093e \u0939\u0948\u0964",
+        "image": "Datum.jpg"
+    },
+    {
+        "term": "Differential GPS (DGPS)",
+        "category": "GPS",
+        "definition_en": "Differential GPS (DGPS) is an enhanced positioning technique that improves GPS accuracy by using corrections from a nearby reference station. It reduces common GPS errors and is widely used in mapping, surveying, and marine navigation.",
+        "definition_hi": "\u0921\u093f\u092b\u0930\u0947\u0902\u0936\u093f\u092f\u0932 GPS (DGPS) \u090f\u0915 \u0909\u0928\u094d\u0928\u0924 \u0924\u0915\u0928\u0940\u0915 \u0939\u0948 \u091c\u094b \u092a\u093e\u0938 \u0915\u0947 \u0930\u0947\u092b\u0930\u0947\u0902\u0938 \u0938\u094d\u091f\u0947\u0936\u0928 \u0938\u0947 \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0938\u0941\u0927\u093e\u0930\u094b\u0902 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0915\u0947 GPS \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u092c\u0922\u093c\u093e\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923, \u092e\u0948\u092a\u093f\u0902\u0917 \u0914\u0930 \u0938\u092e\u0941\u0926\u094d\u0930\u0940 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "DGPS.jpg"
+    },
+    {
+        "term": "Digital Elevation Model (DEM)",
+        "category": "Terrain Analysis",
+        "definition_en": "A Digital Elevation Model (DEM) is a raster dataset that represents the elevation of the Earth's bare surface without buildings or vegetation. It is widely used for slope analysis, watershed delineation, contour generation, flood modeling, and terrain visualization.",
+        "definition_hi": "\u0921\u093f\u091c\u093f\u091f\u0932 \u090f\u0932\u093f\u0935\u0947\u0936\u0928 \u092e\u0949\u0921\u0932 (DEM) \u090f\u0915 \u0930\u093e\u0938\u094d\u091f\u0930 \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u0939\u0948 \u091c\u094b \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u0940 \u090a\u0901\u091a\u093e\u0908 \u0915\u094b \u092c\u093f\u0928\u093e \u092d\u0935\u0928\u094b\u0902 \u0914\u0930 \u0935\u0928\u0938\u094d\u092a\u0924\u093f \u0915\u0947 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0922\u093e\u0932 (Slope), \u0935\u093e\u091f\u0930\u0936\u0947\u0921, \u0915\u0902\u091f\u0942\u0930, \u092c\u093e\u0922\u093c \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0914\u0930 \u092d\u0942-\u092d\u093e\u0917 \u0915\u0947 \u0924\u094d\u0930\u093f-\u0906\u092f\u093e\u092e\u0940 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u0928 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "DEM.jpg"
+    },
+    {
+        "term": "Digital Surface Model (DSM)",
+        "category": "Terrain Analysis",
+        "definition_en": "A Digital Surface Model (DSM) represents the elevation of the Earth's surface, including buildings, trees, and other objects. It is commonly used for urban planning, visibility analysis, and 3D city modeling.",
+        "definition_hi": "\u0921\u093f\u091c\u093f\u091f\u0932 \u0938\u0930\u092b\u0947\u0938 \u092e\u0949\u0921\u0932 (DSM) \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u0940 \u090a\u0901\u091a\u093e\u0908 \u0915\u0947 \u0938\u093e\u0925 \u092d\u0935\u0928, \u092a\u0947\u0921\u093c \u0914\u0930 \u0905\u0928\u094d\u092f \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u094b \u092d\u0940 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0936\u0939\u0930\u0940 \u0928\u093f\u092f\u094b\u091c\u0928, \u0926\u0943\u0936\u094d\u092f\u0924\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0914\u0930 3D \u0936\u0939\u0930 \u092e\u0949\u0921\u0932 \u0924\u0948\u092f\u093e\u0930 \u0915\u0930\u0928\u0947 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "DSM.jpg"
+    },
+    {
+        "term": "Digital Terrain Model (DTM)",
+        "category": "Terrain Analysis",
+        "definition_en": "A Digital Terrain Model (DTM) is an enhanced elevation model that includes terrain elevation along with additional information such as breaklines and terrain features. It provides a more accurate representation of landforms than a basic DEM.",
+        "definition_hi": "\u0921\u093f\u091c\u093f\u091f\u0932 \u091f\u0947\u0930\u0947\u0928 \u092e\u0949\u0921\u0932 (DTM) \u090f\u0915 \u0909\u0928\u094d\u0928\u0924 \u090f\u0932\u093f\u0935\u0947\u0936\u0928 \u092e\u0949\u0921\u0932 \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092d\u0942\u092e\u093f \u0915\u0940 \u090a\u0901\u091a\u093e\u0908 \u0915\u0947 \u0938\u093e\u0925 Breaklines \u0914\u0930 \u0905\u0928\u094d\u092f \u092d\u0942-\u0906\u0915\u0943\u0924\u093f\u0915 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u090f\u0901 \u092d\u0940 \u0936\u093e\u092e\u093f\u0932 \u0939\u094b\u0924\u0940 \u0939\u0948\u0902\u0964 \u092f\u0939 DEM \u0915\u0940 \u0924\u0941\u0932\u0928\u093e \u092e\u0947\u0902 \u0905\u0927\u093f\u0915 \u0938\u091f\u0940\u0915 \u092d\u0942-\u092d\u093e\u0917 \u0915\u093e \u092a\u094d\u0930\u0924\u093f\u0928\u093f\u0927\u093f\u0924\u094d\u0935 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "DTM.jpg"
+    },
+    {
+        "term": "Digitization",
+        "category": "GIS",
+        "definition_en": "Digitization is the process of converting paper maps or satellite images into digital vector data by creating points, lines, and polygons. It is one of the most common tasks in GIS mapping projects.",
+        "definition_hi": "\u0921\u093f\u091c\u093f\u091f\u093e\u0907\u091c\u0947\u0936\u0928 (Digitization) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0915\u093e\u0917\u091c\u093c\u0940 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092f\u093e \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0938\u0947 Point, Line \u0914\u0930 Polygon \u092c\u0928\u093e\u0915\u0930 \u0909\u0928\u094d\u0939\u0947\u0902 \u0921\u093f\u091c\u093f\u091f\u0932 \u0935\u0947\u0915\u094d\u091f\u0930 \u0921\u0947\u091f\u093e \u092e\u0947\u0902 \u092a\u0930\u093f\u0935\u0930\u094d\u0924\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 GIS \u092e\u0948\u092a\u093f\u0902\u0917 \u0915\u093e \u090f\u0915 \u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0915\u093e\u0930\u094d\u092f \u0939\u0948\u0964",
+        "image": "Digitization.jpg"
+    },
+    {
+        "term": "Dissolve",
+        "category": "Spatial Analysis",
+        "definition_en": "Dissolve is a GIS tool that merges adjacent features sharing the same attribute value into a single feature by removing internal boundaries. It simplifies datasets and reduces unnecessary divisions.",
+        "definition_hi": "\u0921\u093f\u091c\u093c\u0949\u0932\u094d\u0935 (Dissolve) \u090f\u0915 GIS \u091f\u0942\u0932 \u0939\u0948 \u091c\u094b \u0938\u092e\u093e\u0928 \u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u0935\u093e\u0932\u0947 \u0906\u0938-\u092a\u093e\u0938 \u0915\u0947 \u092b\u0940\u091a\u0930\u094d\u0938 \u0915\u094b \u0909\u0928\u0915\u0940 \u0906\u0902\u0924\u0930\u093f\u0915 \u0938\u0940\u092e\u093e\u090f\u0901 \u0939\u091f\u093e\u0915\u0930 \u090f\u0915 \u092b\u0940\u091a\u0930 \u092e\u0947\u0902 \u092c\u0926\u0932 \u0926\u0947\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u0921\u0947\u091f\u093e \u0938\u0930\u0932 \u0914\u0930 \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093f\u0924 \u0939\u094b \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Dissolve.jpg"
+    },
+    {
+        "term": "Electromagnetic Spectrum",
+        "category": "Remote Sensing",
+        "definition_en": "The Electromagnetic Spectrum is the complete range of electromagnetic radiation, from gamma rays to radio waves. Remote sensing sensors capture specific wavelengths from this spectrum to study land, water, vegetation, and atmosphere.",
+        "definition_hi": "\u0935\u093f\u0926\u094d\u092f\u0941\u0924\u091a\u0941\u0902\u092c\u0915\u0940\u092f \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u092e (Electromagnetic Spectrum) \u0938\u092d\u0940 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u0940 \u0935\u093f\u0926\u094d\u092f\u0941\u0924\u091a\u0941\u0902\u092c\u0915\u0940\u092f \u0924\u0930\u0902\u0917\u094b\u0902 \u0915\u093e \u0938\u092e\u0942\u0939 \u0939\u0948, \u091c\u093f\u0938\u092e\u0947\u0902 \u0917\u093e\u092e\u093e \u0915\u093f\u0930\u0923\u094b\u0902 \u0938\u0947 \u0932\u0947\u0915\u0930 \u0930\u0947\u0921\u093f\u092f\u094b \u0924\u0930\u0902\u0917\u0947\u0902 \u0936\u093e\u092e\u093f\u0932 \u0939\u0948\u0902\u0964 \u0930\u093f\u092e\u094b\u091f \u0938\u0947\u0902\u0938\u093f\u0902\u0917 \u0938\u0947\u0902\u0938\u0930 \u0907\u0938\u0940 \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u092e \u0915\u0940 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u0924\u0930\u0902\u0917\u0926\u0948\u0930\u094d\u0918\u094d\u092f\u094b\u0902 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0915\u0947 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u093e \u0905\u0927\u094d\u092f\u092f\u0928 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Electromagnetic Spectrum.jpg"
+    },
+    {
+        "term": "Ephemeris",
+        "category": "GPS",
+        "definition_en": "Data specifying the exact positions of satellites in orbit.",
+        "definition_hi": "\u0915\u0915\u094d\u0937\u093e \u092e\u0947\u0902 \u0909\u092a\u0917\u094d\u0930\u0939\u094b\u0902 \u0915\u0940 \u0938\u091f\u0940\u0915 \u0938\u094d\u0925\u093f\u0924\u093f \u0928\u093f\u0930\u094d\u0926\u093f\u0937\u094d\u091f \u0915\u0930\u0928\u0947 \u0935\u093e\u0932\u093e \u0921\u0947\u091f\u093e\u0964",
+        "image": "Ephemeris.jpg"
+    },
+    {
+        "term": "False Color Composite (FCC)",
+        "category": "Remote Sensing",
+        "definition_en": "A False Color Composite is created by assigning different spectral bands to red, green, and blue colors. It enhances specific features such as vegetation, water bodies, and urban areas that may not be clearly visible in true color images.",
+        "definition_hi": "\u092b\u0949\u0932\u094d\u0938 \u0915\u0932\u0930 \u0915\u0949\u092e\u094d\u092a\u094b\u091c\u093f\u091f (FCC) \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u092c\u0948\u0902\u0921\u094b\u0902 \u0915\u094b \u0915\u0943\u0924\u094d\u0930\u093f\u092e \u0930\u0902\u0917\u094b\u0902 \u092e\u0947\u0902 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0915\u0947 \u092c\u0928\u093e\u0908 \u091c\u093e\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u0935\u0928\u0938\u094d\u092a\u0924\u093f, \u091c\u0932 \u0928\u093f\u0915\u093e\u092f \u0914\u0930 \u0936\u0939\u0930\u0940 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u094b\u0902 \u091c\u0948\u0938\u0940 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u090f\u0901 \u0905\u0927\u093f\u0915 \u0938\u094d\u092a\u0937\u094d\u091f \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "image": "FCC.jpg"
+    },
+    {
+        "term": "Feature Class",
+        "category": "GIS",
+        "definition_en": "A Feature Class is a collection of geographic features that share the same geometry type, such as points, lines, or polygons. It is commonly used to organize similar spatial data within a geodatabase.",
+        "definition_hi": "\u092b\u0940\u091a\u0930 \u0915\u094d\u0932\u093e\u0938 \u0938\u092e\u093e\u0928 \u091c\u094d\u092f\u093e\u092e\u093f\u0924\u093f \u0935\u093e\u0932\u0947 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930\u094d\u0938 \u0915\u093e \u0938\u0902\u0917\u094d\u0930\u0939 \u0939\u094b\u0924\u093e \u0939\u0948, \u091c\u0948\u0938\u0947 Point, Line \u092f\u093e Polygon\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u091c\u093f\u092f\u094b\u0921\u0947\u091f\u093e\u092c\u0947\u0938 \u092e\u0947\u0902 \u090f\u0915 \u091c\u0948\u0938\u0947 \u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0921\u0947\u091f\u093e \u0915\u094b \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093f\u0924 \u0930\u0916\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Feature Class.jpg"
+    },
+    {
+        "term": "Flight Path",
+        "category": "Drone",
+        "definition_en": "A Flight Path is the planned route that a drone follows during a mission. It ensures complete coverage of the survey area while maintaining proper overlap and consistent image quality.",
+        "definition_hi": "\u092b\u094d\u0932\u093e\u0907\u091f \u092a\u093e\u0925 \u0935\u0939 \u092a\u0942\u0930\u094d\u0935 \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u092e\u093e\u0930\u094d\u0917 \u0939\u0948 \u091c\u093f\u0938 \u092a\u0930 \u0921\u094d\u0930\u094b\u0928 \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923 \u0915\u0947 \u0926\u094c\u0930\u093e\u0928 \u0909\u0921\u093c\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 \u0938\u0941\u0928\u093f\u0936\u094d\u091a\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948 \u0915\u093f \u092a\u0942\u0930\u093e \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0938\u0939\u0940 \u0913\u0935\u0930\u0932\u0948\u092a \u0914\u0930 \u0938\u092e\u093e\u0928 \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0915\u0947 \u0938\u093e\u0925 \u0915\u0935\u0930 \u0939\u094b\u0964",
+        "image": "Flight Path.jpg"
+    },
+    {
+        "term": "Flight Planning",
+        "category": "Drone",
+        "definition_en": "Flight Planning is the process of preparing a drone mission before takeoff. It includes selecting the survey area, flight altitude, speed, overlap, camera settings, and safety checks to ensure accurate data collection.",
+        "definition_hi": "\u092b\u094d\u0932\u093e\u0907\u091f \u092a\u094d\u0932\u093e\u0928\u093f\u0902\u0917 \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0921\u094d\u0930\u094b\u0928 \u0909\u0921\u093c\u093e\u0928\u0947 \u0938\u0947 \u092a\u0939\u0932\u0947 \u0938\u0930\u094d\u0935\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930, \u090a\u0901\u091a\u093e\u0908, \u0917\u0924\u093f, \u0913\u0935\u0930\u0932\u0948\u092a, \u0915\u0948\u092e\u0930\u093e \u0938\u0947\u091f\u093f\u0902\u0917 \u0914\u0930 \u0938\u0941\u0930\u0915\u094d\u0937\u093e \u0909\u092a\u093e\u092f\u094b\u0902 \u0915\u0940 \u092f\u094b\u091c\u0928\u093e \u092c\u0928\u093e\u0908 \u091c\u093e\u0924\u0940 \u0939\u0948 \u0924\u093e\u0915\u093f \u0938\u091f\u0940\u0915 \u0921\u0947\u091f\u093e \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0939\u094b \u0938\u0915\u0947\u0964",
+        "image": "Flight Planning.jpg"
+    },
+    {
+        "term": "Forward Overlap",
+        "category": "Drone",
+        "definition_en": "Forward Overlap is the percentage of overlap between consecutive images captured in the direction of flight. High forward overlap improves photogrammetric accuracy and 3D model generation.",
+        "definition_hi": "\u092b\u0949\u0930\u0935\u0930\u094d\u0921 \u0913\u0935\u0930\u0932\u0948\u092a \u0909\u0921\u093c\u093e\u0928 \u0915\u0940 \u0926\u093f\u0936\u093e \u092e\u0947\u0902 \u0932\u0917\u093e\u0924\u093e\u0930 \u0932\u0940 \u0917\u0908 \u0926\u094b \u0924\u0938\u094d\u0935\u0940\u0930\u094b\u0902 \u0915\u0947 \u092c\u0940\u091a \u0938\u092e\u093e\u0928 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u093e \u092a\u094d\u0930\u0924\u093f\u0936\u0924 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0905\u0927\u093f\u0915 \u0913\u0935\u0930\u0932\u0948\u092a \u092c\u0947\u0939\u0924\u0930 3D \u092e\u0949\u0921\u0932 \u0914\u0930 \u0938\u091f\u0940\u0915 \u092e\u0948\u092a\u093f\u0902\u0917 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Forward Overlap.jpg"
+    },
+    {
+        "term": "Geocoding",
+        "category": "Spatial Analysis",
+        "definition_en": "The process of transforming a description of a location (such as an address) to a location on the earth's surface.",
+        "definition_hi": "\u0915\u093f\u0938\u0940 \u0938\u094d\u0925\u093e\u0928 \u0915\u0947 \u0935\u093f\u0935\u0930\u0923 (\u091c\u0948\u0938\u0947 \u092a\u0924\u093e) \u0915\u094b \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u092a\u0930 \u090f\u0915 \u0938\u094d\u0925\u093e\u0928 (\u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915) \u092e\u0947\u0902 \u092c\u0926\u0932\u0928\u0947 \u0915\u0940 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e\u0964",
+        "image": "Geocoding.jpg"
+    },
+    {
+        "term": "Geodatabase",
+        "category": "GIS",
+        "definition_en": "A Geodatabase is a structured database designed to store, organize, and manage geographic data efficiently. It supports vector data, raster data, attribute tables, topology rules, relationship classes, and spatial analysis, making it the primary data storage format for modern GIS applications.",
+        "definition_hi": "\u091c\u093f\u092f\u094b\u0921\u0947\u091f\u093e\u092c\u0947\u0938 (Geodatabase) \u090f\u0915 \u0935\u093f\u0936\u0947\u0937 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u093e \u0921\u0947\u091f\u093e\u092c\u0947\u0938 \u0939\u0948 \u091c\u093f\u0938\u0947 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0921\u0947\u091f\u093e \u0915\u094b \u0938\u0902\u0917\u094d\u0930\u0939\u093f\u0924, \u0935\u094d\u092f\u0935\u0938\u094d\u0925\u093f\u0924 \u0914\u0930 \u092a\u094d\u0930\u092c\u0902\u0927\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u092c\u0928\u093e\u092f\u093e \u0917\u092f\u093e \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 Vector Data, Raster Data, Attribute Tables, Topology Rules, Relationship Classes \u0914\u0930 Spatial Analysis \u091c\u0948\u0938\u0940 \u0938\u0941\u0935\u093f\u0927\u093e\u090f\u0901 \u0909\u092a\u0932\u092c\u094d\u0927 \u0939\u094b\u0924\u0940 \u0939\u0948\u0902\u0964 \u092f\u0939 \u0906\u0927\u0941\u0928\u093f\u0915 GIS \u092a\u0930\u093f\u092f\u094b\u091c\u0928\u093e\u0913\u0902 \u092e\u0947\u0902 \u0938\u092c\u0938\u0947 \u0905\u0927\u093f\u0915 \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u092f\u093e \u091c\u093e\u0928\u0947 \u0935\u093e\u0932\u093e \u0921\u0947\u091f\u093e \u0938\u094d\u091f\u094b\u0930\u0947\u091c \u092a\u094d\u0930\u093e\u0930\u0942\u092a \u0939\u0948\u0964",
+        "image": "Geodatabase.jpg"
+    },
+    {
+        "term": "GeoJSON",
+        "category": "WebGIS",
+        "definition_en": "GeoJSON is a lightweight file format based on JSON that is used to store and exchange geographic data. It supports points, lines, polygons, and attributes, making it ideal for web mapping applications and GIS web services.",
+        "definition_hi": "GeoJSON \u090f\u0915 \u0939\u0932\u094d\u0915\u093e \u0921\u0947\u091f\u093e \u092a\u094d\u0930\u093e\u0930\u0942\u092a \u0939\u0948 \u091c\u094b JSON \u092a\u0930 \u0906\u0927\u093e\u0930\u093f\u0924 \u0939\u094b\u0924\u093e \u0939\u0948 \u0914\u0930 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0921\u0947\u091f\u093e \u0915\u094b \u0938\u0902\u0917\u094d\u0930\u0939\u093f\u0924 \u0924\u0925\u093e \u0938\u093e\u091d\u093e \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 Point, Line, Polygon \u0914\u0930 \u0909\u0928\u0915\u0947 Attributes \u0915\u094b \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0915\u0930 \u0938\u0915\u0924\u093e \u0939\u0948, \u0907\u0938\u0932\u093f\u090f WebGIS \u0914\u0930 Web Mapping \u092e\u0947\u0902 \u0907\u0938\u0915\u093e \u0935\u094d\u092f\u093e\u092a\u0915 \u0909\u092a\u092f\u094b\u0917 \u0939\u094b\u0924\u093e \u0939\u0948\u0964",
+        "image": "GeoJSON.jpg"
+    },
+    {
+        "term": "Georeferencing",
+        "category": "GIS",
+        "definition_en": "Georeferencing is the process of assigning real-world coordinates to a scanned map, aerial photograph, or satellite image. This allows the image to align accurately with other GIS datasets for mapping and spatial analysis.",
+        "definition_hi": "\u091c\u093f\u092f\u094b\u0930\u0947\u092b\u0930\u0947\u0902\u0938\u093f\u0902\u0917 (Georeferencing) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0938\u094d\u0915\u0948\u0928 \u0915\u093f\u090f \u0917\u090f \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930, \u0939\u0935\u093e\u0908 \u092b\u094b\u091f\u094b \u092f\u093e \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0915\u094b \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u092a\u0943\u0925\u094d\u0935\u0940 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915\u094b\u0902 \u0938\u0947 \u091c\u094b\u0921\u093c\u093e \u091c\u093e\u0924\u093e \u0939\u0948 \u0924\u093e\u0915\u093f \u0935\u0947 \u0905\u0928\u094d\u092f GIS \u0921\u0947\u091f\u093e \u0915\u0947 \u0938\u093e\u0925 \u0938\u0939\u0940 \u0938\u094d\u0925\u093e\u0928 \u092a\u0930 \u092e\u0947\u0932 \u0916\u093e \u0938\u0915\u0947\u0902\u0964",
+        "image": "Georeferencing.jpg"
+    },
+    {
+        "term": "GeoServer",
+        "category": "WebGIS",
+        "definition_en": "An open-source server written in Java that allows users to share, process and edit geospatial data.",
+        "definition_hi": "\u091c\u093e\u0935\u093e \u092e\u0947\u0902 \u0932\u093f\u0916\u093e \u0917\u092f\u093e \u090f\u0915 \u0913\u092a\u0928-\u0938\u094b\u0930\u094d\u0938 \u0938\u0930\u094d\u0935\u0930 \u091c\u094b \u0909\u092a\u092f\u094b\u0917\u0915\u0930\u094d\u0924\u093e\u0913\u0902 \u0915\u094b \u091c\u093f\u092f\u094b\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0921\u0947\u091f\u093e \u0938\u093e\u091d\u093e \u0915\u0930\u0928\u0947, \u0938\u0902\u0938\u093e\u0927\u093f\u0924 \u0915\u0930\u0928\u0947 \u0914\u0930 \u0938\u0902\u092a\u093e\u0926\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092e\u0924\u093f \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "GeoServer.jpg"
+    },
+    {
+        "term": "Geotagging",
+        "category": "GPS",
+        "definition_en": "Geotagging is the process of attaching geographic coordinates to photographs, videos, or documents. It helps identify the exact location where the data was captured and is widely used in GIS, drone mapping, and field surveys.",
+        "definition_hi": "\u091c\u093f\u092f\u094b\u091f\u0948\u0917\u093f\u0902\u0917 (Geotagging) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092b\u094b\u091f\u094b, \u0935\u0940\u0921\u093f\u092f\u094b \u092f\u093e \u0926\u0938\u094d\u0924\u093e\u0935\u0947\u091c\u093c \u0915\u0947 \u0938\u093e\u0925 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915 \u091c\u094b\u0921\u093c\u0947 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964 \u0907\u0938\u0938\u0947 \u092f\u0939 \u092a\u0924\u093e \u091a\u0932\u0924\u093e \u0939\u0948 \u0915\u093f \u0921\u0947\u091f\u093e \u0915\u093f\u0938 \u0938\u094d\u0925\u093e\u0928 \u092a\u0930 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u093f\u092f\u093e \u0917\u092f\u093e \u0925\u093e \u0914\u0930 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 GIS, \u0921\u094d\u0930\u094b\u0928 \u092e\u0948\u092a\u093f\u0902\u0917 \u0924\u0925\u093e \u092b\u0940\u0932\u094d\u0921 \u0938\u0930\u094d\u0935\u0947 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Geotagging.jpg"
+    },
+    {
+        "term": "GeoTIFF",
+        "category": "Remote Sensing",
+        "definition_en": "GeoTIFF is a raster image format that contains geographic coordinate information within the image file. It is commonly used for satellite imagery, aerial photography, DEMs, and other geospatial raster datasets.",
+        "definition_hi": "GeoTIFF \u090f\u0915 \u0930\u093e\u0938\u094d\u091f\u0930 \u0907\u092e\u0947\u091c \u092a\u094d\u0930\u093e\u0930\u0942\u092a \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u091a\u093f\u0924\u094d\u0930 \u0915\u0947 \u0938\u093e\u0925 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915 \u092d\u0940 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c, \u090f\u0930\u093f\u092f\u0932 \u092b\u094b\u091f\u094b\u0917\u094d\u0930\u093e\u092b\u0940, \u0921\u093f\u091c\u093f\u091f\u0932 \u090f\u0932\u093f\u0935\u0947\u0936\u0928 \u092e\u0949\u0921\u0932 (DEM) \u0924\u0925\u093e \u0905\u0928\u094d\u092f \u091c\u093f\u092f\u094b\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0930\u093e\u0938\u094d\u091f\u0930 \u0921\u0947\u091f\u093e \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "GeoTIFF.jpg"
+    },
+    {
+        "term": "Gimbal",
+        "category": "Drone",
+        "definition_en": "A pivoted support that allows the rotation of an object (like a camera) about a single axis.",
+        "definition_hi": "\u090f\u0915 \u0927\u0941\u0930\u0940 \u0935\u093e\u0932\u093e \u0938\u092e\u0930\u094d\u0925\u0928 \u091c\u094b \u0915\u093f\u0938\u0940 \u0935\u0938\u094d\u0924\u0941 (\u091c\u0948\u0938\u0947 \u0915\u0948\u092e\u0930\u093e) \u0915\u094b \u090f\u0915 \u0927\u0941\u0930\u0940 \u0915\u0947 \u091a\u093e\u0930\u094b\u0902 \u0913\u0930 \u0918\u0942\u092e\u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092e\u0924\u093f \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "Gimbal.jpg"
+    },
+    { // 
+        "term": "GIS",
+        "category": "GIS",
+        "definition_en": "A Geographic Information System (GIS) is a computer-based system used to collect, store, manage, analyze, and display geographic or location-based data. It helps users understand spatial relationships, identify patterns, and make informed decisions in fields such as urban planning, agriculture, disaster management, transportation, and environmental monitoring.",
+        "definition_hi": "\u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0938\u0942\u091a\u0928\u093e \u092a\u094d\u0930\u0923\u093e\u0932\u0940 (GIS) \u090f\u0915 \u0915\u0902\u092a\u094d\u092f\u0942\u091f\u0930 \u0906\u0927\u093e\u0930\u093f\u0924 \u092a\u094d\u0930\u0923\u093e\u0932\u0940 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u094d\u0925\u093e\u0928 \u0906\u0927\u093e\u0930\u093f\u0924 (Geographic) \u0921\u0947\u091f\u093e \u0915\u094b \u090f\u0915\u0924\u094d\u0930\u093f\u0924 \u0915\u0930\u0928\u0947, \u0938\u0902\u0917\u094d\u0930\u0939\u093f\u0924 \u0915\u0930\u0928\u0947, \u092a\u094d\u0930\u092c\u0902\u0927\u093f\u0924 \u0915\u0930\u0928\u0947, \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u0930\u0928\u0947 \u0914\u0930 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0915\u0947 \u0930\u0942\u092a \u092e\u0947\u0902 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u092f\u0939 \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0938\u0902\u092c\u0902\u0927\u094b\u0902 \u0915\u094b \u0938\u092e\u091d\u0928\u0947, \u092a\u0948\u091f\u0930\u094d\u0928 \u092a\u0939\u091a\u093e\u0928\u0928\u0947 \u0914\u0930 \u0936\u0939\u0930\u0940 \u0928\u093f\u092f\u094b\u091c\u0928, \u0915\u0943\u0937\u093f, \u0906\u092a\u0926\u093e \u092a\u094d\u0930\u092c\u0902\u0927\u0928, \u092a\u0930\u093f\u0935\u0939\u0928 \u0924\u0925\u093e \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923 \u0938\u0902\u0930\u0915\u094d\u0937\u0923 \u091c\u0948\u0938\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u094b\u0902 \u092e\u0947\u0902 \u092c\u0947\u0939\u0924\u0930 \u0928\u093f\u0930\u094d\u0923\u092f \u0932\u0947\u0928\u0947 \u092e\u0947\u0902 \u0938\u0939\u093e\u092f\u0924\u093e \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "GIS.jpg"
+    },
+    {
+        "term": "Global Navigation Satellite System (GNSS)",
+        "category": "GPS",
+        "definition_en": "GNSS is the general term for all satellite navigation systems, including GPS (USA), GLONASS (Russia), Galileo (Europe), and BeiDou (China). Using multiple satellite systems together improves positioning accuracy and reliability.",
+        "definition_hi": "\u0917\u094d\u0932\u094b\u092c\u0932 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0938\u093f\u0938\u094d\u091f\u092e (GNSS) \u0938\u092d\u0940 \u0909\u092a\u0917\u094d\u0930\u0939 \u0906\u0927\u093e\u0930\u093f\u0924 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928 \u092a\u094d\u0930\u0923\u093e\u0932\u093f\u092f\u094b\u0902 \u0915\u093e \u0938\u093e\u092e\u0942\u0939\u093f\u0915 \u0928\u093e\u092e \u0939\u0948, \u091c\u0948\u0938\u0947 GPS, GLONASS, Galileo \u0914\u0930 BeiDou\u0964 \u0915\u0908 \u092a\u094d\u0930\u0923\u093e\u0932\u093f\u092f\u094b\u0902 \u0915\u093e \u090f\u0915 \u0938\u093e\u0925 \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0928\u0947 \u0938\u0947 \u0938\u094d\u0925\u093f\u0924\u093f \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u0923 \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u0914\u0930 \u0935\u093f\u0936\u094d\u0935\u0938\u0928\u0940\u092f\u0924\u093e \u092c\u0922\u093c \u091c\u093e\u0924\u0940 \u0939\u0948\u0964",
+        "image": "GNSS.jpg"
+    },
+    {
+        "term": "Global Positioning System (GPS)",
+        "category": "GPS",
+        "definition_en": "The Global Positioning System (GPS) is a satellite-based navigation system developed by the United States. It provides accurate information about location, speed, altitude, and time anywhere on Earth. GPS is widely used in navigation, GIS mapping, surveying, transportation, agriculture, and drone operations.",
+        "definition_hi": "\u0917\u094d\u0932\u094b\u092c\u0932 \u092a\u094b\u091c\u093f\u0936\u0928\u093f\u0902\u0917 \u0938\u093f\u0938\u094d\u091f\u092e (GPS) \u0938\u0902\u092f\u0941\u0915\u094d\u0924 \u0930\u093e\u091c\u094d\u092f \u0905\u092e\u0947\u0930\u093f\u0915\u093e \u0926\u094d\u0935\u093e\u0930\u093e \u0935\u093f\u0915\u0938\u093f\u0924 \u090f\u0915 \u0909\u092a\u0917\u094d\u0930\u0939 \u0906\u0927\u093e\u0930\u093f\u0924 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928 \u092a\u094d\u0930\u0923\u093e\u0932\u0940 \u0939\u0948\u0964 \u092f\u0939 \u092a\u0943\u0925\u094d\u0935\u0940 \u092a\u0930 \u0915\u093f\u0938\u0940 \u092d\u0940 \u0938\u094d\u0925\u093e\u0928 \u0915\u0940 \u0938\u094d\u0925\u093f\u0924\u093f, \u0917\u0924\u093f, \u090a\u0901\u091a\u093e\u0908 \u0914\u0930 \u0938\u092e\u092f \u0915\u0940 \u0938\u091f\u0940\u0915 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928, GIS \u092e\u0948\u092a\u093f\u0902\u0917, \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923, \u092a\u0930\u093f\u0935\u0939\u0928, \u0915\u0943\u0937\u093f \u0914\u0930 \u0921\u094d\u0930\u094b\u0928 \u0938\u0902\u091a\u093e\u0932\u0928 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "GPS.jpg"
+    },
+    {
+        "term": "Graticule",
+        "category": "Cartography",
+        "definition_en": "A network of lines representing meridians and parallels, on which a map or plan can be represented.",
+        "definition_hi": "\u0926\u0947\u0936\u093e\u0902\u0924\u0930 \u0914\u0930 \u0905\u0915\u094d\u0937\u093e\u0902\u0936 \u0930\u0947\u0916\u093e\u0913\u0902 \u0915\u093e \u090f\u0915 \u0928\u0947\u091f\u0935\u0930\u094d\u0915, \u091c\u093f\u0938 \u092a\u0930 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0915\u093e \u092a\u094d\u0930\u0924\u093f\u0928\u093f\u0927\u093f\u0924\u094d\u0935 \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Graticule.jpg"
+    },
+    {
+        "term": "Ground Control Point (GCP)",
+        "category": "Surveying",
+        "definition_en": "A Ground Control Point (GCP) is a clearly marked location on the ground with accurately measured coordinates. It is used to improve the positional accuracy of drone imagery, satellite images, and aerial photographs.",
+        "definition_hi": "\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0915\u0902\u091f\u094d\u0930\u094b\u0932 \u092a\u0949\u0907\u0902\u091f (GCP) \u092d\u0942\u092e\u093f \u092a\u0930 \u092c\u0928\u093e\u092f\u093e \u0917\u092f\u093e \u090f\u0915 \u0938\u094d\u092a\u0937\u094d\u091f \u091a\u093f\u0928\u094d\u0939\u093f\u0924 \u092c\u093f\u0902\u0926\u0941 \u0939\u094b\u0924\u093e \u0939\u0948 \u091c\u093f\u0938\u0915\u0947 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915 \u0905\u0924\u094d\u092f\u0902\u0924 \u0938\u091f\u0940\u0915 \u0930\u0942\u092a \u0938\u0947 \u092e\u093e\u092a\u0947 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0921\u094d\u0930\u094b\u0928 \u0914\u0930 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u092c\u0922\u093c\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "GCP.jpg"
+    },
+    {
+        "term": "Ground Sampling Distance (GSD)",
+        "category": "Drone",
+        "definition_en": "Ground Sampling Distance (GSD) represents the ground area covered by a single image pixel. Smaller GSD values indicate higher image resolution and greater mapping accuracy.",
+        "definition_hi": "\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0938\u0948\u0902\u092a\u0932\u093f\u0902\u0917 \u0921\u093f\u0938\u094d\u091f\u0947\u0902\u0938 (GSD) \u0935\u0939 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u092d\u0942\u092e\u093f \u0926\u0942\u0930\u0940 \u0939\u0948 \u091c\u093f\u0938\u0947 \u0907\u092e\u0947\u091c \u0915\u093e \u090f\u0915 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u091c\u093f\u0924\u0928\u093e \u091b\u094b\u091f\u093e GSD \u0939\u094b\u0917\u093e, \u0907\u092e\u0947\u091c \u0915\u093e \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u0914\u0930 \u092e\u0948\u092a\u093f\u0902\u0917 \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u0909\u0924\u0928\u0940 \u0905\u0927\u093f\u0915 \u0939\u094b\u0917\u0940\u0964",
+        "image": "GSD.jpg"
+    },
+    {
+        "term": "Ground Truth",
+        "category": "Remote Sensing",
+        "definition_en": "Ground Truth is field information collected directly from the Earth's surface to verify and improve the accuracy of satellite image interpretation, classification, and remote sensing analysis.",
+        "definition_hi": "\u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u091f\u094d\u0930\u0941\u0925 (Ground Truth) \u0935\u0939 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u092b\u0940\u0932\u094d\u0921 \u0921\u0947\u091f\u093e \u0939\u0948 \u091c\u093f\u0938\u0947 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0938\u0947 \u090f\u0915\u0924\u094d\u0930 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948 \u0924\u093e\u0915\u093f \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0915\u0940 \u0935\u094d\u092f\u093e\u0916\u094d\u092f\u093e, \u0935\u0930\u094d\u0917\u0940\u0915\u0930\u0923 \u0914\u0930 \u0930\u093f\u092e\u094b\u091f \u0938\u0947\u0902\u0938\u093f\u0902\u0917 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u0915\u0940 \u091c\u093e\u0901\u091a \u0914\u0930 \u0938\u0941\u0927\u093e\u0930 \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0947\u0964",
+        "image": "Ground Truth.jpg"
+    },
+    {
+        "term": "Hillshade",
+        "category": "Terrain Analysis",
+        "definition_en": "Hillshade is a shaded relief representation of terrain created by simulating sunlight on an elevation model. It improves the visualization of hills, valleys, ridges, and other landforms on a map.",
+        "definition_hi": "\u0939\u093f\u0932\u0936\u0947\u0921 (Hillshade) \u090a\u0901\u091a\u093e\u0908 \u092e\u0949\u0921\u0932 \u092a\u0930 \u0915\u0943\u0924\u094d\u0930\u093f\u092e \u0938\u0942\u0930\u094d\u092f \u092a\u094d\u0930\u0915\u093e\u0936 \u0921\u093e\u0932\u0915\u0930 \u092c\u0928\u093e\u092f\u093e \u0917\u092f\u093e \u091b\u093e\u092f\u093e\u0902\u0915\u093f\u0924 \u092d\u0942-\u092d\u093e\u0917 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u0928 \u0939\u0948\u0964 \u092f\u0939 \u092a\u0939\u093e\u0921\u093c, \u0918\u093e\u091f\u0940, \u0930\u093f\u091c \u0914\u0930 \u0905\u0928\u094d\u092f \u0938\u094d\u0925\u0932\u093e\u0915\u0943\u0924\u093f\u092f\u094b\u0902 \u0915\u094b \u0905\u0927\u093f\u0915 \u0938\u094d\u092a\u0937\u094d\u091f \u0930\u0942\u092a \u0938\u0947 \u0926\u093f\u0916\u093e\u0928\u0947 \u092e\u0947\u0902 \u0938\u0939\u093e\u092f\u0924\u093e \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Hillshade.jpg"
+    },
+    {
+        "term": "Hyperspectral Imaging",
+        "category": "Remote Sensing",
+        "definition_en": "Imaging technique that collects and processes information from across the electromagnetic spectrum to find objects or identify materials.",
+        "definition_hi": "\u0907\u092e\u0947\u091c\u093f\u0902\u0917 \u0924\u0915\u0928\u0940\u0915 \u091c\u094b \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u094b \u0916\u094b\u091c\u0928\u0947 \u092f\u093e \u0938\u093e\u092e\u0917\u094d\u0930\u093f\u092f\u094b\u0902 \u0915\u0940 \u092a\u0939\u091a\u093e\u0928 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u092a\u0942\u0930\u0947 \u0935\u093f\u0926\u094d\u092f\u0941\u0924 \u091a\u0941\u092e\u094d\u092c\u0915\u0940\u092f \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u092e \u0938\u0947 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u090f\u0915\u0924\u094d\u0930 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Hyperspectral.jpg"
+    },
+    {
+        "term": "IDW",
+        "category": "Spatial Analysis",
+        "definition_en": "Inverse Distance Weighting; an interpolation method that estimates cell values by averaging the values of sample data points in the neighborhood.",
+        "definition_hi": "IDW; \u090f\u0915 \u0907\u0902\u091f\u0930\u092a\u094b\u0932\u0947\u0936\u0928 \u0935\u093f\u0927\u093f \u091c\u094b \u092a\u0921\u093c\u094b\u0938 \u092e\u0947\u0902 \u0928\u092e\u0942\u0928\u093e \u0921\u0947\u091f\u093e \u092c\u093f\u0902\u0926\u0941\u0913\u0902 \u0915\u0947 \u092e\u093e\u0928\u094b\u0902 \u0915\u093e \u0914\u0938\u0924 \u0928\u093f\u0915\u093e\u0932\u0915\u0930 \u0938\u0947\u0932 \u092e\u093e\u0928\u094b\u0902 \u0915\u093e \u0905\u0928\u0941\u092e\u093e\u0928 \u0932\u0917\u093e\u0924\u0940 \u0939\u0948\u0964",
+        "image": "IDW.jpg"
+    },
+    {
+        "term": "Image Classification",
+        "category": "Remote Sensing",
+        "definition_en": "Image Classification is the process of grouping pixels into meaningful land cover categories such as forest, water, agriculture, urban area, and barren land based on their spectral characteristics. It is widely used for land use and land cover mapping.",
+        "definition_hi": "\u0907\u092e\u0947\u091c \u0915\u094d\u0932\u093e\u0938\u093f\u092b\u093f\u0915\u0947\u0936\u0928 (Image Classification) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u0915\u094b \u0909\u0928\u0915\u0947 \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u0917\u0941\u0923\u094b\u0902 \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930 \u0935\u0928, \u091c\u0932, \u0915\u0943\u0937\u093f, \u0936\u0939\u0930\u0940 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0914\u0930 \u092c\u0902\u091c\u0930 \u092d\u0942\u092e\u093f \u091c\u0948\u0938\u0940 \u0936\u094d\u0930\u0947\u0923\u093f\u092f\u094b\u0902 \u092e\u0947\u0902 \u0935\u093f\u092d\u093e\u091c\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092d\u0942\u092e\u093f \u0909\u092a\u092f\u094b\u0917 \u090f\u0935\u0902 \u092d\u0942\u092e\u093f \u0906\u0935\u0930\u0923 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930\u0923 \u092e\u0947\u0902 \u0935\u094d\u092f\u093e\u092a\u0915 \u0930\u0942\u092a \u0938\u0947 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Image Classification.jpg"
+    },
+    {
+        "term": "Intersect",
+        "category": "Spatial Analysis",
+        "definition_en": "Intersect is a GIS operation that creates a new dataset containing only the areas or features common to two or more input layers. It is useful for identifying overlapping geographic features.",
+        "definition_hi": "\u0907\u0902\u091f\u0930\u0938\u0947\u0915\u094d\u091f (Intersect) \u090f\u0915 GIS \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u094b \u0915\u0947\u0935\u0932 \u0909\u0928 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u094b\u0902 \u092f\u093e \u092b\u0940\u091a\u0930\u094d\u0938 \u0915\u093e \u0928\u092f\u093e \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u092c\u0928\u093e\u0924\u0940 \u0939\u0948 \u091c\u094b \u0926\u094b \u092f\u093e \u0905\u0927\u093f\u0915 \u0932\u0947\u092f\u0930\u094b\u0902 \u092e\u0947\u0902 \u0938\u092e\u093e\u0928 \u0930\u0942\u092a \u0938\u0947 \u092e\u094c\u091c\u0942\u0926 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0913\u0935\u0930\u0932\u0948\u092a \u0939\u094b\u0928\u0947 \u0935\u093e\u0932\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u094b\u0902 \u0915\u0940 \u092a\u0939\u091a\u093e\u0928 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Intersect.jpg"
+    },
+    {
+        "term": "KML",
+        "category": "WebGIS",
+        "definition_en": "KML (Keyhole Markup Language) is an XML-based file format developed for displaying geographic data in Google Earth and other mapping applications. It stores locations, paths, polygons, images, and other geographic information.",
+        "definition_hi": "KML (Keyhole Markup Language) \u090f\u0915 XML \u0906\u0927\u093e\u0930\u093f\u0924 \u092b\u093c\u093e\u0907\u0932 \u092a\u094d\u0930\u093e\u0930\u0942\u092a \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 Google Earth \u0924\u0925\u093e \u0905\u0928\u094d\u092f \u092e\u0948\u092a\u093f\u0902\u0917 \u0938\u0949\u092b\u094d\u091f\u0935\u0947\u092f\u0930 \u092e\u0947\u0902 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0921\u0947\u091f\u093e \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0938\u094d\u0925\u093e\u0928, \u092e\u093e\u0930\u094d\u0917, \u092a\u0949\u0932\u0940\u0917\u0949\u0928, \u091a\u093f\u0924\u094d\u0930 \u0914\u0930 \u0905\u0928\u094d\u092f \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0915\u0940 \u091c\u093e \u0938\u0915\u0924\u0940 \u0939\u0948\u0964",
+        "image": "KML.jpg"
+    },
+    {
+        "term": "Kriging",
+        "category": "Spatial Analysis",
+        "definition_en": "An advanced geostatistical procedure that generates an estimated surface from a scattered set of points with z-values.",
+        "definition_hi": "\u090f\u0915 \u0909\u0928\u094d\u0928\u0924 \u092d\u0942-\u0938\u093e\u0902\u0916\u094d\u092f\u093f\u0915\u0940\u092f \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u091c\u094b z-\u092e\u093e\u0928\u094b\u0902 \u0935\u093e\u0932\u0947 \u092c\u093f\u0916\u0930\u0947 \u0939\u0941\u090f \u092c\u093f\u0902\u0926\u0941\u0913\u0902 \u0915\u0947 \u0938\u0947\u091f \u0938\u0947 \u0905\u0928\u0941\u092e\u093e\u0928\u093f\u0924 \u0938\u0924\u0939 \u0909\u0924\u094d\u092a\u0928\u094d\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Kriging.jpg"
+    },
+    {
+        "term": "Layer",
+        "category": "GIS",
+        "definition_en": "A Layer is a collection of similar geographic features displayed together on a map. Different layers such as roads, rivers, buildings, land use, and elevation can be combined to perform spatial analysis and create meaningful maps.",
+        "definition_hi": "\u0932\u0947\u092f\u0930 \u0938\u092e\u093e\u0928 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u093e \u090f\u0915 \u0938\u092e\u0942\u0939 \u0939\u094b\u0924\u093e \u0939\u0948 \u091c\u093f\u0938\u0947 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092a\u0930 \u090f\u0915 \u0938\u093e\u0925 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0938\u0921\u093c\u0915, \u0928\u0926\u0940, \u092d\u0935\u0928, \u092d\u0942\u092e\u093f \u0909\u092a\u092f\u094b\u0917 \u0914\u0930 \u090a\u0901\u091a\u093e\u0908 \u091c\u0948\u0938\u0940 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u0932\u0947\u092f\u0930\u094b\u0902 \u0915\u094b \u091c\u094b\u0921\u093c\u0915\u0930 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0914\u0930 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0924\u0948\u092f\u093e\u0930 \u0915\u093f\u090f \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Layer.jpg"
+    },
+    {
+        "term": "Leaflet",
+        "category": "WebGIS",
+        "definition_en": "A widely used open-source JavaScript library used to build web mapping applications.",
+        "definition_hi": "\u0935\u0947\u092c \u092e\u0948\u092a\u093f\u0902\u0917 \u090f\u092a\u094d\u0932\u093f\u0915\u0947\u0936\u0928 \u092c\u0928\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0935\u094d\u092f\u093e\u092a\u0915 \u0930\u0942\u092a \u0938\u0947 \u0909\u092a\u092f\u094b\u0917 \u0915\u0940 \u091c\u093e\u0928\u0947 \u0935\u093e\u0932\u0940 \u0913\u092a\u0928-\u0938\u094b\u0930\u094d\u0938 \u091c\u093e\u0935\u093e\u0938\u094d\u0915\u094d\u0930\u093f\u092a\u094d\u091f \u0932\u093e\u0907\u092c\u094d\u0930\u0947\u0930\u0940\u0964",
+        "image": "Leaflet.jpg"
+    },
+    {
+        "term": "Legend",
+        "category": "Cartography",
+        "definition_en": "The reference area on a map that details the meaning of the symbols and colors used.",
+        "definition_hi": "\u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092a\u0930 \u0938\u0902\u0926\u0930\u094d\u092d \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u091c\u094b \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u090f \u0917\u090f \u092a\u094d\u0930\u0924\u0940\u0915\u094b\u0902 \u0914\u0930 \u0930\u0902\u0917\u094b\u0902 \u0915\u0947 \u0905\u0930\u094d\u0925 \u0915\u093e \u0935\u093f\u0935\u0930\u0923 \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "Legend.jpg"
+    },
+    {
+        "term": "Lidar",
+        "category": "Remote Sensing",
+        "definition_en": "Light Detection and Ranging; a remote sensing method that uses light in the form of a pulsed laser to measure ranges.",
+        "definition_hi": "Lidar; \u090f\u0915 \u0930\u093f\u092e\u094b\u091f \u0938\u0947\u0902\u0938\u093f\u0902\u0917 \u0935\u093f\u0927\u093f \u091c\u094b \u0926\u0942\u0930\u0940 \u092e\u093e\u092a\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0938\u094d\u092a\u0902\u0926\u093f\u0924 \u0932\u0947\u091c\u0930 \u0915\u0947 \u0930\u0942\u092a \u092e\u0947\u0902 \u092a\u094d\u0930\u0915\u093e\u0936 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Lidar.jpg"
+    },
+    {
+        "term": "Map Algebra",
+        "category": "Spatial Analysis",
+        "definition_en": "A set of primitive operations in a geographic information system which allows two or more raster layers of similar dimensions to produce a new raster layer.",
+        "definition_hi": "GIS \u092e\u0947\u0902 \u0906\u0926\u093f\u092e \u0911\u092a\u0930\u0947\u0936\u0928\u094b\u0902 \u0915\u093e \u090f\u0915 \u0938\u0947\u091f \u091c\u094b \u0938\u092e\u093e\u0928 \u0906\u092f\u093e\u092e\u094b\u0902 \u0915\u0947 \u0926\u094b \u092f\u093e \u0926\u094b \u0938\u0947 \u0905\u0927\u093f\u0915 \u0930\u093e\u0938\u094d\u091f\u0930 \u0932\u0947\u092f\u0930\u094d\u0938 \u0915\u094b \u092e\u093f\u0932\u093e\u0915\u0930 \u0928\u0908 \u0930\u093e\u0938\u094d\u091f\u0930 \u0932\u0947\u092f\u0930 \u0909\u0924\u094d\u092a\u0928\u094d\u0928 \u0915\u0930\u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092e\u0924\u093f \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "Map Algebra.jpg"
+    },
+    {
+        "term": "Map Projection",
+        "category": "GIS",
+        "definition_en": "A Map Projection is a mathematical method used to represent the curved surface of the Earth on a flat map. Different projections are used depending on whether accuracy in distance, area, shape, or direction is more important.",
+        "definition_hi": "\u092e\u0948\u092a \u092a\u094d\u0930\u094b\u091c\u0947\u0915\u094d\u0936\u0928 \u090f\u0915 \u0917\u0923\u093f\u0924\u0940\u092f \u0935\u093f\u0927\u093f \u0939\u0948 \u091c\u093f\u0938\u0915\u0947 \u0926\u094d\u0935\u093e\u0930\u093e \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0917\u094b\u0932\u093e\u0915\u093e\u0930 \u0938\u0924\u0939 \u0915\u094b \u0938\u092e\u0924\u0932 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092a\u0930 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u092a\u094d\u0930\u094b\u091c\u0947\u0915\u094d\u0936\u0928 \u0926\u0942\u0930\u0940, \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u092b\u0932, \u0906\u0915\u093e\u0930 \u092f\u093e \u0926\u093f\u0936\u093e \u0915\u0940 \u0938\u091f\u0940\u0915\u0924\u093e \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930 \u091a\u0941\u0928\u0947 \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Map Projection.jpg"
+    },
+    {
+        "term": "Merge",
+        "category": "GIS",
+        "definition_en": "Merge is used to combine two or more datasets of the same geometry type into a single dataset while keeping all records. It is commonly used to create one dataset from multiple sources.",
+        "definition_hi": "\u092e\u0930\u094d\u091c (Merge) \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u092e\u093e\u0928 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u0940 \u0926\u094b \u092f\u093e \u0905\u0927\u093f\u0915 \u0932\u0947\u092f\u0930\u094b\u0902 \u0915\u094b \u090f\u0915 \u0928\u090f \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u092e\u0947\u0902 \u091c\u094b\u0921\u093c\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0938\u092d\u0940 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0930\u0939\u0924\u0947 \u0939\u0948\u0902 \u0914\u0930 \u0915\u0908 \u0938\u094d\u0930\u094b\u0924\u094b\u0902 \u0915\u0947 \u0921\u0947\u091f\u093e \u0915\u094b \u090f\u0915 \u0938\u093e\u0925 \u0932\u093e\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Merge.jpg"
+    },
+    {
+        "term": "Mission Planning",
+        "category": "Drone",
+        "definition_en": "Mission Planning is the process of designing an automated drone survey by defining waypoints, flight paths, altitude, camera triggers, and mission parameters before the flight begins.",
+        "definition_hi": "\u092e\u093f\u0936\u0928 \u092a\u094d\u0932\u093e\u0928\u093f\u0902\u0917 \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0921\u094d\u0930\u094b\u0928 \u0909\u0921\u093c\u093e\u0928 \u0936\u0941\u0930\u0942 \u0939\u094b\u0928\u0947 \u0938\u0947 \u092a\u0939\u0932\u0947 Waypoints, Flight Path, \u090a\u0901\u091a\u093e\u0908, \u0915\u0948\u092e\u0930\u093e \u091f\u094d\u0930\u093f\u0917\u0930 \u0914\u0930 \u0905\u0928\u094d\u092f \u092e\u093f\u0936\u0928 \u092a\u0948\u0930\u093e\u092e\u0940\u091f\u0930 \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0915\u093f\u090f \u091c\u093e\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Mission Planning.jpg"
+    },
+    {
+        "term": "Multipath",
+        "category": "GPS",
+        "definition_en": "An error in GPS positioning caused by the radio signal bouncing off objects before reaching the receiver.",
+        "definition_hi": "\u091c\u0940\u092a\u0940\u090f\u0938 \u092a\u094b\u091c\u093f\u0936\u0928\u093f\u0902\u0917 \u092e\u0947\u0902 \u090f\u0915 \u0924\u094d\u0930\u0941\u091f\u093f \u091c\u094b \u0930\u093f\u0938\u0940\u0935\u0930 \u0924\u0915 \u092a\u0939\u0941\u0902\u091a\u0928\u0947 \u0938\u0947 \u092a\u0939\u0932\u0947 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0938\u0947 \u091f\u0915\u0930\u093e\u0915\u0930 \u0930\u0947\u0921\u093f\u092f\u094b \u0938\u093f\u0917\u094d\u0928\u0932 \u0915\u0947 \u0915\u093e\u0930\u0923 \u0939\u094b\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Multipath.jpg"
+    },
+    {
+        "term": "Multispectral Imaging",
+        "category": "Remote Sensing",
+        "definition_en": "Captures image data within specific wavelength ranges across the electromagnetic spectrum.",
+        "definition_hi": "\u0935\u093f\u0926\u094d\u092f\u0941\u0924 \u091a\u0941\u092e\u094d\u092c\u0915\u0940\u092f \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u092e \u092e\u0947\u0902 \u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0924\u0930\u0902\u0917 \u0926\u0948\u0930\u094d\u0927\u094d\u092f \u0938\u0940\u092e\u093e \u0915\u0947 \u092d\u0940\u0924\u0930 \u091b\u0935\u093f \u0921\u0947\u091f\u093e \u0915\u0948\u092a\u094d\u091a\u0930 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Multispectral Imaging.jpg"
+    },
+    {
+        "term": "Nadir",
+        "category": "Remote Sensing",
+        "definition_en": "Nadir is the point on the Earth's surface directly below a satellite or sensor. Images captured at nadir generally have the least geometric distortion and provide more accurate measurements.",
+        "definition_hi": "\u0928\u093e\u0926\u093f\u0930 (Nadir) \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u093e \u0935\u0939 \u092c\u093f\u0902\u0926\u0941 \u0939\u0948 \u091c\u094b \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u092f\u093e \u0938\u0947\u0902\u0938\u0930 \u0915\u0947 \u0920\u0940\u0915 \u0928\u0940\u091a\u0947 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0928\u093e\u0926\u093f\u0930 \u0938\u0947 \u0932\u0940 \u0917\u0908 \u0907\u092e\u0947\u091c \u092e\u0947\u0902 \u091c\u094d\u092f\u093e\u092e\u093f\u0924\u0940\u092f \u0935\u093f\u0915\u0943\u0924\u093f \u0915\u092e \u0939\u094b\u0924\u0940 \u0939\u0948 \u0914\u0930 \u0935\u0947 \u0905\u0927\u093f\u0915 \u0938\u091f\u0940\u0915 \u092e\u093e\u0928\u0940 \u091c\u093e\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "image": "Nadir.jpg"
+    },
+    {
+        "term": "NDVI",
+        "category": "Remote Sensing",
+        "definition_en": "Normalized Difference Vegetation Index; a simple graphical indicator to analyze remote sensing measurements and assess whether the target being observed contains live green vegetation.",
+        "definition_hi": "NDVI; \u0930\u093f\u092e\u094b\u091f \u0938\u0947\u0902\u0938\u093f\u0902\u0917 \u092e\u093e\u092a\u094b\u0902 \u0915\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u0930\u0928\u0947 \u0914\u0930 \u092f\u0939 \u0906\u0915\u0932\u0928 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 \u0938\u0942\u091a\u0915 \u0915\u093f \u0932\u0915\u094d\u0937\u094d\u092f \u092e\u0947\u0902 \u091c\u0940\u0935\u093f\u0924 \u0939\u0930\u0940 \u0935\u0928\u0938\u094d\u092a\u0924\u093f \u0939\u0948 \u092f\u093e \u0928\u0939\u0940\u0902\u0964",
+        "image": "NDVI.jpg"
+    },
+    {
+        "term": "Off-Nadir",
+        "category": "Remote Sensing",
+        "definition_en": "Off-Nadir refers to images captured at an angle away from the point directly below the satellite. It allows viewing areas that cannot be observed from nadir but may introduce geometric distortion.",
+        "definition_hi": "\u0911\u092b-\u0928\u093e\u0926\u093f\u0930 (Off-Nadir) \u0935\u0939 \u0938\u094d\u0925\u093f\u0924\u093f \u0939\u0948 \u091c\u092c \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0938\u0940\u0927\u0947 \u0928\u0940\u091a\u0947 \u0926\u0947\u0916\u0928\u0947 \u0915\u0947 \u092c\u091c\u093e\u092f \u0915\u094b\u0923 \u092c\u0928\u093e\u0915\u0930 \u0915\u093f\u0938\u0940 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u0940 \u0907\u092e\u0947\u091c \u0932\u0947\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u0905\u0924\u093f\u0930\u093f\u0915\u094d\u0924 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0924\u0947 \u0939\u0948\u0902 \u0932\u0947\u0915\u093f\u0928 \u0907\u092e\u0947\u091c \u092e\u0947\u0902 \u0935\u093f\u0915\u0943\u0924\u093f \u092c\u0922\u093c \u0938\u0915\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Off-Nadir.jpg"
+    },
+    {
+        "term": "OpenLayers",
+        "category": "WebGIS",
+        "definition_en": "An open-source JavaScript library for displaying map data in web browsers as slippy maps.",
+        "definition_hi": "\u0935\u0947\u092c \u092c\u094d\u0930\u093e\u0909\u091c\u093c\u0930 \u092e\u0947\u0902 \u092e\u0948\u092a \u0921\u0947\u091f\u093e \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 \u0913\u092a\u0928-\u0938\u094b\u0930\u094d\u0938 \u091c\u093e\u0935\u093e\u0938\u094d\u0915\u094d\u0930\u093f\u092a\u094d\u091f \u0932\u093e\u0907\u092c\u094d\u0930\u0947\u0930\u0940\u0964",
+        "image": "OpenLayers.jpg"
+    },
+    {
+        "term": "Orbit",
+        "category": "Remote Sensing",
+        "definition_en": "An Orbit is the fixed path followed by a satellite around the Earth due to gravity. Different types of orbits are used depending on the purpose, such as Earth observation, communication, or weather monitoring.",
+        "definition_hi": "\u0911\u0930\u094d\u092c\u093f\u091f (Orbit) \u0935\u0939 \u0928\u093f\u0936\u094d\u091a\u093f\u0924 \u092e\u093e\u0930\u094d\u0917 \u0939\u0948 \u091c\u093f\u0938 \u092a\u0930 \u0915\u094b\u0908 \u0909\u092a\u0917\u094d\u0930\u0939 \u0917\u0941\u0930\u0941\u0924\u094d\u0935\u093e\u0915\u0930\u094d\u0937\u0923 \u0915\u0947 \u0915\u093e\u0930\u0923 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0947 \u091a\u093e\u0930\u094b\u0902 \u0913\u0930 \u0918\u0942\u092e\u0924\u093e \u0939\u0948\u0964 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u0915\u093e\u0930\u094d\u092f\u094b\u0902 \u091c\u0948\u0938\u0947 \u092a\u0943\u0925\u094d\u0935\u0940 \u0905\u0935\u0932\u094b\u0915\u0928, \u0938\u0902\u091a\u093e\u0930 \u0914\u0930 \u092e\u094c\u0938\u092e \u0905\u0927\u094d\u092f\u092f\u0928 \u0915\u0947 \u0932\u093f\u090f \u0905\u0932\u0917-\u0905\u0932\u0917 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u0940 \u0915\u0915\u094d\u0937\u093e\u0913\u0902 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Orbit.jpg"
+    },
+    {
+        "term": "Orthomosaic",
+        "category": "Drone",
+        "definition_en": "An Orthomosaic is a geometrically corrected aerial image created by stitching together multiple overlapping drone photographs. It has uniform scale and can be used for accurate distance, area, and mapping measurements.",
+        "definition_hi": "\u0911\u0930\u094d\u0925\u094b\u092e\u094b\u091c\u093c\u0947\u0915 (Orthomosaic) \u0915\u0908 \u0913\u0935\u0930\u0932\u0948\u092a\u093f\u0902\u0917 \u0921\u094d\u0930\u094b\u0928 \u0924\u0938\u094d\u0935\u0940\u0930\u094b\u0902 \u0915\u094b \u091c\u094b\u0921\u093c\u0915\u0930 \u092c\u0928\u093e\u0908 \u0917\u0908 \u091c\u094d\u092f\u093e\u092e\u093f\u0924\u0940\u092f \u0930\u0942\u092a \u0938\u0947 \u0938\u0939\u0940 \u0907\u092e\u0947\u091c \u0939\u094b\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0938\u092e\u093e\u0928 \u0938\u094d\u0915\u0947\u0932 \u0939\u094b\u0924\u093e \u0939\u0948 \u0914\u0930 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0926\u0942\u0930\u0940, \u0915\u094d\u0937\u0947\u0924\u094d\u0930\u092b\u0932 \u0924\u0925\u093e \u0938\u091f\u0940\u0915 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930\u0923 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Orthomosaic.jpg"
+    },
+    {
+        "term": "Overlay Analysis",
+        "category": "Spatial Analysis",
+        "definition_en": "Overlay Analysis is a GIS technique that combines two or more map layers to identify spatial relationships and generate new information. It is widely used in site suitability analysis, land use planning, and environmental assessment.",
+        "definition_hi": "\u0913\u0935\u0930\u0932\u0947 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 (Overlay Analysis) \u090f\u0915 GIS \u0924\u0915\u0928\u0940\u0915 \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0926\u094b \u092f\u093e \u0905\u0927\u093f\u0915 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0932\u0947\u092f\u0930\u094b\u0902 \u0915\u094b \u090f\u0915 \u0938\u093e\u0925 \u091c\u094b\u0921\u093c\u0915\u0930 \u0928\u090f \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0938\u0902\u092c\u0902\u0927\u094b\u0902 \u0914\u0930 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u093e\u0907\u091f \u0909\u092a\u092f\u0941\u0915\u094d\u0924\u0924\u093e, \u092d\u0942\u092e\u093f \u0909\u092a\u092f\u094b\u0917 \u092f\u094b\u091c\u0928\u093e \u0914\u0930 \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923\u0940\u092f \u0905\u0927\u094d\u092f\u092f\u0928 \u092e\u0947\u0902 \u0935\u094d\u092f\u093e\u092a\u0915 \u0930\u0942\u092a \u0938\u0947 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Overlay Analysis.jpg"
+    },
+    {
+        "term": "Passive Sensor",
+        "category": "Remote Sensing",
+        "definition_en": "A Passive Sensor records naturally reflected or emitted energy from the Earth's surface, mainly sunlight or thermal radiation. Most optical satellite sensors are passive sensors.",
+        "definition_hi": "\u092a\u0948\u0938\u093f\u0935 \u0938\u0947\u0902\u0938\u0930 (Passive Sensor) \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0938\u0947 \u092a\u094d\u0930\u093e\u0915\u0943\u0924\u093f\u0915 \u0930\u0942\u092a \u0938\u0947 \u092a\u0930\u093e\u0935\u0930\u094d\u0924\u093f\u0924 \u092f\u093e \u0909\u0924\u094d\u0938\u0930\u094d\u091c\u093f\u0924 \u090a\u0930\u094d\u091c\u093e, \u091c\u0948\u0938\u0947 \u0938\u0942\u0930\u094d\u092f \u0915\u093e \u092a\u094d\u0930\u0915\u093e\u0936 \u092f\u093e \u0924\u093e\u092a\u0940\u092f \u0935\u093f\u0915\u093f\u0930\u0923, \u0915\u094b \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u0930\u0924\u093e \u0939\u0948\u0964 \u0905\u0927\u093f\u0915\u093e\u0902\u0936 \u0911\u092a\u094d\u091f\u093f\u0915\u0932 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0938\u0947\u0902\u0938\u0930 \u0907\u0938\u0940 \u092a\u094d\u0930\u0915\u093e\u0930 \u0915\u0947 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Passive Sensor.jpg"
+    },
+    {
+        "term": "PDOP",
+        "category": "GPS",
+        "definition_en": "Position Dilution of Precision; a measure of the geometric quality of a GPS satellite configuration.",
+        "definition_hi": "PDOP; \u091c\u0940\u092a\u0940\u090f\u0938 \u0909\u092a\u0917\u094d\u0930\u0939 \u0935\u093f\u0928\u094d\u092f\u093e\u0938 \u0915\u0940 \u091c\u094d\u092f\u093e\u092e\u093f\u0924\u0940\u092f \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0915\u093e \u090f\u0915 \u0909\u092a\u093e\u092f\u0964",
+        "image": "PDOP.jpg"
+    },
+    {
+        "term": "Photogrammetry",
+        "category": "Drone",
+        "definition_en": "Photogrammetry is the science of obtaining accurate measurements and 3D information from overlapping photographs. In drone mapping, it is used to generate orthomosaics, digital elevation models, point clouds, and 3D surface models.",
+        "definition_hi": "\u092b\u094b\u091f\u094b\u0917\u094d\u0930\u093e\u092e\u0947\u091f\u094d\u0930\u0940 (Photogrammetry) \u0913\u0935\u0930\u0932\u0948\u092a\u093f\u0902\u0917 \u0924\u0938\u094d\u0935\u0940\u0930\u094b\u0902 \u0938\u0947 \u0938\u091f\u0940\u0915 \u092e\u093e\u092a\u0928 \u0914\u0930 3D \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0915\u0930\u0928\u0947 \u0915\u093e \u0935\u093f\u091c\u094d\u091e\u093e\u0928 \u0939\u0948\u0964 \u0921\u094d\u0930\u094b\u0928 \u092e\u0948\u092a\u093f\u0902\u0917 \u092e\u0947\u0902 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0911\u0930\u094d\u0925\u094b\u092e\u094b\u091c\u093c\u0947\u0915, DEM, \u092a\u0949\u0907\u0902\u091f \u0915\u094d\u0932\u093e\u0909\u0921 \u0914\u0930 3D \u092e\u0949\u0921\u0932 \u0924\u0948\u092f\u093e\u0930 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Photogrammetry.jpg"
+    },
+    {
+        "term": "Pitch",
+        "category": "Drone",
+        "definition_en": "The movement of a drone along its lateral axis (tilting forward or backward).",
+        "definition_hi": "\u0921\u094d\u0930\u094b\u0928 \u0915\u093e \u0909\u0938\u0915\u0947 \u092a\u093e\u0930\u094d\u0936\u094d\u0935 \u0905\u0915\u094d\u0937 \u0915\u0947 \u0938\u093e\u0925 \u0918\u0942\u092e\u0928\u093e (\u0906\u0917\u0947 \u092f\u093e \u092a\u0940\u091b\u0947 \u091d\u0941\u0915\u0928\u093e)\u0964",
+        "image": "Pitch.jpg"
+    },
+    {
+        "term": "Pixel",
+        "category": "Remote Sensing",
+        "definition_en": "A Pixel is the smallest unit of a digital image. Each pixel stores a numerical value representing the reflected or emitted energy from a specific ground area. The size of a pixel determines the spatial resolution of the image.",
+        "definition_hi": "\u092a\u093f\u0915\u094d\u0938\u0947\u0932 (Pixel) \u0915\u093f\u0938\u0940 \u0921\u093f\u091c\u093f\u091f\u0932 \u0907\u092e\u0947\u091c \u0915\u0940 \u0938\u092c\u0938\u0947 \u091b\u094b\u091f\u0940 \u0907\u0915\u093e\u0908 \u0939\u094b\u0924\u0940 \u0939\u0948\u0964 \u092a\u094d\u0930\u0924\u094d\u092f\u0947\u0915 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u0947 \u090f\u0915 \u091b\u094b\u091f\u0947 \u092d\u093e\u0917 \u0938\u0947 \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u092a\u0930\u093e\u0935\u0930\u094d\u0924\u093f\u0924 \u092f\u093e \u0909\u0924\u094d\u0938\u0930\u094d\u091c\u093f\u0924 \u090a\u0930\u094d\u091c\u093e \u0915\u093e \u092e\u093e\u0928 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0915\u0930\u0924\u093e \u0939\u0948\u0964 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u0915\u093e \u0906\u0915\u093e\u0930 \u0907\u092e\u0947\u091c \u0915\u0947 \u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u0915\u094b \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Pixel.jpg"
+    },
+    {
+        "term": "Post Processed Kinematic (PPK)",
+        "category": "GPS",
+        "definition_en": "PPK is a positioning technique where GNSS data is corrected after the survey instead of in real time. It provides high accuracy and is commonly used in drone mapping when internet connectivity is unavailable.",
+        "definition_hi": "\u092a\u094b\u0938\u094d\u091f \u092a\u094d\u0930\u094b\u0938\u0947\u0938\u094d\u0921 \u0915\u093f\u0928\u0947\u092e\u0947\u091f\u093f\u0915 (PPK) \u0910\u0938\u0940 \u0924\u0915\u0928\u0940\u0915 \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u0938\u0930\u094d\u0935\u0947 \u0915\u0947 \u092c\u093e\u0926 GNSS \u0921\u0947\u091f\u093e \u0915\u094b \u0938\u0941\u0927\u093e\u0930\u0915\u0930 \u0909\u091a\u094d\u091a \u0938\u091f\u0940\u0915\u0924\u093e \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0915\u0940 \u091c\u093e\u0924\u0940 \u0939\u0948\u0964 \u0907\u0902\u091f\u0930\u0928\u0947\u091f \u0909\u092a\u0932\u092c\u094d\u0927 \u0928 \u0939\u094b\u0928\u0947 \u092a\u0930 \u0921\u094d\u0930\u094b\u0928 \u092e\u0948\u092a\u093f\u0902\u0917 \u092e\u0947\u0902 \u0907\u0938\u0915\u093e \u0935\u094d\u092f\u093e\u092a\u0915 \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "PPK.jpg"
+    },
+    {
+        "term": "PostGIS",
+        "category": "Database",
+        "definition_en": "An open-source software program that adds support for geographic objects to the PostgreSQL object-relational database.",
+        "definition_hi": "\u090f\u0915 \u0913\u092a\u0928-\u0938\u094b\u0930\u094d\u0938 \u0938\u0949\u092b\u094d\u091f\u0935\u0947\u092f\u0930 \u092a\u094d\u0930\u094b\u0917\u094d\u0930\u093e\u092e \u091c\u094b PostgreSQL \u0921\u0947\u091f\u093e\u092c\u0947\u0938 \u092e\u0947\u0902 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u0947 \u0932\u093f\u090f \u0938\u092e\u0930\u094d\u0925\u0928 \u091c\u094b\u0921\u093c\u0924\u093e \u0939\u0948\u0964",
+        "image": "PostGIS.jpg"
+    },
+    {
+        "term": "Primary Key",
+        "category": "Database",
+        "definition_en": "A specific choice of a minimal set of attributes that uniquely specify a tuple in a relation.",
+        "definition_hi": "\u0935\u093f\u0936\u0947\u0937\u0924\u093e\u0913\u0902 \u0915\u0947 \u090f\u0915 \u0928\u094d\u092f\u0942\u0928\u0924\u092e \u0938\u0947\u091f \u0915\u093e \u090f\u0915 \u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0935\u093f\u0915\u0932\u094d\u092a \u091c\u094b \u090f\u0915 \u0930\u093f\u0932\u0947\u0936\u0928 \u092e\u0947\u0902 \u0921\u0947\u091f\u093e \u0915\u094b \u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0930\u0942\u092a \u0938\u0947 \u0928\u093f\u0930\u094d\u0926\u093f\u0937\u094d\u091f \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Primary Key.jpg"
+    },
+    {
+        "term": "Radiometric Resolution",
+        "category": "Remote Sensing",
+        "definition_en": "Radiometric Resolution is the ability of a sensor to detect slight differences in reflected energy. Higher radiometric resolution provides more detailed brightness information and improves image interpretation.",
+        "definition_hi": "\u0930\u0947\u0921\u093f\u092f\u094b\u092e\u0947\u091f\u094d\u0930\u093f\u0915 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 (Radiometric Resolution) \u0915\u093f\u0938\u0940 \u0938\u0947\u0902\u0938\u0930 \u0915\u0940 \u092a\u0930\u093e\u0935\u0930\u094d\u0924\u093f\u0924 \u090a\u0930\u094d\u091c\u093e \u0915\u0947 \u091b\u094b\u091f\u0947-\u091b\u094b\u091f\u0947 \u0905\u0902\u0924\u0930 \u0915\u094b \u092a\u0939\u091a\u093e\u0928\u0928\u0947 \u0915\u0940 \u0915\u094d\u0937\u092e\u0924\u093e \u0939\u0948\u0964 \u0905\u0927\u093f\u0915 \u0930\u0947\u0921\u093f\u092f\u094b\u092e\u0947\u091f\u094d\u0930\u093f\u0915 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u0907\u092e\u0947\u091c \u0915\u0940 \u0917\u0941\u0923\u0935\u0924\u094d\u0924\u093e \u0914\u0930 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u094b \u092c\u0947\u0939\u0924\u0930 \u092c\u0928\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Radiometric Resolution.jpg"
+    },
+    {
+        "term": "Raster Calculator",
+        "category": "Raster Analysis",
+        "definition_en": "Raster Calculator is a GIS tool used to perform mathematical and logical operations on one or more raster datasets. It is widely used for creating indices such as NDVI, suitability maps, and terrain analysis.",
+        "definition_hi": "\u0930\u093e\u0938\u094d\u091f\u0930 \u0915\u0948\u0932\u0915\u0941\u0932\u0947\u091f\u0930 (Raster Calculator) \u090f\u0915 GIS \u091f\u0942\u0932 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u090f\u0915 \u092f\u093e \u0905\u0927\u093f\u0915 \u0930\u093e\u0938\u094d\u091f\u0930 \u0921\u0947\u091f\u093e\u0938\u0947\u091f \u092a\u0930 \u0917\u0923\u093f\u0924\u0940\u092f \u0914\u0930 \u0924\u093e\u0930\u094d\u0915\u093f\u0915 \u0917\u0923\u0928\u093e\u090f\u0901 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 NDVI, \u0938\u093e\u0907\u091f \u0909\u092a\u092f\u0941\u0915\u094d\u0924\u0924\u093e \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u0914\u0930 \u092d\u0942-\u092d\u093e\u0917 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u091c\u0948\u0938\u0947 \u0915\u093e\u0930\u094d\u092f\u094b\u0902 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Raster Calculator.jpg"
+    },
+    {
+        "term": "Raster Data",
+        "category": "GIS",
+        "definition_en": "Raster Data is made up of a grid of pixels or cells, where each cell stores a value representing information such as elevation, temperature, rainfall, or land cover. It is mainly used for satellite imagery, digital elevation models, and continuous geographic data.",
+        "definition_hi": "\u0930\u093e\u0938\u094d\u091f\u0930 \u0921\u0947\u091f\u093e \u091b\u094b\u091f\u0947-\u091b\u094b\u091f\u0947 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u092f\u093e \u0938\u0947\u0932 \u0938\u0947 \u092e\u093f\u0932\u0915\u0930 \u092c\u0928\u093e \u0939\u094b\u0924\u093e \u0939\u0948, \u091c\u0939\u093e\u0901 \u092a\u094d\u0930\u0924\u094d\u092f\u0947\u0915 \u0938\u0947\u0932 \u0915\u093f\u0938\u0940 \u092e\u093e\u0928 \u091c\u0948\u0938\u0947 \u090a\u0901\u091a\u093e\u0908, \u0924\u093e\u092a\u092e\u093e\u0928, \u0935\u0930\u094d\u0937\u093e \u092f\u093e \u092d\u0942\u092e\u093f \u0906\u0935\u0930\u0923 \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092e\u0941\u0916\u094d\u092f \u0930\u0942\u092a \u0938\u0947 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c, \u0921\u093f\u091c\u093f\u091f\u0932 \u090f\u0932\u093f\u0935\u0947\u0936\u0928 \u092e\u0949\u0921\u0932 \u0914\u0930 \u0938\u0924\u0924 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0921\u0947\u091f\u093e \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Raster Data.jpg"
+    },
+    {
+        "term": "Real-Time Kinematic (RTK)",
+        "category": "GPS",
+        "definition_en": "RTK is a high-precision GNSS positioning technique that provides centimeter-level accuracy in real time. It uses a base station and a rover receiver to transmit correction data instantly during field surveys.",
+        "definition_hi": "\u0930\u0940\u092f\u0932-\u091f\u093e\u0907\u092e \u0915\u093f\u0928\u0947\u092e\u0947\u091f\u093f\u0915 (RTK) \u090f\u0915 \u0909\u091a\u094d\u091a \u0938\u091f\u0940\u0915\u0924\u093e \u0935\u093e\u0932\u0940 GNSS \u0924\u0915\u0928\u0940\u0915 \u0939\u0948 \u091c\u094b \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0938\u092e\u092f \u092e\u0947\u0902 \u0938\u0947\u0902\u091f\u0940\u092e\u0940\u091f\u0930 \u0938\u094d\u0924\u0930 \u0924\u0915 \u0938\u091f\u0940\u0915 \u0938\u094d\u0925\u093e\u0928 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u092c\u0947\u0938 \u0938\u094d\u091f\u0947\u0936\u0928 \u0914\u0930 \u0930\u094b\u0935\u0930 \u0915\u0947 \u092c\u0940\u091a \u0938\u0941\u0927\u093e\u0930 \u0921\u0947\u091f\u093e \u0924\u0941\u0930\u0902\u0924 \u0938\u093e\u091d\u093e \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "RTK.jpg"
+    },
+    {
+        "term": "Remote Sensing",
+        "category": "Remote Sensing",
+        "definition_en": "Remote Sensing is the science of collecting information about the Earth's surface without making physical contact. It uses sensors mounted on satellites, aircraft, or drones to capture images and measure natural and man-made features for mapping and environmental monitoring.",
+        "definition_hi": "\u0930\u093f\u092e\u094b\u091f \u0938\u0947\u0902\u0938\u093f\u0902\u0917 \u0935\u0939 \u0935\u093f\u091c\u094d\u091e\u093e\u0928 \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u092c\u093f\u0928\u093e \u0938\u0940\u0927\u0947 \u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0947 \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0915\u0940 \u091c\u093e\u0924\u0940 \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0909\u092a\u0917\u094d\u0930\u0939, \u0935\u093f\u092e\u093e\u0928 \u092f\u093e \u0921\u094d\u0930\u094b\u0928 \u092a\u0930 \u0932\u0917\u0947 \u0938\u0947\u0902\u0938\u0930\u094b\u0902 \u0926\u094d\u0935\u093e\u0930\u093e \u091a\u093f\u0924\u094d\u0930 \u0914\u0930 \u0905\u0928\u094d\u092f \u0921\u0947\u091f\u093e \u090f\u0915\u0924\u094d\u0930 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948, \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092e\u0948\u092a\u093f\u0902\u0917, \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923 \u0928\u093f\u0917\u0930\u093e\u0928\u0940 \u0914\u0930 \u0938\u0902\u0938\u093e\u0927\u0928 \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Remote Sensing.jpg"
+    },
+    {
+        "term": "Roll",
+        "category": "Drone",
+        "definition_en": "The movement of a drone along its longitudinal axis (tilting left or right).",
+        "definition_hi": "\u0921\u094d\u0930\u094b\u0928 \u0915\u093e \u0909\u0938\u0915\u0947 \u0905\u0928\u0941\u0926\u0948\u0930\u094d\u0927\u094d\u092f \u0905\u0915\u094d\u0937 \u0915\u0947 \u0938\u093e\u0925 \u0918\u0942\u092e\u0928\u093e (\u092c\u093e\u090f\u0901 \u092f\u093e \u0926\u093e\u090f\u0901 \u091d\u0941\u0915\u0928\u093e)\u0964",
+        "image": "Roll.jpg"
+    },
+    {
+        "term": "SAR",
+        "category": "Remote Sensing",
+        "definition_en": "Synthetic Aperture Radar; a form of radar that is used to create two-dimensional images or three-dimensional reconstructions of objects.",
+        "definition_hi": "\u0938\u093f\u0902\u0925\u0947\u091f\u093f\u0915 \u0905\u092a\u0930\u094d\u091a\u0930 \u0930\u0921\u093e\u0930; \u0930\u093e\u0921\u093e\u0930 \u0915\u093e \u090f\u0915 \u0930\u0942\u092a \u091c\u093f\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0926\u094d\u0935\u093f-\u0906\u092f\u093e\u092e\u0940 \u091a\u093f\u0924\u094d\u0930 \u092f\u093e \u0924\u094d\u0930\u093f-\u0906\u092f\u093e\u092e\u0940 \u092a\u0941\u0928\u0930\u094d\u0928\u093f\u0930\u094d\u092e\u093e\u0923 \u092c\u0928\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "SAR.jpg"
+    },
+    {
+        "term": "Satellite",
+        "category": "Remote Sensing",
+        "definition_en": "A Satellite is an artificial object placed in orbit around the Earth to collect information, capture images, provide communication, and monitor environmental changes. Remote sensing satellites continuously observe the Earth's surface for mapping, agriculture, weather forecasting, disaster management, and resource monitoring.",
+        "definition_hi": "\u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u090f\u0915 \u0915\u0943\u0924\u094d\u0930\u093f\u092e \u0909\u092a\u0917\u094d\u0930\u0939 \u0939\u0948 \u091c\u093f\u0938\u0947 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0915\u0915\u094d\u0937\u093e \u092e\u0947\u0902 \u0938\u094d\u0925\u093e\u092a\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092a\u0943\u0925\u094d\u0935\u0940 \u0915\u0940 \u0938\u0924\u0939 \u0915\u0940 \u0924\u0938\u094d\u0935\u0940\u0930\u0947\u0902 \u0932\u0947\u0928\u0947, \u0938\u0902\u091a\u093e\u0930, \u092e\u094c\u0938\u092e \u092a\u0942\u0930\u094d\u0935\u093e\u0928\u0941\u092e\u093e\u0928, \u0915\u0943\u0937\u093f, \u0906\u092a\u0926\u093e \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u0914\u0930 \u092a\u094d\u0930\u093e\u0915\u0943\u0924\u093f\u0915 \u0938\u0902\u0938\u093e\u0927\u0928\u094b\u0902 \u0915\u0940 \u0928\u093f\u0917\u0930\u093e\u0928\u0940 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Satellite.jpg"
+    },
+    {
+        "term": "Shapefile",
+        "category": "GIS",
+        "definition_en": "A Shapefile is one of the most widely used vector data formats in GIS. It stores geographic features such as points, lines, and polygons along with their attribute information. A shapefile actually consists of multiple files such as .shp, .shx, and .dbf.",
+        "definition_hi": "\u0936\u0947\u092a\u092b\u093e\u0907\u0932 (Shapefile) GIS \u092e\u0947\u0902 \u0938\u092c\u0938\u0947 \u0905\u0927\u093f\u0915 \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u090f \u091c\u093e\u0928\u0947 \u0935\u093e\u0932\u0947 \u0935\u0947\u0915\u094d\u091f\u0930 \u0921\u0947\u091f\u093e \u092a\u094d\u0930\u093e\u0930\u0942\u092a\u094b\u0902 \u092e\u0947\u0902 \u0938\u0947 \u090f\u0915 \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 Point, Line \u0914\u0930 Polygon \u091c\u0948\u0938\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u0947 \u0938\u093e\u0925 \u0909\u0928\u0915\u0940 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u0913\u0902 (Attributes) \u0915\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u092d\u0940 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0939\u094b\u0924\u0940 \u0939\u0948\u0964 \u090f\u0915 Shapefile \u0935\u093e\u0938\u094d\u0924\u0935 \u092e\u0947\u0902 .shp, .shx \u0914\u0930 .dbf \u091c\u0948\u0938\u0940 \u0915\u0908 \u092b\u093e\u0907\u0932\u094b\u0902 \u0915\u093e \u0938\u092e\u0942\u0939 \u0939\u094b\u0924\u093e \u0939\u0948\u0964",
+        "image": "Shapefile.jpg"
+    },
+    {
+        "term": "Side Overlap (Sidelap)",
+        "category": "Drone",
+        "definition_en": "Side Overlap is the overlap between images captured in adjacent flight lines. Adequate sidelap ensures complete area coverage and improves the quality of orthomosaics and digital surface models.",
+        "definition_hi": "\u0938\u093e\u0907\u0921 \u0913\u0935\u0930\u0932\u0948\u092a (Sidelap) \u092a\u093e\u0938-\u092a\u093e\u0938 \u0915\u0940 \u0909\u0921\u093c\u093e\u0928 \u0932\u093e\u0907\u0928\u094b\u0902 \u092e\u0947\u0902 \u0932\u0940 \u0917\u0908 \u0924\u0938\u094d\u0935\u0940\u0930\u094b\u0902 \u0915\u0947 \u092c\u0940\u091a \u0938\u092e\u093e\u0928 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u093e \u092a\u094d\u0930\u0924\u093f\u0936\u0924 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u092a\u0930\u094d\u092f\u093e\u092a\u094d\u0924 \u0938\u093e\u0907\u0921 \u0913\u0935\u0930\u0932\u0948\u092a \u0938\u0947 \u092c\u0947\u0939\u0924\u0930 \u0911\u0930\u094d\u0925\u094b\u092e\u094b\u091c\u093c\u0947\u0915 \u0914\u0930 \u0938\u0924\u0939 \u092e\u0949\u0921\u0932 \u0924\u0948\u092f\u093e\u0930 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Sidelap.jpg"
+    },
+    {
+        "term": "Slope",
+        "category": "Terrain Analysis",
+        "definition_en": "Slope measures the steepness or rate of elevation change of the land surface. It is usually expressed in degrees or percentage and is important for construction, agriculture, watershed management, and landslide risk assessment.",
+        "definition_hi": "\u0938\u094d\u0932\u094b\u092a (Slope) \u092d\u0942\u092e\u093f \u0915\u0940 \u0922\u093e\u0932 \u092f\u093e \u090a\u0901\u091a\u093e\u0908 \u092e\u0947\u0902 \u092a\u0930\u093f\u0935\u0930\u094d\u0924\u0928 \u0915\u0940 \u0926\u0930 \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0947 \u0938\u093e\u092e\u093e\u0928\u094d\u092f\u0924\u0903 \u0921\u093f\u0917\u094d\u0930\u0940 \u092f\u093e \u092a\u094d\u0930\u0924\u093f\u0936\u0924 \u092e\u0947\u0902 \u0935\u094d\u092f\u0915\u094d\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948 \u0914\u0930 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0928\u093f\u0930\u094d\u092e\u093e\u0923, \u0915\u0943\u0937\u093f, \u091c\u0932\u0917\u094d\u0930\u0939\u0923 \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u0924\u0925\u093e \u092d\u0942\u0938\u094d\u0916\u0932\u0928 \u091c\u094b\u0916\u093f\u092e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Slope.jpg"
+    },
+    {
+        "term": "Spatial Analysis",
+        "category": "Spatial Analysis",
+        "definition_en": "Spatial Analysis is the process of examining the locations, patterns, relationships, and trends of geographic features. It helps solve location-based problems such as site selection, route optimization, disaster management, environmental monitoring, and urban planning by analyzing spatial data.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u090f\u0928\u093e\u0932\u093f\u0938\u093f\u0938 (Spatial Analysis) \u0935\u0939 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0921\u0947\u091f\u093e \u0915\u0947 \u0938\u094d\u0925\u093e\u0928, \u092a\u0948\u091f\u0930\u094d\u0928, \u0938\u0902\u092c\u0902\u0927 \u0914\u0930 \u092a\u094d\u0930\u0935\u0943\u0924\u094d\u0924\u093f\u092f\u094b\u0902 \u0915\u093e \u0905\u0927\u094d\u092f\u092f\u0928 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u093e\u0907\u091f \u091a\u092f\u0928, \u092e\u093e\u0930\u094d\u0917 \u0905\u0928\u0941\u0915\u0942\u0932\u0928, \u0906\u092a\u0926\u093e \u092a\u094d\u0930\u092c\u0902\u0927\u0928, \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923 \u0928\u093f\u0917\u0930\u093e\u0928\u0940 \u0924\u0925\u093e \u0936\u0939\u0930\u0940 \u0928\u093f\u092f\u094b\u091c\u0928 \u091c\u0948\u0938\u0940 \u0938\u094d\u0925\u093e\u0928 \u0906\u0927\u093e\u0930\u093f\u0924 \u0938\u092e\u0938\u094d\u092f\u093e\u0913\u0902 \u0915\u0947 \u0938\u092e\u093e\u0927\u093e\u0928 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Spatial Analysis.jpg"
+    },
+    {
+        "term": "Spatial Data",
+        "category": "GIS",
+        "definition_en": "Spatial Data is any information that has a geographic location on the Earth's surface. It contains coordinates along with descriptive information, allowing users to analyze the position, distance, direction, and relationship between different geographic features.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0921\u0947\u091f\u093e \u0935\u0939 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0939\u0948 \u091c\u093f\u0938\u0915\u093e \u092a\u0943\u0925\u094d\u0935\u0940 \u092a\u0930 \u090f\u0915 \u0928\u093f\u0936\u094d\u091a\u093f\u0924 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0938\u094d\u0925\u093e\u0928 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915 (Coordinates) \u0915\u0947 \u0938\u093e\u0925 \u0905\u0928\u094d\u092f \u0935\u093f\u0935\u0930\u0923 \u092d\u0940 \u0939\u094b\u0924\u0947 \u0939\u0948\u0902, \u091c\u093f\u0938\u0938\u0947 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u0947 \u0938\u094d\u0925\u093e\u0928, \u0926\u0942\u0930\u0940, \u0926\u093f\u0936\u093e \u0914\u0930 \u0938\u0902\u092c\u0902\u0927\u094b\u0902 \u0915\u093e \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Spatial Data.jpg"
+    },
+    {
+        "term": "Spatial Index",
+        "category": "Database",
+        "definition_en": "A data structure that allows for accessing a spatial object efficiently.",
+        "definition_hi": "\u090f\u0915 \u0921\u0947\u091f\u093e \u0938\u0902\u0930\u091a\u0928\u093e \u091c\u094b \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0935\u0938\u094d\u0924\u0941 \u0924\u0915 \u0915\u0941\u0936\u0932\u0924\u093e\u092a\u0942\u0930\u094d\u0935\u0915 \u092a\u0939\u0941\u0901\u091a\u0928\u0947 \u0915\u0940 \u0905\u0928\u0941\u092e\u0924\u093f \u0926\u0947\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Spatial Index.jpg"
+    },
+    {
+        "term": "Spatial Join",
+        "category": "Spatial Analysis",
+        "definition_en": "Spatial Join transfers attribute information from one layer to another based on their geographic relationship, such as containment, intersection, or nearest distance. It enriches datasets with additional spatial information.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u091c\u0949\u0907\u0928 (Spatial Join) \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0938\u0902\u092c\u0902\u0927 \u091c\u0948\u0938\u0947 Containment, Intersection \u092f\u093e Nearest Distance \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930 \u090f\u0915 \u0932\u0947\u092f\u0930 \u0915\u0940 \u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0926\u0942\u0938\u0930\u0940 \u0932\u0947\u092f\u0930 \u092e\u0947\u0902 \u091c\u094b\u0921\u093c\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u0921\u0947\u091f\u093e \u0905\u0927\u093f\u0915 \u0909\u092a\u092f\u094b\u0917\u0940 \u0914\u0930 \u0938\u092e\u0943\u0926\u094d\u0927 \u092c\u0928\u0924\u093e \u0939\u0948\u0964",
+        "image": "Spatial Join.jpg"
+    },
+    {
+        "term": "Spatial Query",
+        "category": "Spatial Analysis",
+        "definition_en": "A Spatial Query is used to select geographic features based on their location or spatial relationship with other features. It helps answer questions such as which buildings are inside a flood zone or which roads intersect a river.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0915\u094d\u0935\u0947\u0930\u0940 (Spatial Query) \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u093f\u0938\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930 \u0915\u094b \u0909\u0938\u0915\u0947 \u0938\u094d\u0925\u093e\u0928 \u092f\u093e \u0905\u0928\u094d\u092f \u092b\u0940\u091a\u0930\u094d\u0938 \u0915\u0947 \u0938\u093e\u0925 \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0938\u0902\u092c\u0902\u0927 \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930 \u0916\u094b\u091c\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0938\u0947 \u092f\u0939 \u092a\u0924\u093e \u0932\u0917\u093e\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948 \u0915\u093f \u0915\u094c\u0928-\u0938\u0940 \u0907\u092e\u093e\u0930\u0924\u0947\u0902 \u092c\u093e\u0922\u093c \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u092e\u0947\u0902 \u0939\u0948\u0902 \u092f\u093e \u0915\u094c\u0928-\u0938\u0940 \u0938\u0921\u093c\u0915\u0947\u0902 \u0928\u0926\u0940 \u0915\u094b \u092a\u093e\u0930 \u0915\u0930\u0924\u0940 \u0939\u0948\u0902\u0964",
+        "image": "Spatial Query.jpg"
+    },
+    {
+        "term": "Spatial Resolution",
+        "category": "Remote Sensing",
+        "definition_en": "Spatial Resolution refers to the size of one pixel on the ground. A higher spatial resolution means smaller pixels and greater detail, while a lower resolution represents larger areas with less detail.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 (Spatial Resolution) \u0915\u093f\u0938\u0940 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u0915\u0947 \u090f\u0915 \u092a\u093f\u0915\u094d\u0938\u0947\u0932 \u0926\u094d\u0935\u093e\u0930\u093e \u0926\u0930\u094d\u0936\u093e\u090f \u0917\u090f \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u092d\u0942\u092e\u093f \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u093e \u0906\u0915\u093e\u0930 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0909\u091a\u094d\u091a \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u0905\u0927\u093f\u0915 \u0935\u093f\u0938\u094d\u0924\u0943\u0924 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0926\u0947\u0924\u093e \u0939\u0948 \u091c\u092c\u0915\u093f \u0915\u092e \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u092c\u0921\u093c\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u094b \u0915\u092e \u0935\u093f\u0935\u0930\u0923 \u0915\u0947 \u0938\u093e\u0925 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Spatial Resolution.jpg"
+    },
+    {
+        "term": "Spectral Resolution",
+        "category": "Remote Sensing",
+        "definition_en": "Spectral Resolution is the ability of a sensor to distinguish between different wavelengths of electromagnetic radiation. Sensors with high spectral resolution can identify subtle differences between various land cover types.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 (Spectral Resolution) \u0915\u093f\u0938\u0940 \u0938\u0947\u0902\u0938\u0930 \u0915\u0940 \u0935\u093f\u092d\u093f\u0928\u094d\u0928 \u0924\u0930\u0902\u0917\u0926\u0948\u0930\u094d\u0918\u094d\u092f\u094b\u0902 \u0915\u094b \u0905\u0932\u0917-\u0905\u0932\u0917 \u092a\u0939\u091a\u093e\u0928\u0928\u0947 \u0915\u0940 \u0915\u094d\u0937\u092e\u0924\u093e \u0939\u0948\u0964 \u0909\u091a\u094d\u091a \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 \u0935\u093e\u0932\u0947 \u0938\u0947\u0902\u0938\u0930 \u092d\u0942\u092e\u093f \u0906\u0935\u0930\u0923 \u0915\u0940 \u0938\u0942\u0915\u094d\u0937\u094d\u092e \u092d\u093f\u0928\u094d\u0928\u0924\u093e\u0913\u0902 \u0915\u094b \u092d\u0940 \u092a\u0939\u091a\u093e\u0928 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902\u0964",
+        "image": "Spectral Resolution.jpg"
+    },
+    {
+        "term": "Spectral Signature",
+        "category": "Remote Sensing",
+        "definition_en": "A Spectral Signature is the unique pattern of reflection or absorption of electromagnetic energy by a material. Different objects such as water, soil, vegetation, and buildings have distinct spectral signatures that help identify them in satellite imagery.",
+        "definition_hi": "\u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u0938\u093f\u0917\u094d\u0928\u0947\u091a\u0930 \u0915\u093f\u0938\u0940 \u0935\u0938\u094d\u0924\u0941 \u0926\u094d\u0935\u093e\u0930\u093e \u0935\u093f\u0926\u094d\u092f\u0941\u0924\u091a\u0941\u0902\u092c\u0915\u0940\u092f \u090a\u0930\u094d\u091c\u093e \u0915\u0947 \u092a\u0930\u093e\u0935\u0930\u094d\u0924\u0928 \u092f\u093e \u0905\u0935\u0936\u094b\u0937\u0923 \u0915\u093e \u0935\u093f\u0936\u093f\u0937\u094d\u091f \u092a\u0948\u091f\u0930\u094d\u0928 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u092a\u093e\u0928\u0940, \u092e\u093f\u091f\u094d\u091f\u0940, \u0935\u0928\u0938\u094d\u092a\u0924\u093f \u0914\u0930 \u092d\u0935\u0928 \u091c\u0948\u0938\u0940 \u092a\u094d\u0930\u0924\u094d\u092f\u0947\u0915 \u0935\u0938\u094d\u0924\u0941 \u0915\u093e \u0905\u0932\u0917 \u0938\u094d\u092a\u0947\u0915\u094d\u091f\u094d\u0930\u0932 \u0938\u093f\u0917\u094d\u0928\u0947\u091a\u0930 \u0939\u094b\u0924\u093e \u0939\u0948, \u091c\u093f\u0938\u0938\u0947 \u0909\u0928\u094d\u0939\u0947\u0902 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0907\u092e\u0947\u091c \u092e\u0947\u0902 \u092a\u0939\u091a\u093e\u0928\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Spectral Signature.jpg"
+    },
+    {
+        "term": "Swath",
+        "category": "Remote Sensing",
+        "definition_en": "Swath is the width of the Earth's surface covered by a satellite sensor during a single pass. A wider swath covers a larger area quickly, while a narrower swath usually provides higher spatial resolution.",
+        "definition_hi": "\u0938\u094d\u0935\u093e\u0925 (Swath) \u0935\u0939 \u091a\u094c\u0921\u093c\u093e\u0908 \u0939\u0948 \u091c\u093f\u0924\u0928\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u094b\u0908 \u0938\u0948\u091f\u0947\u0932\u093e\u0907\u091f \u0938\u0947\u0902\u0938\u0930 \u090f\u0915 \u092c\u093e\u0930 \u0917\u0941\u091c\u0930\u0928\u0947 \u092a\u0930 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u0930\u0924\u093e \u0939\u0948\u0964 \u0905\u0927\u093f\u0915 \u0938\u094d\u0935\u093e\u0925 \u0935\u093e\u0932\u093e \u0938\u0947\u0902\u0938\u0930 \u092c\u0921\u093c\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u094b \u0915\u0935\u0930 \u0915\u0930\u0924\u093e \u0939\u0948 \u091c\u092c\u0915\u093f \u0915\u092e \u0938\u094d\u0935\u093e\u0925 \u0905\u0927\u093f\u0915 \u0935\u093f\u0938\u094d\u0924\u0943\u0924 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Swath.jpg"
+    },
+    {
+        "term": "Symbology",
+        "category": "Cartography",
+        "definition_en": "The study or use of symbols to represent geographic features on a map.",
+        "definition_hi": "\u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092a\u0930 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u0913\u0902 \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u092a\u094d\u0930\u0924\u0940\u0915\u094b\u0902 \u0915\u093e \u0905\u0927\u094d\u092f\u092f\u0928 \u092f\u093e \u0909\u092a\u092f\u094b\u0917\u0964",
+        "image": "Symbology.jpg"
+    },
+    {
+        "term": "Telemetry",
+        "category": "Drone",
+        "definition_en": "The automated communications process by which measurements and other data are collected at remote points and transmitted to receiving equipment.",
+        "definition_hi": "\u0938\u094d\u0935\u091a\u093e\u0932\u093f\u0924 \u0938\u0902\u091a\u093e\u0930 \u092a\u094d\u0930\u0915\u094d\u0930\u093f\u092f\u093e \u091c\u093f\u0938\u0915\u0947 \u0926\u094d\u0935\u093e\u0930\u093e \u0926\u0942\u0930\u0938\u094d\u0925 \u092c\u093f\u0902\u0926\u0941\u0913\u0902 \u092a\u0930 \u0921\u0947\u091f\u093e \u090f\u0915\u0924\u094d\u0930 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948 \u0914\u0930 \u0909\u092a\u0915\u0930\u0923 \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u092a\u094d\u0930\u0947\u0937\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Telemetry.jpg"
+    },
+    {
+        "term": "Temporal Resolution",
+        "category": "Remote Sensing",
+        "definition_en": "Temporal Resolution is the frequency at which a satellite revisits and captures images of the same location. A shorter revisit period allows better monitoring of changes over time.",
+        "definition_hi": "\u091f\u0947\u092e\u094d\u092a\u094b\u0930\u0932 \u0930\u093f\u091c\u093c\u0949\u0932\u094d\u092f\u0942\u0936\u0928 (Temporal Resolution) \u0935\u0939 \u0938\u092e\u092f \u0905\u0902\u0924\u0930\u093e\u0932 \u0939\u0948 \u091c\u093f\u0938\u0915\u0947 \u092c\u093e\u0926 \u0915\u094b\u0908 \u0909\u092a\u0917\u094d\u0930\u0939 \u0909\u0938\u0940 \u0938\u094d\u0925\u093e\u0928 \u0915\u0940 \u0926\u094b\u092c\u093e\u0930\u093e \u0907\u092e\u0947\u091c \u0932\u0947\u0924\u093e \u0939\u0948\u0964 \u0915\u092e \u0938\u092e\u092f \u0905\u0902\u0924\u0930\u093e\u0932 \u0939\u094b\u0928\u0947 \u092a\u0930 \u0938\u092e\u092f \u0915\u0947 \u0938\u093e\u0925 \u0939\u094b\u0928\u0947 \u0935\u093e\u0932\u0947 \u092a\u0930\u093f\u0935\u0930\u094d\u0924\u0928\u094b\u0902 \u0915\u0940 \u092c\u0947\u0939\u0924\u0930 \u0928\u093f\u0917\u0930\u093e\u0928\u0940 \u0915\u0940 \u091c\u093e \u0938\u0915\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Temporal Resolution.jpg"
+    },
+    {
+        "term": "TIN (Triangulated Irregular Network)",
+        "category": "Terrain Analysis",
+        "definition_en": "TIN is a vector-based surface model made of connected triangles that accurately represents terrain. It is especially useful for modeling irregular landscapes, engineering design, and surface analysis.",
+        "definition_hi": "TIN (Triangulated Irregular Network) \u0924\u094d\u0930\u093f\u092d\u0941\u091c\u094b\u0902 \u0938\u0947 \u092c\u0928\u093e \u090f\u0915 \u0935\u0947\u0915\u094d\u091f\u0930 \u0906\u0927\u093e\u0930\u093f\u0924 \u0938\u0924\u0939 \u092e\u0949\u0921\u0932 \u0939\u0948 \u091c\u094b \u092d\u0942-\u092d\u093e\u0917 \u0915\u093e \u0938\u091f\u0940\u0915 \u092a\u094d\u0930\u0924\u093f\u0928\u093f\u0927\u093f\u0924\u094d\u0935 \u0915\u0930\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0907\u0902\u091c\u0940\u0928\u093f\u092f\u0930\u093f\u0902\u0917, \u0905\u0928\u093f\u092f\u092e\u093f\u0924 \u092d\u0942-\u092d\u093e\u0917 \u092e\u0949\u0921\u0932\u093f\u0902\u0917 \u0914\u0930 \u0938\u0924\u0939 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "TIN.jpg"
+    },
+    {
+        "term": "Topology",
+        "category": "GIS",
+        "definition_en": "Topology is a set of rules that defines how geographic features share boundaries, connect with each other, and maintain spatial relationships. It helps identify and correct mapping errors such as gaps, overlaps, and disconnected lines.",
+        "definition_hi": "\u091f\u094b\u092a\u094b\u0932\u0949\u091c\u0940 (Topology) \u0928\u093f\u092f\u092e\u094b\u0902 \u0915\u093e \u090f\u0915 \u0938\u092e\u0942\u0939 \u0939\u0948 \u091c\u094b \u092f\u0939 \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948 \u0915\u093f \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930\u094d\u0938 \u090f\u0915-\u0926\u0942\u0938\u0930\u0947 \u0938\u0947 \u0915\u0948\u0938\u0947 \u091c\u0941\u0921\u093c\u0947 \u0939\u0948\u0902, \u0909\u0928\u0915\u0940 \u0938\u0940\u092e\u093e\u090f\u0901 \u0915\u0948\u0938\u0947 \u0938\u093e\u091d\u093e \u0939\u094b\u0924\u0940 \u0939\u0948\u0902 \u0914\u0930 \u0909\u0928\u0915\u0947 \u0938\u094d\u0925\u093e\u0928\u093f\u0915 \u0938\u0902\u092c\u0902\u0927 \u0915\u0948\u0938\u0947 \u092c\u0928\u0947 \u0930\u0939\u0924\u0947 \u0939\u0948\u0902\u0964 \u092f\u0939 Gaps, Overlaps \u0914\u0930 Disconnected Lines \u091c\u0948\u0938\u0940 \u0924\u094d\u0930\u0941\u091f\u093f\u092f\u094b\u0902 \u0915\u094b \u092a\u0939\u091a\u093e\u0928\u0928\u0947 \u0914\u0930 \u0938\u0941\u0927\u093e\u0930\u0928\u0947 \u092e\u0947\u0902 \u092e\u0926\u0926 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "Topology.jpg"
+    },
+    {
+        "term": "Track Log",
+        "category": "GPS",
+        "definition_en": "A Track Log is a digital record of the path traveled by a GPS receiver. It stores a sequence of geographic coordinates that can later be displayed on a map for route analysis and movement tracking.",
+        "definition_hi": "\u091f\u094d\u0930\u0948\u0915 \u0932\u0949\u0917 (Track Log) GPS \u0926\u094d\u0935\u093e\u0930\u093e \u0924\u092f \u0915\u093f\u090f \u0917\u090f \u092e\u093e\u0930\u094d\u0917 \u0915\u093e \u0921\u093f\u091c\u093f\u091f\u0932 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u092e\u0947\u0902 \u092f\u093e\u0924\u094d\u0930\u093e \u0915\u0947 \u0926\u094c\u0930\u093e\u0928 \u0930\u093f\u0915\u0949\u0930\u094d\u0921 \u0915\u093f\u090f \u0917\u090f \u0928\u093f\u0930\u094d\u0926\u0947\u0936\u093e\u0902\u0915\u094b\u0902 \u0915\u0940 \u0936\u094d\u0930\u0943\u0902\u0916\u0932\u093e \u0939\u094b\u0924\u0940 \u0939\u0948 \u091c\u093f\u0938\u0947 \u092c\u093e\u0926 \u092e\u0947\u0902 \u092e\u093e\u0928\u091a\u093f\u0924\u094d\u0930 \u092a\u0930 \u092a\u094d\u0930\u0926\u0930\u094d\u0936\u093f\u0924 \u0915\u093f\u092f\u093e \u091c\u093e \u0938\u0915\u0924\u093e \u0939\u0948\u0964",
+        "image": "Track Log.jpg"
+    },
+    {
+        "term": "True Color Composite",
+        "category": "Remote Sensing",
+        "definition_en": "A True Color Composite is an image created using the red, green, and blue spectral bands in their natural order. It appears similar to what the human eye sees and is commonly used for general mapping and visualization.",
+        "definition_hi": "\u091f\u094d\u0930\u0942 \u0915\u0932\u0930 \u0915\u0949\u092e\u094d\u092a\u094b\u091c\u093f\u091f (True Color Composite) \u0932\u093e\u0932, \u0939\u0930\u0947 \u0914\u0930 \u0928\u0940\u0932\u0947 \u092c\u0948\u0902\u0921 \u0915\u094b \u0909\u0928\u0915\u0947 \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0915\u094d\u0930\u092e \u092e\u0947\u0902 \u092e\u093f\u0932\u093e\u0915\u0930 \u092c\u0928\u093e\u0908 \u0917\u0908 \u0907\u092e\u0947\u091c \u0939\u094b\u0924\u0940 \u0939\u0948\u0964 \u092f\u0939 \u092e\u093e\u0928\u0935 \u0906\u0901\u0916 \u0926\u094d\u0935\u093e\u0930\u093e \u0926\u0947\u0916\u0947 \u091c\u093e\u0928\u0947 \u0935\u093e\u0932\u0947 \u092a\u094d\u0930\u093e\u0915\u0943\u0924\u093f\u0915 \u0930\u0902\u0917\u094b\u0902 \u0915\u0947 \u0938\u092e\u093e\u0928 \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0924\u0940 \u0939\u0948\u0964",
+        "image": "TCC.jpg"
+    },
+    {
+        "term": "Union",
+        "category": "Spatial Analysis",
+        "definition_en": "Union combines two or more polygon layers into a single layer while preserving all geographic features and their attribute information. It is commonly used in land use and environmental analysis.",
+        "definition_hi": "\u092f\u0942\u0928\u093f\u092f\u0928 (Union) \u0926\u094b \u092f\u093e \u0905\u0927\u093f\u0915 \u092a\u0949\u0932\u0940\u0917\u0949\u0928 \u0932\u0947\u092f\u0930\u094b\u0902 \u0915\u094b \u090f\u0915 \u0928\u0908 \u0932\u0947\u092f\u0930 \u092e\u0947\u0902 \u091c\u094b\u0921\u093c\u0924\u093e \u0939\u0948 \u0924\u0925\u093e \u0938\u092d\u0940 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u092b\u0940\u091a\u0930\u094d\u0938 \u0914\u0930 \u0909\u0928\u0915\u0940 \u090f\u091f\u094d\u0930\u093f\u092c\u094d\u092f\u0942\u091f \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0915\u094b \u0938\u0941\u0930\u0915\u094d\u0937\u093f\u0924 \u0930\u0916\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092d\u0942\u092e\u093f \u0909\u092a\u092f\u094b\u0917 \u0914\u0930 \u092a\u0930\u094d\u092f\u093e\u0935\u0930\u0923\u0940\u092f \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Union.jpg"
+    },
+    {
+        "term": "Unmanned Aerial Vehicle (UAV)",
+        "category": "Drone",
+        "definition_en": "An Unmanned Aerial Vehicle (UAV), commonly known as a drone, is an aircraft that flies without a human pilot onboard. It is controlled remotely or flies autonomously using GPS and onboard sensors. UAVs are widely used for aerial mapping, agriculture, surveying, disaster management, and infrastructure inspection.",
+        "definition_hi": "\u0905\u0928\u092e\u0948\u0928\u094d\u0921 \u090f\u0930\u093f\u092f\u0932 \u0935\u094d\u0939\u0940\u0915\u0932 (UAV), \u091c\u093f\u0938\u0947 \u0938\u093e\u092e\u093e\u0928\u094d\u092f\u0924\u0903 \u0921\u094d\u0930\u094b\u0928 \u0915\u0939\u093e \u091c\u093e\u0924\u093e \u0939\u0948, \u090f\u0915 \u0910\u0938\u093e \u0935\u093f\u092e\u093e\u0928 \u0939\u0948 \u091c\u093f\u0938\u092e\u0947\u0902 \u092a\u093e\u092f\u0932\u091f \u0938\u0935\u093e\u0930 \u0928\u0939\u0940\u0902 \u0939\u094b\u0924\u093e\u0964 \u0907\u0938\u0947 \u0930\u093f\u092e\u094b\u091f \u0915\u0902\u091f\u094d\u0930\u094b\u0932 \u092f\u093e GPS \u0924\u0925\u093e \u0938\u0947\u0902\u0938\u0930 \u0915\u0940 \u0938\u0939\u093e\u092f\u0924\u093e \u0938\u0947 \u0938\u094d\u0935\u091a\u093e\u0932\u093f\u0924 \u0930\u0942\u092a \u0938\u0947 \u0909\u0921\u093c\u093e\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u090f\u0930\u093f\u092f\u0932 \u092e\u0948\u092a\u093f\u0902\u0917, \u0915\u0943\u0937\u093f, \u0938\u0930\u094d\u0935\u0947\u0915\u094d\u0937\u0923, \u0906\u092a\u0926\u093e \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u0914\u0930 \u0905\u0935\u0938\u0902\u0930\u091a\u0928\u093e \u0928\u093f\u0930\u0940\u0915\u094d\u0937\u0923 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "UAV.jpg"
+    },
+    {
+        "term": "Unmanned Aircraft System (UAS)",
+        "category": "Drone",
+        "definition_en": "An Unmanned Aircraft System (UAS) includes the drone, remote controller, communication system, GPS, software, and ground control station. It represents the complete system required to safely operate an unmanned aircraft.",
+        "definition_hi": "\u0905\u0928\u092e\u0948\u0928\u094d\u0921 \u090f\u092f\u0930\u0915\u094d\u0930\u093e\u092b\u094d\u091f \u0938\u093f\u0938\u094d\u091f\u092e (UAS) \u0915\u0947\u0935\u0932 \u0921\u094d\u0930\u094b\u0928 \u0939\u0940 \u0928\u0939\u0940\u0902 \u092c\u0932\u094d\u0915\u093f \u0930\u093f\u092e\u094b\u091f \u0915\u0902\u091f\u094d\u0930\u094b\u0932, \u0938\u0902\u091a\u093e\u0930 \u092a\u094d\u0930\u0923\u093e\u0932\u0940, GPS, \u0938\u0949\u092b\u094d\u091f\u0935\u0947\u092f\u0930 \u0914\u0930 \u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0915\u0902\u091f\u094d\u0930\u094b\u0932 \u0938\u094d\u091f\u0947\u0936\u0928 \u0938\u0939\u093f\u0924 \u092a\u0942\u0930\u0947 \u0938\u093f\u0938\u094d\u091f\u092e \u0915\u094b \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "UAS.jpg"
+    },
+    {
+        "term": "Vector Data",
+        "category": "GIS",
+        "definition_en": "Vector Data is a data model that represents real-world features using points, lines, and polygons. It is commonly used for mapping roads, rivers, buildings, administrative boundaries, and land parcels because it provides high positional accuracy and stores attribute information efficiently.",
+        "definition_hi": "\u0935\u0947\u0915\u094d\u091f\u0930 \u0921\u0947\u091f\u093e \u090f\u0915 \u0921\u0947\u091f\u093e \u092e\u0949\u0921\u0932 \u0939\u0948 \u091c\u094b \u0935\u093e\u0938\u094d\u0924\u0935\u093f\u0915 \u0926\u0941\u0928\u093f\u092f\u093e \u0915\u0940 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u094b Point, Line \u0914\u0930 Polygon \u0915\u0947 \u0930\u0942\u092a \u092e\u0947\u0902 \u0926\u0930\u094d\u0936\u093e\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0938\u0921\u093c\u0915, \u0928\u0926\u0940, \u092d\u0935\u0928, \u092a\u094d\u0930\u0936\u093e\u0938\u0928\u093f\u0915 \u0938\u0940\u092e\u093e \u0914\u0930 \u092d\u0942\u092e\u093f \u0915\u0947 \u092a\u094d\u0932\u0949\u091f \u091c\u0948\u0938\u0940 \u0935\u0938\u094d\u0924\u0941\u0913\u0902 \u0915\u0940 \u092e\u0948\u092a\u093f\u0902\u0917 \u0915\u0947 \u0932\u093f\u090f \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948 \u0915\u094d\u092f\u094b\u0902\u0915\u093f \u092f\u0939 \u0909\u091a\u094d\u091a \u0938\u091f\u0940\u0915\u0924\u093e \u0915\u0947 \u0938\u093e\u0925 \u0938\u094d\u0925\u093e\u0928 \u0914\u0930 \u0935\u093f\u0936\u0947\u0937\u0924\u093e\u0913\u0902 \u0915\u0940 \u091c\u093e\u0928\u0915\u093e\u0930\u0940 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u0915\u0930\u0924\u093e \u0939\u0948\u0964",
+        "image": "Vector Data.jpg"
+    },
+    {
+        "term": "Viewshed Analysis",
+        "category": "Terrain Analysis",
+        "definition_en": "Viewshed Analysis determines which areas are visible from a specific observation point based on terrain elevation. It is commonly used in telecom tower placement, defense planning, tourism, and landscape analysis.",
+        "definition_hi": "\u0935\u094d\u092f\u0942\u0936\u0947\u0921 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 (Viewshed Analysis) \u092f\u0939 \u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u0915\u0930\u0924\u093e \u0939\u0948 \u0915\u093f \u0915\u093f\u0938\u0940 \u0935\u093f\u0936\u0947\u0937 \u0938\u094d\u0925\u093e\u0928 \u0938\u0947 \u0915\u094c\u0928-\u0915\u094c\u0928 \u0938\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0926\u093f\u0916\u093e\u0908 \u0926\u0947\u0902\u0917\u0947\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u092e\u094b\u092c\u093e\u0907\u0932 \u091f\u093e\u0935\u0930 \u092f\u094b\u091c\u0928\u093e, \u0930\u0915\u094d\u0937\u093e, \u092a\u0930\u094d\u092f\u091f\u0928 \u0914\u0930 \u0926\u0943\u0936\u094d\u092f \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Viewshed Analysis.jpg"
+    },
+    {
+        "term": "WAAS",
+        "category": "GPS",
+        "definition_en": "Wide Area Augmentation System; a system of satellites and ground stations that provide GPS signal corrections.",
+        "definition_hi": "WAAS; \u0909\u092a\u0917\u094d\u0930\u0939\u094b\u0902 \u0914\u0930 \u0917\u094d\u0930\u093e\u0909\u0902\u0921 \u0938\u094d\u091f\u0947\u0936\u0928\u094b\u0902 \u0915\u0940 \u090f\u0915 \u092a\u094d\u0930\u0923\u093e\u0932\u0940 \u091c\u094b \u091c\u0940\u092a\u0940\u090f\u0938 \u0938\u093f\u0917\u094d\u0928\u0932 \u092e\u0947\u0902 \u0938\u0941\u0927\u093e\u0930 \u092a\u094d\u0930\u0926\u093e\u0928 \u0915\u0930\u0924\u0940 \u0939\u0948\u0964",
+        "image": "WAAS.jpg"
+    },
+    {
+        "term": "Waypoint",
+        "category": "GPS",
+        "definition_en": "A Waypoint is a predefined geographic location stored in a GPS receiver or drone mission. It is commonly used for navigation, route planning, and automated drone flights.",
+        "definition_hi": "\u0935\u0947\u092a\u0949\u0907\u0902\u091f (Waypoint) GPS \u092f\u093e \u0921\u094d\u0930\u094b\u0928 \u092e\u093f\u0936\u0928 \u092e\u0947\u0902 \u0938\u0902\u0917\u094d\u0930\u0939\u0940\u0924 \u090f\u0915 \u092a\u0942\u0930\u094d\u0935-\u0928\u093f\u0930\u094d\u0927\u093e\u0930\u093f\u0924 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0938\u094d\u0925\u093e\u0928 \u0939\u094b\u0924\u093e \u0939\u0948\u0964 \u0907\u0938\u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0928\u0947\u0935\u093f\u0917\u0947\u0936\u0928, \u092e\u093e\u0930\u094d\u0917 \u092f\u094b\u091c\u0928\u093e \u0914\u0930 \u0938\u094d\u0935\u091a\u093e\u0932\u093f\u0924 \u0921\u094d\u0930\u094b\u0928 \u0909\u0921\u093c\u093e\u0928\u094b\u0902 \u092e\u0947\u0902 \u0915\u093f\u092f\u093e \u091c\u093e\u0924\u093e \u0939\u0948\u0964",
+        "image": "Waypoint.jpg"
+    },
+    {
+        "term": "WFS (Web Feature Service)",
+        "category": "WebGIS",
+        "definition_en": "An interface that allows requests for geographical features across the web using platform-independent calls.",
+        "definition_hi": "\u090f\u0915 \u0907\u0902\u091f\u0930\u092b\u093c\u0947\u0938 \u091c\u094b \u0935\u0947\u092c \u092a\u0930 \u092a\u094d\u0932\u0947\u091f\u092b\u093c\u0949\u0930\u094d\u092e-\u0938\u094d\u0935\u0924\u0902\u0924\u094d\u0930 \u0915\u0949\u0932 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930\u0915\u0947 \u092d\u094c\u0917\u094b\u0932\u093f\u0915 \u0938\u0941\u0935\u093f\u0927\u093e\u0913\u0902 \u0915\u0947 \u0905\u0928\u0941\u0930\u094b\u0927\u094b\u0902 \u0915\u0940 \u0905\u0928\u0941\u092e\u0924\u093f \u0926\u0947\u0924\u093e \u0939\u0948\u0964",
+        "image": "WFS.jpg"
+    },
+    {
+        "term": "WMS (Web Map Service)",
+        "category": "WebGIS",
+        "definition_en": "An HTTP interface for requesting georeferenced map images from one or more distributed geospatial databases.",
+        "definition_hi": "\u0935\u093f\u0924\u0930\u093f\u0924 \u091c\u093f\u092f\u094b\u0938\u094d\u092a\u0947\u0936\u093f\u092f\u0932 \u0921\u0947\u091f\u093e\u092c\u0947\u0938 \u0938\u0947 \u091c\u093f\u092f\u094b\u0930\u0947\u092b\u0930\u0947\u0902\u0938\u094d\u0921 \u092e\u0948\u092a \u0907\u092e\u0947\u091c \u0915\u093e \u0905\u0928\u0941\u0930\u094b\u0927 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 HTTP \u0907\u0902\u091f\u0930\u092b\u093c\u0947\u0938\u0964",
+        "image": "WMS.jpg"
+    },
+	
+    {
+        "term": "Yaw",
+        "category": "Drone",
+        "definition_en": "The movement of a drone around its vertical axis (rotating left or right).",
+        "definition_hi": "\u0921\u094d\u0930\u094b\u0928 \u0915\u093e \u0909\u0938\u0915\u0947 \u090a\u0930\u094d\u0927\u094d\u0935\u093e\u0927\u0930 \u0905\u0915\u094d\u0937 \u0915\u0947 \u091a\u093e\u0930\u094b\u0902 \u0913\u0930 \u0918\u0942\u092e\u0928\u093e (\u092c\u093e\u090f\u0901 \u092f\u093e \u0926\u093e\u090f\u0901 \u092e\u0941\u0921\u093c\u0928\u093e)\u0964",
+        "image": "Yaw.jpg"
+    }
+];
 
+let currentCategory = 'All';
+let currentFilteredData = [];
 
-
-{
-    term: "Spatial Index",
-    en: "A technique that speeds up searching geographic data.",
-    hi: "भौगोलिक डेटा को तेजी से खोजने की तकनीक।"
-},
-{
-    term: "Geoprocessing",
-    en: "Performing GIS tools to create or modify spatial data.",
-    hi: "स्थानिक डेटा बनाने या बदलने के लिए GIS टूल्स का उपयोग।"
-},
-{
-    term: "Map Algebra",
-    en: "Using mathematical operations on raster layers.",
-    hi: "रास्टर लेयर पर गणितीय गणनाएँ करना।"
-},
-{
-    term: "Raster Calculator",
-    en: "A tool used to calculate values in raster datasets.",
-    hi: "रास्टर डेटा पर गणना करने वाला टूल।"
-},
-{
-    term: "Cell Size",
-    en: "The ground area represented by one raster pixel.",
-    hi: "एक रास्टर पिक्सेल द्वारा दर्शाया गया वास्तविक क्षेत्र।"
-},
-{
-    term: "NoData",
-    en: "Cells that contain no valid information.",
-    hi: "ऐसे सेल जिनमें कोई मान्य डेटा नहीं होता।"
-},
-{
-    term: "Resampling",
-    en: "Changing the pixel size of raster data.",
-    hi: "रास्टर के पिक्सेल आकार को बदलना।"
-},
-{
-    term: "Nearest Neighbor",
-    en: "A resampling method that keeps original pixel values.",
-    hi: "रिसैम्पलिंग की विधि जो मूल पिक्सेल मान बनाए रखती है।"
-},
-{
-    term: "Bilinear Interpolation",
-    en: "A resampling method that averages nearby pixels.",
-    hi: "आस-पास के पिक्सेल का औसत निकालने वाली रिसैम्पलिंग विधि।"
-},
-{
-    term: "Cubic Convolution",
-    en: "A resampling method that produces smoother images.",
-    hi: "रिसैम्पलिंग की विधि जो अधिक स्मूद इमेज बनाती है।"
-},
-{
-    term: "Mosaic",
-    en: "Combining multiple raster images into one.",
-    hi: "कई रास्टर इमेज को जोड़कर एक बनाना।"
-},
-{
-    term: "Mosaic Dataset",
-    en: "A collection of rasters managed as one dataset.",
-    hi: "कई रास्टर का एक संयुक्त संग्रह।"
-},
-{
-    term: "Tile",
-    en: "A small section of a large map or image.",
-    hi: "बड़े मानचित्र या इमेज का छोटा भाग।"
-},
-{
-    term: "Tile Cache",
-    en: "Pre-generated map tiles for faster loading.",
-    hi: "तेजी से लोड होने के लिए पहले से तैयार किए गए मैप टाइल।"
-},
-{
-    term: "Pyramid",
-    en: "Lower-resolution copies of raster for faster display.",
-    hi: "रास्टर की कम रिज़ॉल्यूशन प्रतियां जो तेजी से दिखाई जाती हैं।"
-},
-{
-    term: "Histogram",
-    en: "A graph showing pixel value distribution.",
-    hi: "पिक्सेल मानों का वितरण दिखाने वाला ग्राफ।"
-},
-{
-    term: "Stretch",
-    en: "Improving image contrast for better viewing.",
-    hi: "इमेज का कॉन्ट्रास्ट बढ़ाकर उसे स्पष्ट बनाना।"
-},
-{
-    term: "Contrast",
-    en: "Difference between light and dark areas.",
-    hi: "हल्के और गहरे भागों के बीच का अंतर।"
-},
-{
-    term: "Brightness",
-    en: "Overall lightness of an image.",
-    hi: "इमेज की कुल चमक।"
-},
-{
-    term: "False Color Composite",
-    en: "An image created using non-natural color bands.",
-    hi: "प्राकृतिक रंगों के बजाय अन्य बैंड से बनी इमेज।"
-},
-{
-    term: "True Color Composite",
-    en: "An image displayed using natural colors.",
-    hi: "प्राकृतिक रंगों में दिखाई गई इमेज।"
-},
-{
-    term: "Band Combination",
-    en: "Selecting bands to create different image views.",
-    hi: "विभिन्न दृश्य बनाने के लिए बैंड का चयन।"
-},
-{
-    term: "Radiometric Resolution",
-    en: "Ability of a sensor to detect small brightness differences.",
-    hi: "सेंसर की छोटी चमक के अंतर पहचानने की क्षमता।"
-},
-{
-    term: "Radiometric Correction",
-    en: "Removing sensor-related image errors.",
-    hi: "सेंसर से संबंधित त्रुटियों को हटाना।"
-},
-{
-    term: "Atmospheric Correction",
-    en: "Removing atmospheric effects from satellite images.",
-    hi: "वायुमंडलीय प्रभाव हटाकर इमेज को साफ करना।"
-},
-{
-    term: "Cloud Mask",
-    en: "A method to remove clouds from satellite images.",
-    hi: "सैटेलाइट इमेज से बादलों को हटाने की तकनीक।"
-},
-{
-    term: "Shadow Mask",
-    en: "Identifying shadow areas in images.",
-    hi: "इमेज में छाया वाले क्षेत्रों की पहचान।"
-},
-{
-    term: "Scene",
-    en: "A single satellite image captured at one time.",
-    hi: "एक समय पर ली गई सैटेलाइट इमेज।"
-},
-{
-    term: "Swath",
-    en: "The width of Earth's surface captured by a satellite.",
-    hi: "सैटेलाइट द्वारा एक बार में कवर किया गया क्षेत्र।"
-},
-{
-    term: "Orbit",
-    en: "The path followed by a satellite around Earth.",
-    hi: "पृथ्वी के चारों ओर उपग्रह का मार्ग।"
-},
-{
-    term: "Sun-Synchronous Orbit",
-    en: "An orbit where the satellite passes at the same local time.",
-    hi: "ऐसी कक्षा जिसमें उपग्रह हर बार लगभग एक ही स्थानीय समय पर गुजरता है।"
-},
-{
-    term: "Revisit Time",
-    en: "Time taken by a satellite to image the same place again.",
-    hi: "उसी स्थान की दोबारा इमेज लेने में लगने वाला समय।"
-},
-{
-    term: "Ground Resolution",
-    en: "The smallest object visible in an image.",
-    hi: "इमेज में दिखाई देने वाली सबसे छोटी वस्तु का आकार।"
-},
-{
-    term: "Footprint",
-    en: "The area covered by a sensor or image.",
-    hi: "सेंसर या इमेज द्वारा कवर किया गया क्षेत्र।"
-},
-{
-    term: "Footprint Polygon",
-    en: "A polygon showing image coverage.",
-    hi: "इमेज के कवर क्षेत्र को दर्शाने वाला पॉलीगॉन।"
-},
-{
-    term: "Image Footprint",
-    en: "The boundary of a satellite image.",
-    hi: "सैटेलाइट इमेज की सीमा।"
-},
-{
-    term: "Ground Sampling Distance (GSD)",
-    en: "Distance on the ground represented by one pixel.",
-    hi: "जमीन पर एक पिक्सेल द्वारा दर्शाई गई दूरी।"
-},
-{
-    term: "Orthorectification",
-    en: "Correcting image distortion using terrain information.",
-    hi: "भूभाग की जानकारी से इमेज विकृति को ठीक करना।"
-},
-{
-    term: "Image Registration",
-    en: "Aligning two or more images accurately.",
-    hi: "दो या अधिक इमेज को सही तरीके से मिलाना।"
-},
-{
-    term: "Image Enhancement",
-    en: "Improving image quality for better interpretation.",
-    hi: "बेहतर विश्लेषण के लिए इमेज की गुणवत्ता बढ़ाना।"
-},
-{
-    term: "Image Classification",
-    en: "Assigning pixels into land cover categories.",
-    hi: "पिक्सेल को विभिन्न भूमि आवरण वर्गों में बाँटना।"
-},
-{
-    term: "Segmentation",
-    en: "Dividing an image into meaningful regions.",
-    hi: "इमेज को उपयोगी भागों में विभाजित करना।"
-},
-{
-    term: "Object-Based Analysis",
-    en: "Analyzing groups of pixels as objects instead of individual pixels.",
-    hi: "अलग-अलग पिक्सेल के बजाय वस्तुओं के रूप में विश्लेषण करना।"
-},
-{
-    term: "Region Growing",
-    en: "Grouping neighboring pixels with similar values.",
-    hi: "समान मान वाले पड़ोसी पिक्सेल को एक समूह बनाना।"
-},
-{
-    term: "Thresholding",
-    en: "Separating pixels using a selected value.",
-    hi: "एक निश्चित मान के आधार पर पिक्सेल अलग करना।"
-},
-{
-    term: "Edge Detection",
-    en: "Finding object boundaries in an image.",
-    hi: "इमेज में वस्तुओं की सीमाओं की पहचान करना।"
-},
-{
-    term: "Sharpening",
-    en: "Making image details clearer.",
-    hi: "इमेज के विवरण को अधिक स्पष्ट बनाना।"
-},
-{
-    term: "Filtering",
-    en: "Removing noise or enhancing image features.",
-    hi: "अनचाहे शोर को हटाना या इमेज को बेहतर बनाना।"
-},
-{
-    term: "Noise",
-    en: "Unwanted random variation in image data.",
-    hi: "इमेज में अनचाहा बदलाव या विकृति।"
-},
-{
-    term: "Kernel",
-    en: "A small matrix used for image filtering.",
-    hi: "इमेज फ़िल्टरिंग में उपयोग होने वाला छोटा मैट्रिक्स।"
-},
-{
-    term: "Convolution",
-    en: "Applying a kernel to process image pixels.",
-    hi: "इमेज प्रोसेसिंग के लिए कर्नेल का उपयोग करना।"
-},
-{
-    term: "TIN",
-    en: "A terrain model made using connected triangles.",
-    hi: "त्रिभुजों से बना डिजिटल भू-भाग मॉडल।"
-},
-{
-    term: "Node",
-    en: "A point where two or more lines meet.",
-    hi: "वह बिंदु जहाँ दो या अधिक रेखाएँ मिलती हैं।"
-},
-{
-    term: "Vertex",
-    en: "A point that defines the shape of a line or polygon.",
-    hi: "रेखा या पॉलीगॉन का आकार निर्धारित करने वाला बिंदु।"
-},
-{
-    term: "Multipart Feature",
-    en: "A single feature made of multiple separate parts.",
-    hi: "एक फीचर जो कई अलग-अलग भागों से मिलकर बना हो।"
-},
-{
-    term: "Singlepart Feature",
-    en: "A feature that contains only one geometry.",
-    hi: "ऐसा फीचर जिसमें केवल एक ज्यामिति हो।"
-},
-{
-    term: "Multipart To Singlepart",
-    en: "A tool that separates multipart features.",
-    hi: "मल्टीपार्ट फीचर को अलग-अलग फीचर में बदलने वाला टूल।"
-},
-{
-    term: "Centroid",
-    en: "The center point of a polygon.",
-    hi: "पॉलीगॉन का केंद्रीय बिंदु।"
-},
-{
-    term: "Extent",
-    en: "The total area covered by a dataset.",
-    hi: "डेटासेट द्वारा कवर किया गया कुल क्षेत्र।"
-},
-{
-    term: "Bounding Box",
-    en: "The smallest rectangle surrounding a feature.",
-    hi: "किसी फीचर को घेरने वाला सबसे छोटा आयत।"
-},
-{
-    term: "Envelope",
-    en: "The minimum rectangle covering all map features.",
-    hi: "सभी फीचर्स को घेरने वाला न्यूनतम आयत।"
-},
-{
-    term: "Snap",
-    en: "Automatically connecting nearby map features.",
-    hi: "पास के फीचर्स को स्वतः जोड़ना।"
-},
-{
-    term: "Snapping Tolerance",
-    en: "The maximum distance for snapping features.",
-    hi: "स्नैप होने की अधिकतम दूरी।"
-},
-{
-    term: "Editing",
-    en: "Adding, deleting, or modifying GIS features.",
-    hi: "GIS फीचर्स को जोड़ना, हटाना या बदलना।"
-},
-{
-    term: "Edit Session",
-    en: "The period during which map editing is performed.",
-    hi: "वह समय जिसमें मैप एडिटिंग की जाती है।"
-},
-{
-    term: "Vertex Editing",
-    en: "Changing the vertices of a feature.",
-    hi: "फीचर के वर्टेक्स को बदलना।"
-},
-{
-    term: "Split",
-    en: "Dividing one feature into multiple features.",
-    hi: "एक फीचर को कई भागों में बाँटना।"
-},
-{
-    term: "Append",
-    en: "Adding one dataset into another.",
-    hi: "एक डेटासेट को दूसरे में जोड़ना।"
-},
-{
-    term: "Erase",
-    en: "Removing areas using another polygon.",
-    hi: "दूसरे पॉलीगॉन की सहायता से क्षेत्र हटाना।"
-},
-{
-    term: "Identity",
-    en: "Adding attributes from overlapping features.",
-    hi: "ओवरलैप होने वाले फीचर्स की जानकारी जोड़ना।"
-},
-{
-    term: "Symmetric Difference",
-    en: "Keeping areas that do not overlap.",
-    hi: "केवल गैर-ओवरलैप क्षेत्रों को रखना।"
-},
-{
-    term: "Spatial Query",
-    en: "Finding features based on their location.",
-    hi: "स्थान के आधार पर फीचर्स को खोजना।"
-},
-{
-    term: "Attribute Query",
-    en: "Finding features using attribute values.",
-    hi: "एट्रिब्यूट मान के आधार पर फीचर्स खोजना।"
-},
-{
-    term: "SQL Expression",
-    en: "A statement used to filter GIS data.",
-    hi: "GIS डेटा को फ़िल्टर करने के लिए SQL कथन।"
-},
-{
-    term: "Selection Set",
-    en: "A group of selected map features.",
-    hi: "चयनित मैप फीचर्स का समूह।"
-},
-{
-    term: "Definition Query",
-    en: "Displaying only features that match a condition.",
-    hi: "केवल निर्धारित शर्त पूरी करने वाले फीचर्स दिखाना।"
-},
-
-
-
-
-{
-    term: "Map Scale Factor",
-    en: "A value used to improve measurement accuracy on maps.",
-    hi: "मानचित्र पर माप की शुद्धता बढ़ाने के लिए उपयोग किया जाने वाला मान।"
-},
-{
-    term: "Cartography",
-    en: "The science and art of making maps.",
-    hi: "मानचित्र बनाने का विज्ञान और कला।"
-},
-{
-    term: "Map Symbol",
-    en: "A sign used to represent a real-world feature.",
-    hi: "वास्तविक वस्तु को दर्शाने वाला मानचित्र चिन्ह।"
-},
-{
-    term: "Reference Map",
-    en: "A map that shows the location of geographic features.",
-    hi: "भौगोलिक विशेषताओं का स्थान दिखाने वाला मानचित्र।"
-},
-{
-    term: "Thematic Map",
-    en: "A map showing one specific topic or theme.",
-    hi: "किसी एक विशेष विषय को दर्शाने वाला मानचित्र।"
-},
-{
-    term: "Choropleth Map",
-    en: "A map using colors to show data values by area.",
-    hi: "क्षेत्र के अनुसार रंगों से डेटा दिखाने वाला मानचित्र।"
-},
-{
-    term: "Dot Density Map",
-    en: "A map using dots to represent data distribution.",
-    hi: "बिंदुओं से डेटा का वितरण दिखाने वाला मानचित्र।"
-},
-{
-    term: "Graduated Symbol Map",
-    en: "A map using different symbol sizes for values.",
-    hi: "अलग-अलग आकार के चिन्हों से डेटा दिखाने वाला मानचित्र।"
-},
-{
-    term: "Proportional Symbol Map",
-    en: "A map where symbol size matches data values.",
-    hi: "मान के अनुसार चिन्ह का आकार बदलने वाला मानचित्र।"
-},
-{
-    term: "Isoline Map",
-    en: "A map connecting points with equal values.",
-    hi: "समान मान वाले बिंदुओं को जोड़ने वाला मानचित्र।"
-},
-{
-    term: "Isopleth",
-    en: "A line joining locations with equal measurements.",
-    hi: "समान माप वाले स्थानों को जोड़ने वाली रेखा।"
-},
-{
-    term: "Cartographic Generalization",
-    en: "Simplifying map details for better readability.",
-    hi: "मानचित्र को स्पष्ट बनाने के लिए विवरण सरल करना।"
-},
-{
-    term: "Generalization",
-    en: "Reducing unnecessary map details.",
-    hi: "अनावश्यक मानचित्र विवरण कम करना।"
-},
-{
-    term: "Simplify Polygon",
-    en: "Reducing polygon complexity while keeping its shape.",
-    hi: "आकार बनाए रखते हुए पॉलीगॉन को सरल बनाना।"
-},
-{
-    term: "Smooth Line",
-    en: "Making a line less sharp and more natural.",
-    hi: "रेखा को अधिक मुलायम और प्राकृतिक बनाना।"
-},
-{
-    term: "Label",
-    en: "Text used to identify a map feature.",
-    hi: "मानचित्र फीचर की पहचान के लिए लिखा गया नाम।"
-},
-{
-    term: "Annotation",
-    en: "Text stored as a map feature.",
-    hi: "मानचित्र फीचर के रूप में संग्रहीत टेक्स्ट।"
-},
-{
-    term: "Callout",
-    en: "A label connected to a feature with a leader line.",
-    hi: "रेखा द्वारा फीचर से जुड़ा हुआ लेबल।"
-},
-{
-    term: "Inset Map",
-    en: "A small map showing additional location details.",
-    hi: "अतिरिक्त स्थान जानकारी दिखाने वाला छोटा मानचित्र।"
-},
-{
-    term: "Locator Map",
-    en: "A map showing where the main map is located.",
-    hi: "मुख्य मानचित्र का स्थान दिखाने वाला छोटा मानचित्र।"
-},
-{
-    term: "Neatline",
-    en: "The border drawn around a map.",
-    hi: "मानचित्र के चारों ओर बनाई गई सीमा रेखा।"
-},
-{
-    term: "Map Grid",
-    en: "A network of lines used for map referencing.",
-    hi: "मानचित्र में स्थान पहचानने के लिए रेखाओं का जाल।"
-},
-{
-    term: "Graticule",
-    en: "Lines of latitude and longitude shown on a map.",
-    hi: "मानचित्र पर अक्षांश और देशांतर की रेखाएँ।"
-},
-{
-    term: "Map Frame",
-    en: "The area where the map is displayed in a layout.",
-    hi: "लेआउट में मानचित्र दिखाने का निर्धारित क्षेत्र।"
-},
-{
-    term: "Layout View",
-    en: "The page used to design and print a map.",
-    hi: "मानचित्र को डिज़ाइन और प्रिंट करने वाला पेज।"
-},
-
-
-
-
-{
-    term: "Geodesy",
-    en: "The science of measuring the Earth's shape and size.",
-    hi: "पृथ्वी के आकार और माप का अध्ययन करने वाला विज्ञान।"
-},
-{
-    term: "Ellipsoid",
-    en: "A mathematical model that represents the Earth's shape.",
-    hi: "पृथ्वी के आकार को दर्शाने वाला गणितीय मॉडल।"
-},
-{
-    term: "Geoid",
-    en: "The Earth's true shape based on gravity.",
-    hi: "गुरुत्वाकर्षण के आधार पर पृथ्वी का वास्तविक आकार।"
-},
-{
-    term: "Benchmark",
-    en: "A fixed reference point with a known elevation.",
-    hi: "ज्ञात ऊँचाई वाला स्थायी संदर्भ बिंदु।"
-},
-{
-    term: "Control Point",
-    en: "A known location used to improve map accuracy.",
-    hi: "मानचित्र की सटीकता बढ़ाने के लिए उपयोग किया जाने वाला ज्ञात स्थान।"
-},
-{
-    term: "Horizontal Accuracy",
-    en: "How close a mapped location is to its true position.",
-    hi: "मानचित्र पर स्थान की वास्तविक स्थिति से निकटता।"
-},
-{
-    term: "Vertical Accuracy",
-    en: "How accurate elevation measurements are.",
-    hi: "ऊँचाई माप की शुद्धता।"
-},
-{
-    term: "Survey Station",
-    en: "A fixed point used during land surveying.",
-    hi: "भूमि सर्वेक्षण में उपयोग किया जाने वाला स्थायी बिंदु।"
-},
-{
-    term: "Traverse",
-    en: "A series of connected survey lines.",
-    hi: "आपस में जुड़ी सर्वेक्षण रेखाओं की श्रृंखला।"
-},
-{
-    term: "Traverse Adjustment",
-    en: "Correcting survey measurements to reduce errors.",
-    hi: "त्रुटि कम करने के लिए सर्वे मापों का सुधार।"
-},
-{
-    term: "Bearing",
-    en: "The direction of a line measured from north.",
-    hi: "उत्तर दिशा से मापी गई रेखा की दिशा।"
-},
-{
-    term: "Azimuth",
-    en: "A clockwise angle measured from north.",
-    hi: "उत्तर से दक्षिणावर्त मापा गया कोण।"
-},
-{
-    term: "Back Bearing",
-    en: "The opposite direction of a survey line.",
-    hi: "सर्वे रेखा की विपरीत दिशा।"
-},
-{
-    term: "Magnetic North",
-    en: "The direction toward the Earth's magnetic pole.",
-    hi: "पृथ्वी के चुंबकीय उत्तर ध्रुव की दिशा।"
-},
-{
-    term: "True North",
-    en: "The direction toward the geographic North Pole.",
-    hi: "भौगोलिक उत्तर ध्रुव की दिशा।"
-},
-{
-    term: "Magnetic Declination",
-    en: "The angle between true north and magnetic north.",
-    hi: "वास्तविक उत्तर और चुंबकीय उत्तर के बीच का कोण।"
-},
-{
-    term: "Total Station",
-    en: "An instrument used for measuring angles and distances.",
-    hi: "कोण और दूरी मापने वाला सर्वे उपकरण।"
-},
-{
-    term: "Electronic Distance Measurement (EDM)",
-    en: "Technology used to measure distance electronically.",
-    hi: "इलेक्ट्रॉनिक तरीके से दूरी मापने की तकनीक।"
-},
-{
-    term: "Prism",
-    en: "A reflector used with a total station.",
-    hi: "टोटल स्टेशन के साथ उपयोग होने वाला परावर्तक।"
-},
-{
-    term: "Prism Pole",
-    en: "A pole used to hold the survey prism.",
-    hi: "सर्वे प्रिज्म को पकड़ने वाली छड़।"
-},
-{
-    term: "Leveling",
-    en: "Measuring height differences between points.",
-    hi: "दो बिंदुओं की ऊँचाई का अंतर मापना।"
-},
-{
-    term: "Auto Level",
-    en: "An instrument used for leveling surveys.",
-    hi: "लेवल सर्वे के लिए उपयोग किया जाने वाला उपकरण।"
-},
-{
-    term: "Staff",
-    en: "A graduated rod used during leveling.",
-    hi: "लेवलिंग में उपयोग की जाने वाली माप वाली छड़।"
-},
-{
-    term: "Reduced Level (RL)",
-    en: "The elevation of a point above a reference level.",
-    hi: "संदर्भ स्तर से किसी बिंदु की ऊँचाई।"
-},
-{
-    term: "Contour Interval",
-    en: "The vertical distance between contour lines.",
-    hi: "दो समोच्च रेखाओं के बीच की ऊँचाई का अंतर।"
-},
-
-
-
-
-{
-    term: "Differential GPS (DGPS)",
-    en: "A GPS technique that improves location accuracy using a reference station.",
-    hi: "रेफरेंस स्टेशन की मदद से GPS की सटीकता बढ़ाने वाली तकनीक।"
-},
-{
-    term: "Post Processed Kinematic (PPK)",
-    en: "A positioning method where GPS data is corrected after the survey.",
-    hi: "सर्वे के बाद GPS डेटा को सुधारकर अधिक सटीक स्थान प्राप्त करने की विधि।"
-},
-{
-    term: "Base Station",
-    en: "A fixed GPS receiver used as a reference for accurate positioning.",
-    hi: "सटीक स्थिति के लिए संदर्भ के रूप में उपयोग किया जाने वाला स्थिर GPS रिसीवर।"
-},
-{
-    term: "Rover",
-    en: "A movable GPS receiver used to collect field coordinates.",
-    hi: "फील्ड में निर्देशांक एकत्र करने वाला चलित GPS रिसीवर।"
-},
-{
-    term: "Baseline",
-    en: "The distance between the base station and the rover.",
-    hi: "बेस स्टेशन और रोवर के बीच की दूरी।"
-},
-{
-    term: "Point Cloud",
-    en: "A collection of millions of 3D points representing real-world objects.",
-    hi: "वास्तविक वस्तुओं को दर्शाने वाले लाखों 3D बिंदुओं का समूह।"
-},
-{
-    term: "LAS File",
-    en: "A standard file format used to store LiDAR point cloud data.",
-    hi: "LiDAR पॉइंट क्लाउड डेटा को संग्रहीत करने का मानक फ़ाइल प्रारूप।"
-},
-{
-    term: "LAZ File",
-    en: "A compressed version of a LAS point cloud file.",
-    hi: "LAS पॉइंट क्लाउड फ़ाइल का संपीड़ित (Compressed) रूप।"
-},
-{
-    term: "Point Density",
-    en: "The number of points collected in a given area.",
-    hi: "किसी क्षेत्र में एकत्र किए गए बिंदुओं की संख्या।"
-},
-{
-    term: "Return Pulse",
-    en: "The laser signal reflected back to the LiDAR sensor.",
-    hi: "LiDAR सेंसर तक वापस आने वाला लेज़र सिग्नल।"
-},
-{
-    term: "First Return",
-    en: "The first laser reflection received by the LiDAR sensor.",
-    hi: "LiDAR सेंसर द्वारा प्राप्त पहली लेज़र परावर्तन।"
-},
-{
-    term: "Last Return",
-    en: "The final laser reflection received from the ground.",
-    hi: "भूमि से प्राप्त अंतिम लेज़र परावर्तन।"
-},
-{
-    term: "Canopy Height",
-    en: "The height of trees above the ground.",
-    hi: "भूमि से पेड़ों की ऊँचाई।"
-},
-{
-    term: "Bare Earth Model",
-    en: "A terrain model with trees and buildings removed.",
-    hi: "पेड़ और इमारतों को हटाकर बनाया गया भूमि मॉडल।"
-},
-{
-    term: "3D Mesh",
-    en: "A connected network of triangles representing a 3D surface.",
-    hi: "3D सतह को दर्शाने वाले जुड़े हुए त्रिभुजों का जाल।"
-},
-{
-    term: "Textured Mesh",
-    en: "A 3D mesh with realistic image textures applied.",
-    hi: "वास्तविक तस्वीरों की टेक्सचर वाला 3D मेष।"
-},
-{
-    term: "Digital Twin",
-    en: "A virtual 3D model of a real-world object or place.",
-    hi: "वास्तविक वस्तु या स्थान का डिजिटल 3D मॉडल।"
-},
-{
-    term: "SLAM",
-    en: "A technique that builds a map while tracking the sensor's position.",
-    hi: "सेंसर की स्थिति पता करते हुए साथ ही मानचित्र बनाने की तकनीक।"
-},
-{
-    term: "ICP Algorithm",
-    en: "A method used to align two 3D point clouds.",
-    hi: "दो 3D पॉइंट क्लाउड को मिलाने की विधि।"
-},
-{
-    term: "Bathymetry",
-    en: "Measuring the depth and shape of the underwater surface.",
-    hi: "पानी के नीचे की गहराई और सतह का मापन।"
-},
-{
-    term: "Hydrography",
-    en: "The study and mapping of rivers, lakes, and oceans.",
-    hi: "नदियों, झीलों और महासागरों का अध्ययन और मानचित्रण।"
-},
-{
-    term: "Cross Section",
-    en: "A side view showing the shape of the land or river.",
-    hi: "भूमि या नदी के आकार का पार्श्व दृश्य।"
-},
-{
-    term: "Longitudinal Profile",
-    en: "A view showing elevation changes along a path.",
-    hi: "किसी मार्ग के साथ ऊँचाई में होने वाले बदलाव का दृश्य।"
-},
-{
-    term: "Breakline",
-    en: "A line representing a sharp change in terrain.",
-    hi: "भूभाग में अचानक बदलाव को दर्शाने वाली रेखा।"
-},
-{
-    term: "Mass Point",
-    en: "A surveyed point used to represent terrain elevation.",
-    hi: "भूभाग की ऊँचाई दर्शाने के लिए लिया गया सर्वे बिंदु।"
-},
-
-
-
-
-
-{
-    term: "Open Geospatial Consortium (OGC)",
-    en: "An organization that creates standards for sharing geospatial data.",
-    hi: "भौगोलिक डेटा साझा करने के मानक बनाने वाला संगठन।"
-},
-{
-    term: "OGC Standard",
-    en: "A common rule that allows GIS software to work together.",
-    hi: "ऐसा मानक जिससे अलग-अलग GIS सॉफ्टवेयर एक साथ काम कर सकें।"
-},
-{
-    term: "Web Map Service (WMS)",
-    en: "A service that provides map images over the internet.",
-    hi: "इंटरनेट पर मानचित्र की इमेज उपलब्ध कराने वाली सेवा।"
-},
-{
-    term: "Web Feature Service (WFS)",
-    en: "A service that shares editable vector features online.",
-    hi: "ऑनलाइन संपादन योग्य वेक्टर डेटा साझा करने वाली सेवा।"
-},
-{
-    term: "Web Coverage Service (WCS)",
-    en: "A service that provides raster data over the web.",
-    hi: "वेब के माध्यम से रास्टर डेटा उपलब्ध कराने वाली सेवा।"
-},
-{
-    term: "Web Map Tile Service (WMTS)",
-    en: "A service that delivers map tiles for fast display.",
-    hi: "तेज़ी से मानचित्र दिखाने के लिए टाइल उपलब्ध कराने वाली सेवा।"
-},
-{
-    term: "Feature Service",
-    en: "An online service for viewing and editing GIS features.",
-    hi: "GIS फीचर्स को देखने और संपादित करने की ऑनलाइन सेवा।"
-},
-{
-    term: "Image Service",
-    en: "An online service that shares raster imagery.",
-    hi: "रास्टर इमेज साझा करने वाली ऑनलाइन सेवा।"
-},
-{
-    term: "Map Service",
-    en: "An online service that displays map layers.",
-    hi: "मानचित्र लेयर दिखाने वाली ऑनलाइन सेवा।"
-},
-{
-    term: "Tile Service",
-    en: "A service that provides pre-generated map tiles.",
-    hi: "पहले से तैयार मानचित्र टाइल उपलब्ध कराने वाली सेवा।"
-},
-{
-    term: "GeoPackage (GPKG)",
-    en: "A single file format for storing vector and raster GIS data.",
-    hi: "वेक्टर और रास्टर दोनों प्रकार के GIS डेटा को रखने वाला एकल फ़ाइल प्रारूप।"
-},
-{
-    term: "File Geodatabase",
-    en: "A folder-based database for storing GIS datasets.",
-    hi: "GIS डेटा संग्रहित करने के लिए फ़ोल्डर आधारित डेटाबेस।"
-},
-{
-    term: "Enterprise Geodatabase",
-    en: "A GIS database designed for multiple users.",
-    hi: "कई उपयोगकर्ताओं के लिए बनाया गया GIS डेटाबेस।"
-},
-{
-    term: "Spatial Data Infrastructure (SDI)",
-    en: "A framework for sharing geographic data and services.",
-    hi: "भौगोलिक डेटा और सेवाओं को साझा करने की प्रणाली।"
-},
-{
-    term: "Geoportal",
-    en: "A website used to search and access geospatial data.",
-    hi: "भौगोलिक डेटा खोजने और प्राप्त करने वाली वेबसाइट।"
-},
-{
-    term: "Metadata Catalog",
-    en: "A collection of information describing GIS datasets.",
-    hi: "GIS डेटासेट की जानकारी का संग्रह।"
-},
-{
-    term: "Catalog Service",
-    en: "A service used to search available GIS datasets.",
-    hi: "उपलब्ध GIS डेटा खोजने वाली सेवा।"
-},
-{
-    term: "REST API",
-    en: "A web interface used for accessing GIS services.",
-    hi: "GIS सेवाओं तक पहुँचने के लिए उपयोग किया जाने वाला वेब इंटरफेस।"
-},
-{
-    term: "JSON",
-    en: "A lightweight format used to exchange GIS data.",
-    hi: "GIS डेटा साझा करने के लिए उपयोग किया जाने वाला हल्का डेटा प्रारूप।"
-},
-{
-    term: "XML",
-    en: "A markup language used for storing geographic information.",
-    hi: "भौगोलिक जानकारी संग्रहित करने की मार्कअप भाषा।"
-},
-{
-    term: "Cloud Optimized GeoTIFF (COG)",
-    en: "A GeoTIFF file optimized for fast cloud access.",
-    hi: "क्लाउड पर तेज़ी से उपयोग के लिए अनुकूलित GeoTIFF फ़ाइल।"
-},
-{
-    term: "NetCDF",
-    en: "A file format for storing scientific and climate data.",
-    hi: "वैज्ञानिक और जलवायु डेटा संग्रहित करने का फ़ाइल प्रारूप।"
-},
-{
-    term: "HDF5",
-    en: "A file format for storing large scientific datasets.",
-    hi: "बड़े वैज्ञानिक डेटासेट रखने का फ़ाइल प्रारूप।"
-},
-{
-    term: "STAC",
-    en: "A standard for organizing and searching geospatial assets.",
-    hi: "जियोस्पेशियल डेटा को व्यवस्थित और खोजने का मानक।"
-},
-{
-    term: "Asset",
-    en: "A data file linked to a geospatial dataset.",
-    hi: "जियोस्पेशियल डेटासेट से जुड़ी डेटा फ़ाइल।"
-},
-
-
-{
-    term: "Leaflet",
-    en: "A JavaScript library used to create interactive web maps.",
-    hi: "इंटरैक्टिव वेब मैप बनाने के लिए उपयोग की जाने वाली JavaScript लाइब्रेरी।"
-},
-{
-    term: "OpenLayers",
-    en: "An open-source library for displaying GIS maps on the web.",
-    hi: "वेब पर GIS मानचित्र दिखाने के लिए ओपन-सोर्स लाइब्रेरी।"
-},
-{
-    term: "CesiumJS",
-    en: "A JavaScript library for creating 3D maps and globes.",
-    hi: "3D मानचित्र और ग्लोब बनाने की JavaScript लाइब्रेरी।"
-},
-{
-    term: "Mapbox GL JS",
-    en: "A library for building fast and interactive vector maps.",
-    hi: "तेज़ और इंटरैक्टिव वेक्टर मानचित्र बनाने की लाइब्रेरी।"
-},
-{
-    term: "GeoNode",
-    en: "A platform for sharing and managing geospatial data online.",
-    hi: "ऑनलाइन जियोस्पेशियल डेटा साझा और प्रबंधित करने का प्लेटफॉर्म।"
-},
-{
-    term: "GeoWebCache",
-    en: "A tool that stores map tiles for faster map loading.",
-    hi: "तेज़ मानचित्र लोडिंग के लिए मैप टाइल संग्रहीत करने वाला टूल।"
-},
-{
-    term: "CityGML",
-    en: "A standard for storing and sharing 3D city models.",
-    hi: "3D शहर मॉडल को संग्रहित और साझा करने का मानक।"
-},
-{
-    term: "Indoor GIS",
-    en: "GIS used for mapping the inside of buildings.",
-    hi: "भवनों के अंदर का मानचित्र बनाने के लिए उपयोग किया जाने वाला GIS।"
-},
-{
-    term: "Indoor Positioning",
-    en: "Finding locations inside buildings where GPS is weak.",
-    hi: "जहाँ GPS काम नहीं करता वहाँ भवन के अंदर स्थान पता करना।"
-},
-{
-    term: "Utility Network",
-    en: "A GIS model for managing electricity, water, gas, and telecom networks.",
-    hi: "बिजली, पानी, गैस और दूरसंचार नेटवर्क प्रबंधन के लिए GIS मॉडल।"
-},
-{
-    term: "Parcel Fabric",
-    en: "A GIS dataset used to manage land parcels.",
-    hi: "भूमि के प्लॉट प्रबंधन के लिए उपयोग किया जाने वाला GIS डेटासेट।"
-},
-{
-    term: "BIM",
-    en: "A digital model containing detailed building information.",
-    hi: "भवन की विस्तृत जानकारी वाला डिजिटल मॉडल।"
-},
-{
-    term: "BIM-GIS Integration",
-    en: "Connecting building models with geographic information.",
-    hi: "भवन मॉडल को भौगोलिक जानकारी के साथ जोड़ना।"
-},
-{
-    term: "Voxel",
-    en: "A 3D pixel used to represent volume data.",
-    hi: "आयतन (Volume) डेटा दिखाने वाला 3D पिक्सेल।"
-},
-{
-    term: "3D Tiles",
-    en: "A format for streaming large 3D geospatial data.",
-    hi: "बड़े 3D जियोस्पेशियल डेटा को प्रदर्शित करने का प्रारूप।"
-},
-{
-    term: "Scene Layer",
-    en: "A layer used to display 3D geographic objects.",
-    hi: "3D भौगोलिक वस्तुओं को दिखाने वाली लेयर।"
-},
-{
-    term: "Scene Service",
-    en: "An online service for sharing 3D GIS scenes.",
-    hi: "3D GIS दृश्य साझा करने की ऑनलाइन सेवा।"
-},
-{
-    term: "Mesh Layer",
-    en: "A layer that displays connected 3D surface models.",
-    hi: "जुड़ी हुई 3D सतहों को दिखाने वाली लेयर।"
-},
-{
-    term: "Web Scene",
-    en: "An interactive 3D map viewed in a web browser.",
-    hi: "वेब ब्राउज़र में देखी जाने वाली इंटरैक्टिव 3D मैप।"
-},
-{
-    term: "Experience Builder",
-    en: "A tool for creating GIS web applications without coding.",
-    hi: "बिना कोड लिखे GIS वेब एप्लिकेशन बनाने का टूल।"
-},
-{
-    term: "Dashboard Widget",
-    en: "A visual component that displays GIS information.",
-    hi: "GIS जानकारी दिखाने वाला विजुअल घटक।"
-},
-{
-    term: "Network Dataset",
-    en: "A dataset used for route and network analysis.",
-    hi: "रूट और नेटवर्क विश्लेषण के लिए उपयोग किया जाने वाला डेटासेट।"
-},
-{
-    term: "Trace Network",
-    en: "A GIS model used to trace connected network paths.",
-    hi: "जुड़े हुए नेटवर्क मार्गों का पता लगाने वाला GIS मॉडल।"
-},
-{
-    term: "Utility Trace",
-    en: "Following the flow of water, electricity, or gas in a network.",
-    hi: "नेटवर्क में पानी, बिजली या गैस के प्रवाह का पता लगाना।"
-},
-{
-    term: "Digital Terrain Visualization",
-    en: "Displaying terrain in realistic 2D or 3D views.",
-    hi: "भूभाग को वास्तविक 2D या 3D दृश्य में प्रदर्शित करना।"
+function init() {
+    renderCategories();
+    renderCards();
 }
 
-];
+function renderCategories() {
+    const panel = document.getElementById('categoryPanel');
+    const categories = ['All', ...new Set(glossaryData.map(item => item.category))];
+    
+    let htmlContent = "";
+    categories.forEach(category => {
+        htmlContent += `<button class="category-btn ${category === 'All' ? 'active' : ''}" onclick="filterCategory('${category}', this)">${category}</button>`;
+    });
+    
+    panel.innerHTML = htmlContent;
+}
+
+window.filterCategory = function(category, btnElement) {
+    currentCategory = category;
+    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+    btnElement.classList.add('active');
+    renderCards();
+}
 
 function renderCards() {
     const grid = document.getElementById('glossaryGrid');
     let htmlContent = "";
 
-    glossaryData.forEach((item, index) => {
+    currentFilteredData = currentCategory === 'All' 
+        ? glossaryData 
+        : glossaryData.filter(item => item.category === currentCategory);
+
+    currentFilteredData.forEach((item, index) => {
         let delay = (index % 10) * 0.1; 
         
         htmlContent += `
-        <div class="card" style="animation-delay: ${delay}s" onclick="this.classList.toggle('flipped')">
+        <div class="card" style="animation-delay: ${delay}s" onclick="openModal(${index})">
             <div class="card-inner">
                 <div class="card-front">
                     <h2>${item.term}</h2>
-                </div>
-                <div class="card-back">
-                    <p><strong>EN:</strong> ${item.en}</p>
-                    <p><strong>HI:</strong> ${item.hi}</p>
                 </div>
             </div>
         </div>
@@ -1580,7 +852,7 @@ function renderCards() {
     grid.innerHTML = htmlContent;
 }
 
-function searchGlossary() {
+window.searchGlossary = function() {
     let input = document.getElementById('searchInput').value.toLowerCase();
     let cards = document.getElementsByClassName('card');
 
@@ -1595,4 +867,26 @@ function searchGlossary() {
     }
 }
 
-window.onload = renderCards;
+window.openModal = function(index) {
+    const item = currentFilteredData[index];
+    
+    document.getElementById('modalTerm').innerText = item.term;
+    
+    document.getElementById('modalDefinition').innerText = item.definition_en + "\n\n" + item.definition_hi;
+
+    const imgEl = document.getElementById('modalImage');
+    if (item.image) {
+        imgEl.src = item.image;
+        imgEl.style.display = 'block';
+    } else {
+        imgEl.style.display = 'none';
+    }
+
+    document.getElementById('cardModal').classList.add('active');
+}
+
+window.closeModal = function(e) {
+    document.getElementById('cardModal').classList.remove('active');
+}
+
+window.onload = init;
