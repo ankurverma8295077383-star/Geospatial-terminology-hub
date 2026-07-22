@@ -28,13 +28,25 @@
         </main>
     </div>
 
-    <!-- Modal Overlay -->
+
+<!-- Modal Overlay -->
     <div id="cardModal" class="modal-overlay" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal(event)">&times;</span>
-            <img id="modalImage" src="" alt="Technology Image">
-            <h2 id="modalTerm"></h2>
-            <p id="modalDefinition"></p>
+            
+            <div class="modal-split-layout">
+                <!-- Left Side: Text -->
+                <div class="modal-text-side">
+                    <h2 id="modalTerm"></h2>
+                    <p id="modalDefinition"></p>
+                </div>
+                
+                <!-- Right Side: Image -->
+                <div class="modal-image-side">
+                    <img id="modalImage" src="" alt="Technology Image">
+                </div>
+            </div>
+            
         </div>
     </div>
 
